@@ -1,7 +1,4 @@
-<script src="/collab/OHSIncidentRegister/SiteAssets/jquery-1.8.2.min.js" type="text/javascript"></script>
-<script src="/collab/OHSIncidentRegister/SiteAssets/jquery.qtip.js" type="text/javascript"></script>
-<script src="/collab/OHSIncidentRegister/SiteAssets/jquery.SPServices-2014.01.min.js" type="text/javascript"></script>
-<script>
+
 
 
 $(document).ready(function(){
@@ -91,4 +88,4 @@ $("nobr:contains('Full Name')").parent('h3').parent('td').parent('tr').qtip({
     }
 });
 
-});</script>
+});
