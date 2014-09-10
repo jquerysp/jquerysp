@@ -1,0 +1,94 @@
+<script src="/collab/OHSIncidentRegister/SiteAssets/jquery-1.8.2.min.js" type="text/javascript"></script>
+<script src="/collab/OHSIncidentRegister/SiteAssets/jquery.qtip.js" type="text/javascript"></script>
+<script src="/collab/OHSIncidentRegister/SiteAssets/jquery.SPServices-2014.01.min.js" type="text/javascript"></script>
+<script>
+
+
+$(document).ready(function(){
+
+$("input[title$='Any person involved?']").click(function(){
+$("nobr:contains('Full Name')").parent('h3').parent('td').parent('tr').toggle();
+$("nobr:contains('Phone Number')").parent('h3').parent('td').parent('tr').toggle();
+$("nobr:contains('Job Title')").parent('h3').parent('td').parent('tr').toggle();
+$("nobr:contains('Immediate Manager')").parent('h3').parent('td').parent('tr').toggle();
+$("nobr:contains('Shift Name')").parent('h3').parent('td').parent('tr').toggle();
+$("nobr:contains('Nominate an Investigator')").parent('h3').parent('td').parent('tr').toggle();
+$("nobr:contains('Employment Type')").parent('h3').parent('td').parent('tr').toggle();
+});
+
+$("select[title$='Type of First Aid']").change(function(){
+    if ($("select[title$='Type of First Aid']").val()=="No FA provided") {
+        $("nobr:contains('First Aid Treatment')").parent('h3').parent('td').parent('tr').hide();
+		$("textarea[title$='First Aid Treatment']").val("");
+    } else {
+        $("nobr:contains('First Aid Treatment')").parent('h3').parent('td').parent('tr').show();
+    }
+});
+
+
+  $().SPServices.SPCascadeDropdowns({
+    relationshipList: "sa_area",
+    relationshipListParentColumn: "site",
+    relationshipListChildColumn: "Title",
+	parentColumn: "Site",
+    childColumn: "Area"
+  });
+  $().SPServices.SPCascadeDropdowns({
+    relationshipList: "sa_subarea",
+    relationshipListParentColumn: "area",
+    relationshipListChildColumn: "Title",
+    relationshipListSortColumn: "ID",
+    parentColumn: "Area",
+    childColumn: "Sub-area"
+  });
+
+  $().SPServices.SPCascadeDropdowns({
+    relationshipList: "ir_idc",
+    relationshipListParentColumn: "TOE",
+    relationshipListChildColumn: "Title",
+	parentColumn: "Type of Event",
+    childColumn: "Direct Causes"
+  });
+  $().SPServices.SPCascadeDropdowns({
+    relationshipList: "ir_brc",
+    relationshipListParentColumn: "IDC",
+    relationshipListChildColumn: "Title",
+    relationshipListSortColumn: "ID",
+    parentColumn: "Direct Causes",
+    childColumn: "Root Causes"
+  });
+
+  $().SPServices.SPCascadeDropdowns({
+    relationshipList: "ir_rcd",
+    relationshipListParentColumn: "BRC",
+    relationshipListChildColumn: "Title",
+    relationshipListSortColumn: "ID",
+    parentColumn: "Root Causes",
+    childColumn: "Detailed Root Causes"
+  });
+
+//$().SPServices.SPArrangeChoices({
+//	columnName: "Type of First Aid",
+//	perRow: 3
+//});
+
+$("input[title$='Incident Title']").qtip({ 
+    content: {
+        text: 'This is tooltips.',
+        title: 'This is Title!'
+    }
+});
+$("input[title$='Any person involved?']").qtip({ 
+    content: {
+        text: 'Anyone involved?',
+        title: 'Person involved'
+    }
+});
+$("nobr:contains('Full Name')").parent('h3').parent('td').parent('tr').qtip({ 
+    content: {
+        text: 'This is full name.',
+        title: 'Full Name'
+    }
+});
+
+});</script>
