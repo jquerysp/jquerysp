@@ -1,6 +1,5 @@
 
 
-
 $(document).ready(function(){
 
 $("input[title$='Any person involved?']").click(function(){
@@ -27,7 +26,7 @@ $("select[title$='Type of First Aid']").change(function(){
     relationshipList: "sa_area",
     relationshipListParentColumn: "site",
     relationshipListChildColumn: "Title",
-	parentColumn: "Site",
+	parentColumn: "Site1",
     childColumn: "Area"
   });
   $().SPServices.SPCascadeDropdowns({
