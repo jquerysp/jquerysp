@@ -113,10 +113,13 @@ $("input[title$='Investigation Completed']").change(function(){
 if($("input[title$='Investigation Completed']").is(':checked')){
         $("input[title$='Investigation Completed By']").val(thisUserAccount.Title);
         $("input[title$='Investigation Completed Date']").val(today);
+        $("input[title$='Investigation Completed By']").attr('disabled', 'disabled');
+        $("input[title$='Investigation Completed Date']").attr('disabled', 'disabled');
     } else {
         $("input[title$='Investigation Completed By']").val("");
         $("input[title$='Investigation Completed Date']").val("");
-    }
+        $("input[title$='Investigation Completed By']").attr('disabled', 'disabled');
+        $("input[title$='Investigation Completed Date']").attr('disabled', 'disabled');    }
 
 });
 
