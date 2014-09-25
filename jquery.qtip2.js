@@ -1,11 +1,11 @@
 $(document).ready(function(){
 
 var thisUserAccount = $().SPServices.SPGetCurrentUser({
-	fieldNames: ["Name", "UserName"],
+	fieldNames: ["Name", "Title"],
 	debug: false
 });
-alert(thisUserAccount.Name);
-alert(thisUserAccount.UserName);
+
+alert(thisUserAccount.Title);
 
 $("input[title$='Any person involved?']").click(function(){
 $("nobr:contains('Full Name')").parent('h3').parent('td').parent('tr').toggle();
