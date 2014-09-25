@@ -111,15 +111,20 @@ $("nobr:contains('Full Name')").parent('h3').parent('td').parent('tr').qtip({
 
 $("input[title$='Investigation Completed']").change(function(){
 if($("input[title$='Investigation Completed']").is(':checked')){
+        $("nobr:contains('Investigation Completed By')").parent('h3').parent('td').parent('tr').show();
+        $("nobr:contains('Investigation Completed Date')").parent('h3').parent('td').parent('tr').show();
         $("input[title$='Investigation Completed By']").val(thisUserAccount.Title);
         $("input[title$='Investigation Completed Date']").val(today);
-        $("input[title$='Investigation Completed By']").attr('disabled', 'disabled');
-        $("input[title$='Investigation Completed Date']").attr('disabled', 'disabled');
+        $("nobr:contains('Investigation Completed By')").parent('h3').parent('td').parent('tr').hide();
+        $("nobr:contains('Investigation Completed Date')").parent('h3').parent('td').parent('tr').hide();
     } else {
+        $("nobr:contains('Investigation Completed By')").parent('h3').parent('td').parent('tr').show();
+        $("nobr:contains('Investigation Completed Date')").parent('h3').parent('td').parent('tr').show();
         $("input[title$='Investigation Completed By']").val("");
         $("input[title$='Investigation Completed Date']").val("");
-        $("input[title$='Investigation Completed By']").attr('disabled', 'disabled');
-        $("input[title$='Investigation Completed Date']").attr('disabled', 'disabled');    }
+        $("nobr:contains('Investigation Completed By')").parent('h3').parent('td').parent('tr').hide();
+        $("nobr:contains('Investigation Completed Date')").parent('h3').parent('td').parent('tr').hide();
+    }
 
 });
 
