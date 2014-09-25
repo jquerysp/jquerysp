@@ -110,8 +110,12 @@ $("nobr:contains('Full Name')").parent('h3').parent('td').parent('tr').qtip({
 });
 
 $("input[title$='Investigation Completed']").click(function(){
-var vl=$("input[title$='Investigation Completed']").val()
-alert(vl)
+if($("input[title$='Investigation Completed']").is(':checked')){
+        alert("checked");
+    } else {
+        alert("unchecked");
+    }
+
 });
 
 
