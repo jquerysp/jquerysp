@@ -115,6 +115,7 @@ if($("input[title$='Investigation Completed']").is(':checked')){
         $("nobr:contains('Investigation Completed Date')").parent('h3').parent('td').parent('tr').show();
         $("input[title$='Investigation Completed By']").val(thisUserAccount.Title);
         $("input[title$='Investigation Completed Date']").val(today);
+        alert("added");
         $("nobr:contains('Investigation Completed By')").parent('h3').parent('td').parent('tr').hide();
         $("nobr:contains('Investigation Completed Date')").parent('h3').parent('td').parent('tr').hide();
     } else {
@@ -122,6 +123,7 @@ if($("input[title$='Investigation Completed']").is(':checked')){
         $("nobr:contains('Investigation Completed Date')").parent('h3').parent('td').parent('tr').show();
         $("input[title$='Investigation Completed By']").val("");
         $("input[title$='Investigation Completed Date']").val("");
+        alert("removed");
         $("nobr:contains('Investigation Completed By')").parent('h3').parent('td').parent('tr').hide();
         $("nobr:contains('Investigation Completed Date')").parent('h3').parent('td').parent('tr').hide();
     }
