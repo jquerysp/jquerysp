@@ -20,7 +20,7 @@ if(mm<10) {
     mm='0'+mm
 } 
 
-today = mm+'/'+dd+'/'+yyyy;
+today = dd+'/'+mm+'/'+yyyy;
 alert(today);
 
 
@@ -108,5 +108,12 @@ $("nobr:contains('Full Name')").parent('h3').parent('td').parent('tr').qtip({
         title: 'Full Name'
     }
 });
+
+$("input[title$='Investigation Completed']").click(function(){
+var vl=$("input[title$='Investigation Completed']").val()
+alert(vl)
+});
+
+
 
 });
