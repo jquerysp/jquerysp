@@ -5,7 +5,7 @@ var thisUserAccount = $().SPServices.SPGetCurrentUser({
 	debug: false
 });
 
-alert(thisUserAccount.Title);
+//alert(thisUserAccount.Title);
 
 var today = new Date();
 var dd = today.getDate();
@@ -21,7 +21,7 @@ if(mm<10) {
 } 
 
 today = dd+'/'+mm+'/'+yyyy;
-alert(today);
+//alert(today);
 
 
 $("input[title$='Any person involved?']").click(function(){
@@ -111,21 +111,19 @@ $("nobr:contains('Full Name')").parent('h3').parent('td').parent('tr').qtip({
 
 $("input[title$='Investigation Completed']").change(function(){
 if($("input[title$='Investigation Completed']").is(':checked')){
-        $("nobr:contains('Investigation Completed By')").parent('h3').parent('td').parent('tr').show();
-        $("nobr:contains('Investigation Completed Date')").parent('h3').parent('td').parent('tr').show();
+//        $("nobr:contains('Investigation Completed By')").parent('h3').parent('td').parent('tr').show();
+//        $("nobr:contains('Investigation Completed Date')").parent('h3').parent('td').parent('tr').show();
         $("input[title$='Investigation Completed By']").val(thisUserAccount.Title);
         $("input[title$='Investigation Completed Date']").val(today);
-        alert("added");
-        $("nobr:contains('Investigation Completed By')").parent('h3').parent('td').parent('tr').hide();
-        $("nobr:contains('Investigation Completed Date')").parent('h3').parent('td').parent('tr').hide();
+//        $("nobr:contains('Investigation Completed By')").parent('h3').parent('td').parent('tr').hide();
+//        $("nobr:contains('Investigation Completed Date')").parent('h3').parent('td').parent('tr').hide();
     } else {
-        $("nobr:contains('Investigation Completed By')").parent('h3').parent('td').parent('tr').show();
-        $("nobr:contains('Investigation Completed Date')").parent('h3').parent('td').parent('tr').show();
+//        $("nobr:contains('Investigation Completed By')").parent('h3').parent('td').parent('tr').show();
+//        $("nobr:contains('Investigation Completed Date')").parent('h3').parent('td').parent('tr').show();
         $("input[title$='Investigation Completed By']").val("");
         $("input[title$='Investigation Completed Date']").val("");
-        alert("removed");
-        $("nobr:contains('Investigation Completed By')").parent('h3').parent('td').parent('tr').hide();
-        $("nobr:contains('Investigation Completed Date')").parent('h3').parent('td').parent('tr').hide();
+//        $("nobr:contains('Investigation Completed By')").parent('h3').parent('td').parent('tr').hide();
+//        $("nobr:contains('Investigation Completed Date')").parent('h3').parent('td').parent('tr').hide();
     }
 
 });
