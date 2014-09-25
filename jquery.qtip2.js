@@ -109,11 +109,13 @@ $("nobr:contains('Full Name')").parent('h3').parent('td').parent('tr').qtip({
     }
 });
 
-$("input[title$='Investigation Completed']").click(function(){
+$("input[title$='Investigation Completed']").change(function(){
 if($("input[title$='Investigation Completed']").is(':checked')){
-        alert("checked");
+        $("input[title$='Investigation Completed By']").val(thisUserAccount.Title);
+        $("input[title$='Investigation Completed Date']").val(today);
     } else {
-        alert("unchecked");
+        $("input[title$='Investigation Completed By']").val("");
+        $("input[title$='Investigation Completed Date']").val("");
     }
 
 });
