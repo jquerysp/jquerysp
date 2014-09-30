@@ -157,7 +157,7 @@ $("input[title$='Off Site']").click(function(){
 
 });
 $("input[title$='Vehicle Caused?']").click(function(){
-	if ($("input[title$='Investigation Completed']").is(':checked')){
+	if ($("input[title$='Vehicle Caused?']").is(':checked')){
         $("nobr:contains('Type of Vehicle')").parent('h3').parent('td').parent('tr').toggle();
     }
 });
