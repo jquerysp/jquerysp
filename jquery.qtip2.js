@@ -23,27 +23,7 @@ if(mm<10) {
 today = dd+'/'+mm+'/'+yyyy;
 //alert(today);
 
-$("input[title$='Off Site']").change(function(){
 
-	if ($("input[title$='Off Site']").prop("checked")){
-	alert("is checked");
-        $("nobr:contains('Site')").parent('h3').parent('td').parent('tr').hide();
-		$("nobr:contains('Area')").parent('h3').parent('td').parent('tr').hide();
-		$("nobr:contains('Sub-area')").parent('h3').parent('td').parent('tr').hide();
-		//$("select[title$='Site']").val("");
-		//$("select[title$='Area']").val("");
-		//$("select[title$='Sub-area']").val("");
-		$("nobr:contains('Location')").parent('h3').parent('td').parent('tr').show();
-    } else {
-	alert("is not checked");
-        $("nobr:contains('Site')").parent('h3').parent('td').parent('tr').show();
-		$("nobr:contains('Area')").parent('h3').parent('td').parent('tr').show();
-		$("nobr:contains('Sub-area')").parent('h3').parent('td').parent('tr').show();
-		$("nobr:contains('Location')").parent('h3').parent('td').parent('tr').hide();
-		//$("input[title$='Location']").val("");
-    }
-
-});
 
 $("input[title$='Any person involved?']").click(function(){
 $("nobr:contains('Full Name')").parent('h3').parent('td').parent('tr').toggle();
@@ -63,6 +43,7 @@ $("select[title$='Type of First Aid']").change(function(){
         $("nobr:contains('First Aid Treatment')").parent('h3').parent('td').parent('tr').show();
     }
 });
+
 
 
   $().SPServices.SPCascadeDropdowns({
@@ -154,6 +135,26 @@ if($("input[title$='Investigation Completed']").is(':checked')){
 
 });
 
+$("input[title$='Off Site']").change(function(){
 
+	if ($("input[title$='Off Site']").prop("checked")){
+	alert("is checked");
+        $("nobr:contains('Site')").parent('h3').parent('td').parent('tr').hide();
+		$("nobr:contains('Area')").parent('h3').parent('td').parent('tr').hide();
+		$("nobr:contains('Sub-area')").parent('h3').parent('td').parent('tr').hide();
+		//$("select[title$='Site']").val("");
+		//$("select[title$='Area']").val("");
+		//$("select[title$='Sub-area']").val("");
+		$("nobr:contains('Location')").parent('h3').parent('td').parent('tr').show();
+    } else {
+	alert("is not checked");
+        $("nobr:contains('Site')").parent('h3').parent('td').parent('tr').show();
+		$("nobr:contains('Area')").parent('h3').parent('td').parent('tr').show();
+		$("nobr:contains('Sub-area')").parent('h3').parent('td').parent('tr').show();
+		$("nobr:contains('Location')").parent('h3').parent('td').parent('tr').hide();
+		//$("input[title$='Location']").val("");
+    }
+
+});
 
 });
