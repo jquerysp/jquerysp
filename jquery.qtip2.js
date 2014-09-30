@@ -139,7 +139,7 @@ $("input[title$='Off Site']").change(function(){
 
 	if ($("input[title$='Off Site']").is(':checked')){
 	alert("is checked");
-        $("nobr:contains('Site')").parent('h3').parent('td').parent('tr').hide();
+        $("nobr:contains('Site')").parent('h3').parent('td').parent('tr').show();
 		$("nobr:contains('Area')").parent('h3').parent('td').parent('tr').hide();
 		$("nobr:contains('Sub-area')").parent('h3').parent('td').parent('tr').hide();
 		//$("select[title$='Site']").val("");
@@ -148,7 +148,7 @@ $("input[title$='Off Site']").change(function(){
 		$("nobr:contains('Location')").parent('h3').parent('td').parent('tr').show();
     } else {
 	alert("is not checked");
-        $("nobr:contains('Site')").parent('h3').parent('td').parent('tr').show();
+        $("nobr:contains('Site')").parent('h3').parent('td').parent('tr').hide();
 		$("nobr:contains('Area')").parent('h3').parent('td').parent('tr').show();
 		$("nobr:contains('Sub-area')").parent('h3').parent('td').parent('tr').show();
 		$("nobr:contains('Location')").parent('h3').parent('td').parent('tr').hide();
