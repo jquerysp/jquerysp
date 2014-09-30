@@ -135,33 +135,14 @@ if ($("input[title$='Investigation Completed']").is(':checked')){
 
 });
 
-$("input[title$='Off Site']").click(function(){
 
-	if ($("input[title$='Off Site']").is(':checked')){
-	alert("is checked");
-        $("nobr:contains('Site')").parent('h3').parent('td').parent('tr').show();
-		$("nobr:contains('Area')").parent('h3').parent('td').parent('tr').hide();
-		$("nobr:contains('Sub-area')").parent('h3').parent('td').parent('tr').hide();
-		//$("select[title$='Site']").val("");
-		//$("select[title$='Area']").val("");
-		//$("select[title$='Sub-area']").val("");
-		$("nobr:contains('Location')").parent('h3').parent('td').parent('tr').show();
-    } else {
-	alert("is not checked");
-        $("nobr:contains('Site')").parent('h3').parent('td').parent('tr').hide();
-		$("nobr:contains('Area')").parent('h3').parent('td').parent('tr').show();
-		$("nobr:contains('Sub-area')").parent('h3').parent('td').parent('tr').show();
-		$("nobr:contains('Location')").parent('h3').parent('td').parent('tr').hide();
-		//$("input[title$='Location']").val("");
-    }
-
-});
 $("input[title$='Vehicle Caused?']").change(function(){
     $("nobr:contains('Type of Vehicle')").parent('h3').parent('td').parent('tr').toggle();
 	if (!$("input[title$='Vehicle Caused?']").is(':checked')){
 	$("select[title$='Type of Vehicle']").val("");
     }
 });
+
 
 
 
