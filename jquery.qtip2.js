@@ -135,7 +135,7 @@ if ($("input[title$='Investigation Completed']").is(':checked')){
 
 });
 
-$("input[title$='Off Site']").change(function(){
+$("input[title$='Off Site']").click(function(){
 
 	if ($("input[title$='Off Site']").is(':checked')){
 	alert("is checked");
@@ -156,7 +156,7 @@ $("input[title$='Off Site']").change(function(){
     }
 
 });
-$("input[title$='Vehicle Caused?']").change(function(){
+$("input[title$='Vehicle Caused?']").click(function(){
 	if ($("input[title$='Investigation Completed']").is(':checked')){
         $("nobr:contains('Type of Vehicle')").parent('h3').parent('td').parent('tr').show();
     } else {
