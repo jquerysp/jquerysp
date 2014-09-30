@@ -157,9 +157,11 @@ $("input[title$='Off Site']").click(function(){
 
 });
 $("input[title$='Vehicle Caused?']").change(function(){
+    $("nobr:contains('Type of Vehicle')").parent('h3').parent('td').parent('tr').toggle();
 	if ($("input[title$='Vehicle Caused?']").is(':checked')){
 	alert("it is checked")
-        $("nobr:contains('Type of Vehicle')").parent('h3').parent('td').parent('tr').toggle();
+	} else {
+	$("select[title$='Type of Vehicle']").val("");
     }
 });
 
