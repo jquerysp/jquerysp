@@ -23,7 +23,7 @@ if(mm<10) {
 today = dd+'/'+mm+'/'+yyyy;
 //alert(today);
 
-$("input[title$='Off Site']").click(function(){
+$("input[title$='Off Site']").change(function(){
     if($("input[title$='Off Site']").is(':checked')) {
 	alert("is checked");
         $("nobr:contains('Site')").parent('h3').parent('td').parent('tr').hide();
