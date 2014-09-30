@@ -40,14 +40,6 @@ $("input[title$='Off Site']").change(function(){
 		$("input[title$='Location']").val("")
     }
 
-
-$("nobr:contains('Full Name')").parent('h3').parent('td').parent('tr').toggle();
-$("nobr:contains('Phone Number')").parent('h3').parent('td').parent('tr').toggle();
-$("nobr:contains('Job Title')").parent('h3').parent('td').parent('tr').toggle();
-$("nobr:contains('Immediate Manager')").parent('h3').parent('td').parent('tr').toggle();
-$("nobr:contains('Shift Name')").parent('h3').parent('td').parent('tr').toggle();
-$("nobr:contains('Nominate an Investigator')").parent('h3').parent('td').parent('tr').toggle();
-$("nobr:contains('Employment Type')").parent('h3').parent('td').parent('tr').toggle();
 });
 
 $("input[title$='Any person involved?']").click(function(){
@@ -124,7 +116,7 @@ $("input[title$='Incident Title']").qtip({
 });
 $("input[title$='Off Site']").qtip({ 
     content: {
-      text: 'Tick the checkbox the incident did not happen at one of the sites listed in the Site field below. Eg: tick the checkbox if the incident happened on the road.'
+      text: 'Tick the checkbox if the incident did not happen at one of the sites listed in the Site field below. Eg: tick the checkbox if the incident happened on the road.'
     }
 });
 $("input[title$='Any person involved?']").qtip({ 
