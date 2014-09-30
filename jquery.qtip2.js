@@ -23,21 +23,21 @@ if(mm<10) {
 today = dd+'/'+mm+'/'+yyyy;
 //alert(today);
 
-$("input[title$='Off Site']").change(function(){
+$("input[title$='Off Site']").click(function(){
     if($("input[title$='Off Site']").is(':checked')) {
         $("nobr:contains('Site')").parent('h3').parent('td').parent('tr').hide();
 		$("nobr:contains('Area')").parent('h3').parent('td').parent('tr').hide();
 		$("nobr:contains('Sub-area')").parent('h3').parent('td').parent('tr').hide();
-		$("select[title$='Site']").val("")
-		$("select[title$='Area']").val("")
-		$("select[title$='Sub-area']").val("")
+		$("select[title$='Site']").val("");
+		$("select[title$='Area']").val("");
+		$("select[title$='Sub-area']").val("");
 		$("nobr:contains('Location')").parent('h3').parent('td').parent('tr').show();
     } else {
         $("nobr:contains('Site')").parent('h3').parent('td').parent('tr').show();
 		$("nobr:contains('Area')").parent('h3').parent('td').parent('tr').show();
 		$("nobr:contains('Sub-area')").parent('h3').parent('td').parent('tr').show();
 		$("nobr:contains('Location')").parent('h3').parent('td').parent('tr').hide();
-		$("input[title$='Location']").val("")
+		$("input[title$='Location']").val("");
     }
 
 });
