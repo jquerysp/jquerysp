@@ -117,7 +117,7 @@ $("nobr:contains('Full Name')").parent('h3').parent('td').parent('tr').qtip({
 });
 
 $("input[title$='Investigation Completed']").change(function(){
-if($("input[title$='Investigation Completed']").is(':checked')){
+if ($("input[title$='Investigation Completed']").is(':checked')){
 //        $("nobr:contains('Investigation Completed By')").parent('h3').parent('td').parent('tr').show();
 //        $("nobr:contains('Investigation Completed Date')").parent('h3').parent('td').parent('tr').show();
         $("input[title$='Investigation Completed By']").val(thisUserAccount.Title);
@@ -137,7 +137,7 @@ if($("input[title$='Investigation Completed']").is(':checked')){
 
 $("input[title$='Off Site']").change(function(){
 
-	if ($("input[title$='Off Site']").prop("checked")){
+	if ($("input[title$='Off Site']").is(':checked')){
 	alert("is checked");
         $("nobr:contains('Site')").parent('h3').parent('td').parent('tr').hide();
 		$("nobr:contains('Area')").parent('h3').parent('td').parent('tr').hide();
