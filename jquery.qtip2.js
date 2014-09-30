@@ -24,8 +24,8 @@ today = dd+'/'+mm+'/'+yyyy;
 //alert(today);
 
 $("input[title$='Off Site']").change(function(){
-	alert($("input[title$='Off Site']").val());
-	if($("input[title$='Off Site']").is(':checked')){
+	alert($("input[title$='Off Site']").prop());
+	if($("input[title$='Off Site']").prop("checked")){
 	alert("is checked");
         $("nobr:contains('Site')").parent('h3').parent('td').parent('tr').hide();
 		$("nobr:contains('Area')").parent('h3').parent('td').parent('tr').hide();
