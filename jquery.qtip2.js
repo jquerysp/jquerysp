@@ -71,6 +71,7 @@ $("input[title$='Off Site']").change(function(){
         $("nobr:containsExactCase('Site')").parent('h3').parent('td').parent('tr').toggle();
 		$("nobr:containsExactCase('Area')").parent('h3').parent('td').parent('tr').toggle();
 		$("nobr:containsExactCase('Sub-area')").parent('h3').parent('td').parent('tr').toggle();
+		$("nobr:containsExactCase('Location')").parent('h3').parent('td').parent('tr').toggle();
 	if ($("input[title$='Off Site']").is(':checked')){
 		$("select[title$='Site']").val("");
 		$("select[title$='Area']").val("");
