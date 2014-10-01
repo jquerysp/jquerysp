@@ -23,18 +23,24 @@ if(mm<10) {
 today = dd+'/'+mm+'/'+yyyy;
 //alert(today);
 
-$("input[oldtitle$='Off Site']").change(function(){
-  alert("changed");
-});
-
-
 $("input[title$='Vehicle Caused?']").change(function(){
     $("nobr:contains('Type of Vehicle')").parent('h3').parent('td').parent('tr').toggle();
 	if (!$("input[title$='Vehicle Caused?']").is(':checked')){
 	$("select[title$='Type of Vehicle']").val("");
     }
 });
-
+$("input[title$='Off Site']").change(function(){
+        $("nobr:contains('Site')").parent('h3').parent('td').parent('tr').toggle();
+		$("nobr:contains('Area')").parent('h3').parent('td').parent('tr').toggle();
+		$("nobr:contains('Sub-area')").parent('h3').parent('td').parent('tr').toggle();
+	if ($("input[title$='Off Site']").is(':checked')){
+		$("select[title$='Site']").val("");
+		$("select[title$='Area']").val("");
+		$("select[title$='Sub-area']").val("");
+	} else {
+		$("input[title$='Location']").val("");
+    }
+});
 
 $("input[title$='Any person involved?']").click(function(){
 $("nobr:contains('Full Name')").parent('h3').parent('td').parent('tr').toggle();
@@ -120,6 +126,13 @@ $("input[title$='Any person involved?']").qtip({
         title: 'Person involved'
     }
 });
+
+$("input[title$='Vehicle Caused?']").qtip({ 
+    content: {
+        text: 'Tick the checkbox if this incident was caused by a motor vehicle.'
+    }
+});
+
 $("nobr:contains('Full Name')").parent('h3').parent('td').parent('tr').qtip({ 
     content: {
         text: 'This is full name.',
