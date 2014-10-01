@@ -1,3 +1,41 @@
+$.extend( $.expr[":"], {
+ containsExact: $.expr.createPseudo ?
+  $.expr.createPseudo(function(text) {
+   return function(elem) {
+    return $.trim(elem.innerHTML.toLowerCase()) === text.toLowerCase();
+   };
+  }) :
+  // support: jQuery <1.8
+  function(elem, i, match) {
+   return $.trim(elem.innerHTML.toLowerCase()) === match[3].toLowerCase();
+  },
+
+ containsExactCase: $.expr.createPseudo ?
+  $.expr.createPseudo(function(text) {
+   return function(elem) {
+    return $.trim(elem.innerHTML) === text;
+   };
+  }) :
+  // support: jQuery <1.8
+  function(elem, i, match) {
+   return $.trim(elem.innerHTML) === match[3];
+  },
+
+ containsRegex: $.expr.createPseudo ?
+  $.expr.createPseudo(function(text) {
+   var reg = /^\/((?:\\\/|[^\/]) )\/([mig]{0,3})$/.exec(text);
+   return function(elem) {
+    return RegExp(reg[1], reg[2]).test($.trim(elem.innerHTML));
+   };
+  }) :
+  // support: jQuery <1.8
+  function(elem, i, match) {
+   var reg = /^\/((?:\\\/|[^\/]) )\/([mig]{0,3})$/.exec(match[3]);
+   return RegExp(reg[1], reg[2]).test($.trim(elem.innerHTML));
+  }
+
+});
+
 $(document).ready(function(){
 
 var thisUserAccount = $().SPServices.SPGetCurrentUser({
@@ -30,9 +68,9 @@ $("input[title$='Vehicle Caused?']").change(function(){
     }
 });
 $("input[title$='Off Site']").change(function(){
-        $("nobr:contains('Site')").parent('h3').parent('td').parent('tr').toggle();
-		$("nobr:contains('Area')").parent('h3').parent('td').parent('tr').toggle();
-		$("nobr:contains('Sub-area')").parent('h3').parent('td').parent('tr').toggle();
+        $("nobr:containsExactCase('Site')").parent('h3').parent('td').parent('tr').toggle();
+		$("nobr:containsExactCase('Area')").parent('h3').parent('td').parent('tr').toggle();
+		$("nobr:containsExactCase('Sub-area')").parent('h3').parent('td').parent('tr').toggle();
 	if ($("input[title$='Off Site']").is(':checked')){
 		$("select[title$='Site']").val("");
 		$("select[title$='Area']").val("");
