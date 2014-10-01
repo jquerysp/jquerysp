@@ -23,6 +23,12 @@ if(mm<10) {
 today = dd+'/'+mm+'/'+yyyy;
 //alert(today);
 
+$("input[title$='Vehicle Caused?']").change(function(){
+    $("nobr:contains('Type of Vehicle')").parent('h3').parent('td').parent('tr').toggle();
+	if (!$("input[title$='Vehicle Caused?']").is(':checked')){
+	$("select[title$='Type of Vehicle']").val("");
+    }
+});
 
 
 $("input[title$='Any person involved?']").click(function(){
@@ -136,12 +142,6 @@ if ($("input[title$='Investigation Completed']").is(':checked')){
 });
 
 
-$("input[title$='Vehicle Caused?']").change(function(){
-    $("nobr:contains('Type of Vehicle')").parent('h3').parent('td').parent('tr').toggle();
-	if (!$("input[title$='Vehicle Caused?']").is(':checked')){
-	$("select[title$='Type of Vehicle']").val("");
-    }
-});
 
 
 
