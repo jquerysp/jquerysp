@@ -23,6 +23,11 @@ if(mm<10) {
 today = dd+'/'+mm+'/'+yyyy;
 //alert(today);
 
+$("input[oldtitle$='Off Site']").change(function(){
+  alert("changed");
+});
+
+
 $("input[title$='Vehicle Caused?']").change(function(){
     $("nobr:contains('Type of Vehicle')").parent('h3').parent('td').parent('tr').toggle();
 	if (!$("input[title$='Vehicle Caused?']").is(':checked')){
