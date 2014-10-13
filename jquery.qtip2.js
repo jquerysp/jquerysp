@@ -62,11 +62,26 @@ today = dd+'/'+mm+'/'+yyyy;
 //alert(today);
 
 $("input[title$='Vehicle Caused?']").change(function(){
-    $("nobr:contains('Type of Vehicle')").parent('h3').parent('td').parent('tr').toggle();
+    $("nobr:containsExactCase('Type of Vehicle')").parent('h3').parent('td').parent('tr').toggle();
 	if (!$("input[title$='Vehicle Caused?']").is(':checked')){
 	$("select[title$='Type of Vehicle']").val("");
     }
 });
+
+$("input[title$='Property Damaged?']").change(function(){
+    $("nobr:containsExactCase('Type of Damage')").parent('h3').parent('td').parent('tr').toggle();
+	if (!$("input[title$='Property Damaged?']").is(':checked')){
+	$("select[title$='Type of Damage']").val("");
+    }
+});
+
+$("input[title$='Any Witnesses']").change(function(){
+    $("nobr:containsExactCase('Witness Information')").parent('h3').parent('td').parent('tr').toggle();
+	if (!$("input[title$='Any Witnesses']").is(':checked')){
+	$("textarea[title$='Witness Information']").val("");
+	}
+});
+
 $("input[title$='Off Site']").change(function(){
         $("nobr:containsExactCase('Site')").parent('h3').parent('td').parent('tr').toggle();
 		$("nobr:containsExactCase('Area')").parent('h3').parent('td').parent('tr').toggle();
