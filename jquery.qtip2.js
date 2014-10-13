@@ -102,6 +102,13 @@ $("nobr:containsExactCase('Body Part - All affected')").parent('h3').parent('td'
 $("nobr:containsExactCase('Incident Time Period')").parent('h3').parent('td').parent('tr').toggle();
 });
 
+$("input[title$='Injured/Diseased']").click(function(){
+$("nobr:containsExactCase('Type of First Aid')").parent('h3').parent('td').parent('tr').toggle();
+$("nobr:containsExactCase('First Aid Treatment')").parent('h3').parent('td').parent('tr').toggle();
+$("nobr:containsExactCase('Body Part - Primary')").parent('h3').parent('td').parent('tr').toggle();
+$("nobr:containsExactCase('Body Part - All affected')").parent('h3').parent('td').parent('tr').toggle();
+});
+
 $("select[title$='Type of First Aid']").change(function(){
     if ($("select[title$='Type of First Aid']").val()=="No FA provided") {
         $("nobr:contains('First Aid Treatment')").parent('h3').parent('td').parent('tr').hide();
