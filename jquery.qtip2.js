@@ -95,10 +95,6 @@ $("nobr:containsExactCase('Nominate an Investigator')").parent('h3').parent('td'
 $("nobr:containsExactCase('Employment Type')").parent('h3').parent('td').parent('tr').toggle();
 $("nobr:containsExactCase('Function/Department')").parent('h3').parent('td').parent('tr').toggle();
 $("nobr:containsExactCase('Injured/Diseased')").parent('h3').parent('td').parent('tr').toggle();
-$("nobr:containsExactCase('Type of First Aid')").parent('h3').parent('td').parent('tr').toggle();
-$("nobr:containsExactCase('First Aid Treatment')").parent('h3').parent('td').parent('tr').toggle();
-$("nobr:containsExactCase('Body Part - Primary')").parent('h3').parent('td').parent('tr').toggle();
-$("nobr:containsExactCase('Body Part - All affected')").parent('h3').parent('td').parent('tr').toggle();
 $("nobr:containsExactCase('Incident Time Period')").parent('h3').parent('td').parent('tr').toggle();
 });
 
