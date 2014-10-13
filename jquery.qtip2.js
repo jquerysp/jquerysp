@@ -68,13 +68,12 @@ $("input[title$='Vehicle Caused?']").change(function(){
     }
 });
 $("input[title$='Off Site']").change(function(){
-        //$("nobr:containsExactCase('Site')").parent('h3').parent('td').parent('tr').toggle();
-		//$("nobr:containsExactCase('Area')").parent('h3').parent('td').parent('tr').toggle();
-		//$("nobr:containsExactCase('Sub-area')").parent('h3').parent('td').parent('tr').toggle();
-		//$("nobr:containsExactCase('Location')").parent('h3').parent('td').parent('tr').toggle();
+        $("nobr:containsExactCase('Site')").parent('h3').parent('td').parent('tr').toggle();
+		$("nobr:containsExactCase('Area')").parent('h3').parent('td').parent('tr').toggle();
+		$("nobr:containsExactCase('Sub-area')").parent('h3').parent('td').parent('tr').toggle();
+		$("nobr:containsExactCase('Location')").parent('h3').parent('td').parent('tr').toggle();
 	if ($("input[title$='Off Site']").is(':checked')){
 		var siteselect = $("select[title$='Site']");
-      alert(siteselect);
 		siteselect[0].selectedIndex = 0;
 		siteselect.selectmenu("refresh");
 		
@@ -87,13 +86,20 @@ $("input[title$='Off Site']").change(function(){
 });
 
 $("input[title$='Any person involved?']").click(function(){
-$("nobr:contains('Full Name')").parent('h3').parent('td').parent('tr').toggle();
-$("nobr:contains('Phone Number')").parent('h3').parent('td').parent('tr').toggle();
-$("nobr:contains('Job Title')").parent('h3').parent('td').parent('tr').toggle();
-$("nobr:contains('Immediate Manager')").parent('h3').parent('td').parent('tr').toggle();
-$("nobr:contains('Shift Name')").parent('h3').parent('td').parent('tr').toggle();
-$("nobr:contains('Nominate an Investigator')").parent('h3').parent('td').parent('tr').toggle();
-$("nobr:contains('Employment Type')").parent('h3').parent('td').parent('tr').toggle();
+$("nobr:containsExactCase('Full Name')").parent('h3').parent('td').parent('tr').toggle();
+$("nobr:containsExactCase('Phone Number')").parent('h3').parent('td').parent('tr').toggle();
+$("nobr:containsExactCase('Job Title')").parent('h3').parent('td').parent('tr').toggle();
+$("nobr:containsExactCase('Immediate Manager')").parent('h3').parent('td').parent('tr').toggle();
+$("nobr:containsExactCase('Shift Name')").parent('h3').parent('td').parent('tr').toggle();
+$("nobr:containsExactCase('Nominate an Investigator')").parent('h3').parent('td').parent('tr').toggle();
+$("nobr:containsExactCase('Employment Type')").parent('h3').parent('td').parent('tr').toggle();
+$("nobr:containsExactCase('Function/Department')").parent('h3').parent('td').parent('tr').toggle();
+$("nobr:containsExactCase('Injured/Diseased')").parent('h3').parent('td').parent('tr').toggle();
+$("nobr:containsExactCase('Type of First Aid')").parent('h3').parent('td').parent('tr').toggle();
+$("nobr:containsExactCase('First Aid Treatment')").parent('h3').parent('td').parent('tr').toggle();
+$("nobr:containsExactCase('Body Part - Primary')").parent('h3').parent('td').parent('tr').toggle();
+$("nobr:containsExactCase('Body Part - All affected')").parent('h3').parent('td').parent('tr').toggle();
+$("nobr:containsExactCase('Incident Time Period')").parent('h3').parent('td').parent('tr').toggle();
 });
 
 $("select[title$='Type of First Aid']").change(function(){
