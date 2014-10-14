@@ -211,9 +211,39 @@ $("input[title$='Vehicle Caused?']").qtip({
     }
 });
 
+$("input[title$='Property Damaged?']").qtip({ 
+    content: {
+        text: 'Tick the checkbox if this incident caused any property damage such as buildings, plants, vehicles, etc.'
+    }
+});
+
+$("input[title$='Any Witnesses']").qtip({ 
+    content: {
+        text: 'Tick the checkbox if there is any witnesses.'
+    }
+});
+
+$("textarea[title$='Witness Information']").qtip({ 
+    content: {
+      text: 'Please provide information such as Name, Phone Number or Email.'
+    }
+});
+
+$("input[title$='Not Work Related']").qtip({ 
+    content: {
+        text: 'Tick the checkbox if this incident is not work related. Eg: injury occurred during weekend while lifting heavy boxes at home.'
+    }
+});
+
+$("input[title$='Declaration']").qtip({ 
+    content: {
+        text: 'Tick the checkbox when you fill out all the necessary fields above. After ticking off, you can submit this incident report by clicking the save botton at the top left or the bottom right hand side of the page.'
+    }
+});
+
 $("select[title$='Incident Time Period']").qtip({ 
     content: {
-        text: 'Select an option to indicate the relationship between the work hours and the incident time. If the person is a field worker then driving between sites are included in working hours. Note: if option 7. During personal time is selected then this incident will be deemed as non work related.'
+        text: 'Select an option to indicate the relationship between the work hours and the incident time. If the person is a field worker then driving between sites are included in working hours.'
     }
 });
 
