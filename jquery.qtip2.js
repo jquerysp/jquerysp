@@ -253,7 +253,7 @@ $("nobr:containsExactCase('Immediate Manager or Investigator')").parent('h3').pa
     },
     position: {
         adjust: {
-            x: 280
+            x: 200
         }
     }
 });
