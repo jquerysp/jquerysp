@@ -120,10 +120,10 @@ $("nobr:containsExactCase('Body Part - All affected')").parent('h3').parent('td'
 
 $("select[title$='Type of First Aid']").change(function(){
     if ($("select[title$='Type of First Aid']").val()=="No FA provided") {
-        $("nobr:contains('First Aid Treatment')").parent('h3').parent('td').parent('tr').hide();
+        $("nobr:containsExactCase('First Aid Treatment')").parent('h3').parent('td').parent('tr').hide();
 	 $("textarea[title$='First Aid Treatment']").val("");
     } else {
-        $("nobr:contains('First Aid Treatment')").parent('h3').parent('td').parent('tr').show();
+        $("nobr:containsExactCase('First Aid Treatment')").parent('h3').parent('td').parent('tr').show();
     }
 });
 
@@ -216,10 +216,11 @@ $("select[title$='Incident Time Period']").qtip({
         text: 'Select an option to indicate the relationship between the work hours and the incident time. If the person is a field worker then driving between sites are included in working hours. Note: if option 7. During personal time is selected then this incident will be deemed as non work related.'
     }
 });
-
-$("textarea[title$='People Picker']").qtip({ 
+$("nobr:containsExactCase('Immediate Manager or Investigator')").parent('h3').parent('td').parent('tr').qtip({ 
     content: {
-        text: 'Please enter the name of the Immediate Manager if there is someone involved. For those incidents with on one involved, please nominate the most appropriate investigator here. The investigator should be the person responsible for the area and normally should not be the WHS Coordinators. If you are not sure who you should nominate as the investigator, enter the name of your WHS Coordinator.'
+        text: 'Please enter the name of the Immediate Manager if there is someone involved. For those incidents with on one involved, please nominate the most appropriate investigator here. The investigator should be the person responsible for the area and normally should not be the WHS Coordinators. If you are not sure who you should nominate as the investigator, enter the name of your WHS Coordinator.',
+	position: {
+        target: [280, 0]}
     }
 });
 
