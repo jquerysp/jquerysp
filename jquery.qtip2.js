@@ -104,9 +104,7 @@ $("input[title$='Any Individual(s) Involved?']").click(function(){
 $("nobr:containsExactCase('Full Name')").parent('h3').parent('td').parent('tr').toggle();
 $("nobr:containsExactCase('Phone Number')").parent('h3').parent('td').parent('tr').toggle();
 $("nobr:containsExactCase('Job Title')").parent('h3').parent('td').parent('tr').toggle();
-$("nobr:containsExactCase('Immediate Manager')").parent('h3').parent('td').parent('tr').toggle();
 $("nobr:containsExactCase('Shift Name')").parent('h3').parent('td').parent('tr').toggle();
-$("nobr:containsExactCase('Nominate an Investigator')").parent('h3').parent('td').parent('tr').toggle();
 $("nobr:containsExactCase('Employment Type')").parent('h3').parent('td').parent('tr').toggle();
 $("nobr:containsExactCase('Function/Department')").parent('h3').parent('td').parent('tr').toggle();
 $("nobr:containsExactCase('Injured/Diseased')").parent('h3').parent('td').parent('tr').toggle();
@@ -225,11 +223,7 @@ $("textarea[title$='People Picker']").qtip({
     }
 });
 
-$("input[title$='Vehicle Caused?']").qtip({ 
-    content: {
-        text: 'Tick the checkbox if this incident was caused by a motor vehicle.'
-    }
-});
+
 
 
 
