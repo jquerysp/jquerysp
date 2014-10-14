@@ -100,7 +100,7 @@ $("input[title$='Off Site']").change(function(){
     }
 });
 
-$("input[title$='Any person involved?']").click(function(){
+$("input[title$='Any Individual(s) Involved?']").click(function(){
 $("nobr:containsExactCase('Full Name')").parent('h3').parent('td').parent('tr').toggle();
 $("nobr:containsExactCase('Phone Number')").parent('h3').parent('td').parent('tr').toggle();
 $("nobr:containsExactCase('Job Title')").parent('h3').parent('td').parent('tr').toggle();
@@ -179,8 +179,7 @@ $("select[title$='Type of First Aid']").change(function(){
 
 $("input[title$='Incident Title']").qtip({ 
     content: {
-      text: 'Please enter a short description of this incident. Please do NOT mention any names. Eg: Worker slipped in the kitchen.',
-        title: 'Compulsory'
+      text: 'Please enter a short description of this incident. Please do NOT mention any names. Eg: Worker slipped in the kitchen.'
     }
 });
 $("input[title$='Off Site']").qtip({ 
@@ -188,10 +187,23 @@ $("input[title$='Off Site']").qtip({
       text: 'Tick the checkbox if the incident did not happen at one of the sites listed in the Site field below. Eg: tick the checkbox if the incident happened on the road.'
     }
 });
-$("input[title$='Any person involved?']").qtip({ 
+
+$("textarea[title$='Description of Incident']").qtip({ 
     content: {
-        text: 'Anyone involved?',
-        title: 'Person involved'
+      text: 'Please DO Not mention any personal health information. Clearly describe what happened. Give as much information as you can.',
+      title: 'General Guidelines'
+    }
+});
+
+$("input[title$='Location']").qtip({ 
+    content: {
+      text: 'Please enter the location where the incident occurred.'
+    }
+});
+
+$("input[title$='Any Individual(s) Involved?']").qtip({ 
+    content: {
+        text: 'Please tick the checkbox if someone is involved. When more than one person is involved, only identify the primary one.'
     }
 });
 
@@ -201,12 +213,25 @@ $("input[title$='Vehicle Caused?']").qtip({
     }
 });
 
-$("nobr:contains('Full Name')").parent('h3').parent('td').parent('tr').qtip({ 
+$("select[title$='Incident Time Period']").qtip({ 
     content: {
-        text: 'This is full name.',
-        title: 'Full Name'
+        text: 'Select an option to indicate the relationship between the work hours and the incident time. If the person is a field worker then driving between sites are included in working hours. Note: if option 7. During personal time is selected then this incident will be deemed as non work related.'
     }
 });
+
+$("textarea[title$='People Picker']").qtip({ 
+    content: {
+        text: 'Please enter the name of the Immediate Manager if there is someone involved. For those incidents with on one involved, please nominate the most appropriate investigator here. The investigator should be the person responsible for the area and normally should not be the WHS Coordinators. If you are not sure who you should nominate as the investigator, enter the name of your WHS Coordinator.'
+    }
+});
+
+$("input[title$='Vehicle Caused?']").qtip({ 
+    content: {
+        text: 'Tick the checkbox if this incident was caused by a motor vehicle.'
+    }
+});
+
+
 
 $("input[title$='Investigation Completed']").change(function(){
 if ($("input[title$='Investigation Completed']").is(':checked')){
