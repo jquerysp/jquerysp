@@ -260,7 +260,7 @@ $("select[title$='Incident Time Period']").qtip({
     }
 });
 
-$("nobr:containsExactCase('Immediate Manager or Investigator')").parent('h3').parent('td').parent('tr').qtip({ 
+$("nobr:contains('Immediate Manager or Investigator')").parent('h3').parent('td').parent('tr').qtip({ 
     content: {
         text: 'Please enter the name of the Immediate Manager if there is someone involved. For those incidents with on one involved, please nominate the most appropriate investigator here. The investigator should be the person responsible for the area and normally should not be the WHS Coordinators. If you are not sure who you should nominate as the investigator, enter the name of your WHS Coordinator.'
     },
