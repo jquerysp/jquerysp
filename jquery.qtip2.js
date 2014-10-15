@@ -271,9 +271,34 @@ $("nobr:contains('Immediate Manager or Investigator')").parent('h3').parent('td'
     }
 });
 
+$("select[title$='Type of First Aid']").qtip({ 
+    content: {
+      text: 'Please select the propery type of first aid provided. Examples for Preventative First Aid: Heat or ice pack was provided to prevent injury, rinse eyes after contact with chemical before any injury. An example for Applied First Aid: Applying a band-aid to a finger cut.',
+      title: 'General Guidelines'
+    }
+});
 
+$("nobr:contains('Body Part - Primary')").parent('h3').parent('td').parent('tr').qtip({ 
+    content: {
+        text: 'Please select from the list to identify the part of the body affected by the most serious injury or disease. You may choose ONLY ONE option from the list.'
+    },
+    position: {
+        adjust: {
+            x: 210
+        }
+    }
+});
 
-
+$("nobr:contains('Body Part - All affected')").parent('h3').parent('td').parent('tr').qtip({ 
+    content: {
+        text: 'Please select from the list to identify all body parts affected by the injury or disease. You may choose MORE THAN ONE option from the list.'
+    },
+    position: {
+        adjust: {
+            x: 210
+        }
+    }
+});
 
 $("input[title$='Investigation Completed']").change(function(){
 if ($("input[title$='Investigation Completed']").is(':checked')){
