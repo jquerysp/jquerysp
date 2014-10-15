@@ -205,6 +205,19 @@ $("input[title$='Any Individual(s) Involved?']").qtip({
     }
 });
 
+$("input[title$='Phone Number']").qtip({ 
+    content: {
+        text: 'Please enter a landline or mobile phone number.',
+      title: 'Optional Field'
+    }
+});
+
+$("select[title$='Function/Department']").qtip({ 
+    content: {
+        text: 'Select an option to indicate the function/department. Eg.: For workers in the factories, Sourcing Unit should be selected. Note: General Management is only for the CEO and associated roles that are not under any specific function or department.'
+    }
+});
+
 $("input[title$='Vehicle Caused?']").qtip({ 
     content: {
         text: 'Tick the checkbox if this incident was caused by a motor vehicle.'
