@@ -266,7 +266,7 @@ $("nobr:contains('Immediate Manager or Investigator')").parent('h3').parent('td'
     },
     position: {
         adjust: {
-            x: 210
+            x: 215
         }
     }
 });
@@ -284,7 +284,7 @@ $("nobr:contains('Body Part - Primary')").parent('h3').parent('td').parent('tr')
     },
     position: {
         adjust: {
-            x: 210
+            x: 215
         }
     }
 });
@@ -295,7 +295,7 @@ $("nobr:contains('Body Part - All affected')").parent('h3').parent('td').parent(
     },
     position: {
         adjust: {
-            x: 210
+            x: 215
         }
     }
 });
