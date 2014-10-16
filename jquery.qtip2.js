@@ -137,12 +137,14 @@ $("input[title$='Off Site']").change(function(){
 		//var siteselect = $("select[title$='Site']");
 		//siteselect[0].selectedIndex = 0;
 		//siteselect.selectmenu("refresh");
-		$("select[title$='Site']").val("");
+		//$("select[title$='Site']").val("");
 		//$("select[title$='Area']").val("(None)");
 		//$("input[title$='Sub-area']").val("");
 		//$("select[title$='Site']").selectedIndex=0;
-		$("select[title$='Area']").val("");
-		$("select[title$='Sub-area']").val("");
+		//$("select[title$='Area']").val("");
+		//$("select[title$='Sub-area']").val("");
+		$("select[title$='Site']").selectedIndex = 0;
+		//document.formName.selectName.options[0].selected = true;
 	} else {
 		$("input[oldtitle$='Location']").val("");
     }
