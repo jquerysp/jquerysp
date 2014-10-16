@@ -145,6 +145,7 @@ $("input[title$='Off Site']").change(function(){
 		//$("select[title$='Sub-area']").val("");
 		$("select[title$='Site']").find('option:first').attr('selected', 'selected');
 		$("select[title$='Area']").val(0);
+		$("select[title$='Sub-area']").val(0);
 	} else {
 		$("input[oldtitle$='Location']").val("");
     }
