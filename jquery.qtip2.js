@@ -93,7 +93,7 @@ $("input[title$='Off Site']").change(function(){
 		//siteselect[0].selectedIndex = 0;
 		//siteselect.selectmenu("refresh");
 		$("select[title$='Site']").val("");
-		$("select[title$='Area']").val("");
+		$("select[title$='Area']").val("(None)");
 		$("select[title$='Sub-area']").val("");
 		//$("select[title$='Site']").selectedIndex=0;
 		//$("select[title$='Area']").val("0");
