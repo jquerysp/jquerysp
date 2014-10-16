@@ -197,7 +197,11 @@ $("textarea[title$='Description of Incident']").qtip({
     content: {
       text: 'Please DO Not mention any personal health information. Clearly describe what happened. Give as much information as you can.',
       title: 'General Guidelines'
-    }
+    },
+    position: {
+        adjust: {
+            x: 215
+        }
 });
 
 $("input[title$='Location']").qtip({ 
