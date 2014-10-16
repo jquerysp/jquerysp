@@ -101,7 +101,7 @@ $("input[title$='Off Site']").change(function(){
     }
 });
 
-$("input[title$='Any Individual(s) Involved?']").click(function(){
+$("input[title$='Any Individual(s) Involved?']").change(function(){
 $("nobr:containsExactCase('Full Name')").parent('h3').parent('td').parent('tr').toggle();
 $("nobr:containsExactCase('Phone Number')").parent('h3').parent('td').parent('tr').toggle();
 $("nobr:containsExactCase('Job Title')").parent('h3').parent('td').parent('tr').toggle();
@@ -112,7 +112,7 @@ $("nobr:containsExactCase('Injured/Diseased')").parent('h3').parent('td').parent
 $("nobr:containsExactCase('Incident Time Period')").parent('h3').parent('td').parent('tr').toggle();
 });
 
-$("input[title$='Injured/Diseased']").click(function(){
+$("input[title$='Injured/Diseased']").change(function(){
 $("nobr:containsExactCase('Type of First Aid')").parent('h3').parent('td').parent('tr').toggle();
 $("nobr:containsExactCase('First Aid Treatment')").parent('h3').parent('td').parent('tr').toggle();
 $("nobr:containsExactCase('Body Part - Primary')").parent('h3').parent('td').parent('tr').toggle();
@@ -120,7 +120,7 @@ $("nobr:containsExactCase('Body Part - All affected')").parent('h3').parent('td'
 });
 
 $("select[title$='Type of First Aid']").change(function(){
-    if ($("select[title$='Type of First Aid']").val()=="No FA provided") {
+    if ($("select[oldtitle$='Type of First Aid']").val()=="No FA provided") {
         $("nobr:containsExactCase('First Aid Treatment')").parent('h3').parent('td').parent('tr').hide();
 	 $("textarea[title$='First Aid Treatment']").val("");
     } else {
