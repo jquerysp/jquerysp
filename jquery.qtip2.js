@@ -143,8 +143,7 @@ $("input[title$='Off Site']").change(function(){
 		//$("select[title$='Site']").selectedIndex=0;
 		//$("select[title$='Area']").val("");
 		//$("select[title$='Sub-area']").val("");
-		$("select[title$='Site']").selectedIndex = 0;
-		$("select[title$='Site']").options[0].selected = true;
+		$("select[title$='Site']").find('option:first').attr('selected', 'selected');
 	} else {
 		$("input[oldtitle$='Location']").val("");
     }
