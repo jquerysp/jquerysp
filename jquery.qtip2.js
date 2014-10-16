@@ -88,6 +88,7 @@ $("input[title$='Off Site']").change(function(){
 		$("nobr:containsExactCase('Sub-area')").parent('h3').parent('td').parent('tr').toggle();
 		$("nobr:containsExactCase('Location')").parent('h3').parent('td').parent('tr').toggle();
 	if ($("input[title$='Off Site']").is(':checked')){
+		alert("off site");
 		//var siteselect = $("select[title$='Site']");
 		//siteselect[0].selectedIndex = 0;
 		//siteselect.selectmenu("refresh");
