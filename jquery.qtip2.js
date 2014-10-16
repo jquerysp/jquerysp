@@ -39,8 +39,8 @@ $.extend( $.expr[":"], {
 $(document).ready(function(){
 
 var thisUserAccount = $().SPServices.SPGetCurrentUser({
-        fieldNames: ["Name", "Title"],
-        debug: false
+	fieldNames: ["Name", "Title"],
+	debug: false
 });
 
 //alert(thisUserAccount.Title);
@@ -63,40 +63,41 @@ today = dd+'/'+mm+'/'+yyyy;
 
 $("input[title$='Vehicle Caused?']").change(function(){
     $("nobr:containsExactCase('Type of Vehicle')").parent('h3').parent('td').parent('tr').toggle();
-        if (!$("input[title$='Vehicle Caused?']").is(':checked')){
-        $("select[title$='Type of Vehicle']").val("");
+	if (!$("input[title$='Vehicle Caused?']").is(':checked')){
+	$("select[title$='Type of Vehicle']").val("");
     }
 });
 
 $("input[title$='Property Damaged?']").change(function(){
     $("nobr:containsExactCase('Type of Damage')").parent('h3').parent('td').parent('tr').toggle();
-        if (!$("input[title$='Property Damaged?']").is(':checked')){
-        $("select[title$='Type of Damage']").val("");
+	if (!$("input[title$='Property Damaged?']").is(':checked')){
+	$("select[title$='Type of Damage']").val("");
     }
 });
 
 $("input[title$='Any Witnesses']").change(function(){
     $("nobr:containsExactCase('Witness Information')").parent('h3').parent('td').parent('tr').toggle();
-        if (!$("input[title$='Any Witnesses']").is(':checked')){
-        $("textarea[title$='Witness Information']").val("");
-        }
+	if (!$("input[title$='Any Witnesses']").is(':checked')){
+	$("textarea[title$='Witness Information']").val("");
+	}
 });
 
 $("input[title$='Off Site']").change(function(){
         $("nobr:containsExactCase('Site')").parent('h3').parent('td').parent('tr').toggle();
-                $("nobr:containsExactCase('Area')").parent('h3').parent('td').parent('tr').toggle();
-                $("nobr:containsExactCase('Sub-area')").parent('h3').parent('td').parent('tr').toggle();
-                $("nobr:containsExactCase('Location')").parent('h3').parent('td').parent('tr').toggle();
-        if ($("input[title$='Off Site']").is(':checked')){
-                var siteselect = $("select[title$='Site']");
-                siteselect[0].selectedIndex = 0;
-                siteselect.selectmenu("refresh");
-                
-                //$("select[title$='Site']").selectedIndex=0;
-                //$("select[title$='Area']").val("0");
-                //$("select[title$='Sub-area']").val("0");
-        } else {
-                $("input[title$='Location']").val("");
+		$("nobr:containsExactCase('Area')").parent('h3').parent('td').parent('tr').toggle();
+		$("nobr:containsExactCase('Sub-area')").parent('h3').parent('td').parent('tr').toggle();
+		$("nobr:containsExactCase('Location')").parent('h3').parent('td').parent('tr').toggle();
+	if ($("input[title$='Off Site']").is(':checked')){
+		alert("off site");
+		var siteselect = $("select[title$='Site']");
+		siteselect[0].selectedIndex = 0;
+		siteselect.selectmenu("refresh");
+		//$("input[title$='Site']").val("");
+		//$("select[title$='Site']").selectedIndex=0;
+		//$("select[title$='Area']").val("0");
+		//$("select[title$='Sub-area']").val("0");
+	} else {
+		$("input[title$='Location']").val("");
     }
 });
 
@@ -121,7 +122,7 @@ $("nobr:containsExactCase('Body Part - All affected')").parent('h3').parent('td'
 $("select[title$='Type of First Aid']").change(function(){
     if ($("select[title$='Type of First Aid']").val()=="No FA provided") {
         $("nobr:containsExactCase('First Aid Treatment')").parent('h3').parent('td').parent('tr').hide();
-         $("textarea[title$='First Aid Treatment']").val("");
+	 $("textarea[title$='First Aid Treatment']").val("");
     } else {
         $("nobr:containsExactCase('First Aid Treatment')").parent('h3').parent('td').parent('tr').show();
     }
@@ -133,7 +134,7 @@ $("select[title$='Type of First Aid']").change(function(){
     relationshipList: "sa_area",
     relationshipListParentColumn: "site",
     relationshipListChildColumn: "Title",
-        parentColumn: "Site",
+	parentColumn: "Site",
     childColumn: "Area"
   });
   $().SPServices.SPCascadeDropdowns({
@@ -149,7 +150,7 @@ $("select[title$='Type of First Aid']").change(function(){
     relationshipList: "ir_idc",
     relationshipListParentColumn: "TOE",
     relationshipListChildColumn: "Title",
-        parentColumn: "Type of Event",
+	parentColumn: "Type of Event",
     childColumn: "Direct Causes"
   });
   $().SPServices.SPCascadeDropdowns({
@@ -170,10 +171,7 @@ $("select[title$='Type of First Aid']").change(function(){
     childColumn: "Detailed Root Causes"
   });
 
-//$().SPServices.SPArrangeChoices({
-//      columnName: "Type of First Aid",
-//      perRow: 3
-//});
+
 
 $("input[title$='Incident Title']").qtip({ 
     content: {
