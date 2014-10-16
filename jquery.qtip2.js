@@ -61,76 +61,6 @@ if(mm<10) {
 today = dd+'/'+mm+'/'+yyyy;
 //alert(today);
 
-$("input[title$='Vehicle Caused?']").change(function(){
-    $("nobr:containsExactCase('Type of Vehicle')").parent('h3').parent('td').parent('tr').toggle();
-	if (!$("input[title$='Vehicle Caused?']").is(':checked')){
-	$("select[title$='Type of Vehicle']").val("");
-    }
-});
-
-$("input[title$='Property Damaged?']").change(function(){
-    $("nobr:containsExactCase('Type of Damage')").parent('h3').parent('td').parent('tr').toggle();
-	if (!$("input[title$='Property Damaged?']").is(':checked')){
-	$("select[title$='Type of Damage']").val("");
-    }
-});
-
-$("input[title$='Any Witnesses']").change(function(){
-    $("nobr:containsExactCase('Witness Information')").parent('h3').parent('td').parent('tr').toggle();
-	if (!$("input[title$='Any Witnesses']").is(':checked')){
-	$("textarea[title$='Witness Information']").val("");
-	}
-});
-
-$("input[title$='Off Site']").change(function(){
-        $("nobr:containsExactCase('Site')").parent('h3').parent('td').parent('tr').toggle();
-		$("nobr:containsExactCase('Area')").parent('h3').parent('td').parent('tr').toggle();
-		$("nobr:containsExactCase('Sub-area')").parent('h3').parent('td').parent('tr').toggle();
-		$("nobr:containsExactCase('Location')").parent('h3').parent('td').parent('tr').toggle();
-	if ($("input[oldtitle$='Off Site']").is(':checked')){
-		//var siteselect = $("select[title$='Site']");
-		//siteselect[0].selectedIndex = 0;
-		//siteselect.selectmenu("refresh");
-		$("select[title$='Site']").val("");
-		//$("select[title$='Area']").val("(None)");
-		//$("input[title$='Sub-area']").val("");
-		//$("select[title$='Site']").selectedIndex=0;
-		$("select[title$='Area']").val("0");
-		$("select[title$='Sub-area']").val("0");
-	} else {
-		$("input[oldtitle$='Location']").val("");
-    }
-});
-
-$("input[title$='Any Individual(s) Involved?']").change(function(){
-$("nobr:containsExactCase('Full Name')").parent('h3').parent('td').parent('tr').toggle();
-$("nobr:containsExactCase('Phone Number')").parent('h3').parent('td').parent('tr').toggle();
-$("nobr:containsExactCase('Job Title')").parent('h3').parent('td').parent('tr').toggle();
-$("nobr:containsExactCase('Shift Name')").parent('h3').parent('td').parent('tr').toggle();
-$("nobr:containsExactCase('Employment Type')").parent('h3').parent('td').parent('tr').toggle();
-$("nobr:containsExactCase('Function/Department')").parent('h3').parent('td').parent('tr').toggle();
-$("nobr:containsExactCase('Injured/Diseased')").parent('h3').parent('td').parent('tr').toggle();
-$("nobr:containsExactCase('Incident Time Period')").parent('h3').parent('td').parent('tr').toggle();
-});
-
-$("input[title$='Injured/Diseased']").change(function(){
-$("nobr:containsExactCase('Type of First Aid')").parent('h3').parent('td').parent('tr').toggle();
-$("nobr:containsExactCase('First Aid Treatment')").parent('h3').parent('td').parent('tr').toggle();
-$("nobr:containsExactCase('Body Part - Primary')").parent('h3').parent('td').parent('tr').toggle();
-$("nobr:containsExactCase('Body Part - All affected')").parent('h3').parent('td').parent('tr').toggle();
-});
-
-$("select[title$='Type of First Aid']").change(function(){
-    if ($("select[oldtitle$='Type of First Aid']").val()=="No FA provided") {
-        $("nobr:containsExactCase('First Aid Treatment')").parent('h3').parent('td').parent('tr').hide();
-	 $("textarea[title$='First Aid Treatment']").val("");
-    } else {
-        $("nobr:containsExactCase('First Aid Treatment')").parent('h3').parent('td').parent('tr').show();
-    }
-});
-
-
-
   $().SPServices.SPCascadeDropdowns({
     relationshipList: "sa_area",
     relationshipListParentColumn: "site",
@@ -171,6 +101,89 @@ $("select[title$='Type of First Aid']").change(function(){
     parentColumn: "Root Causes",
     childColumn: "Detailed Root Causes"
   });
+
+$().SPServices.SPComplexToSimpleDropdown({
+	columnName: "Direct Causes"
+});
+
+$().SPServices.SPComplexToSimpleDropdown({
+	columnName: "Root Causes"
+});
+
+$().SPServices.SPComplexToSimpleDropdown({
+	columnName: "Detailed Root Causes"
+});
+
+
+$("input[title$='Vehicle Caused?']").change(function(){
+    $("nobr:containsExactCase('Type of Vehicle')").parent('h3').parent('td').parent('tr').toggle();
+	if (!$("input[title$='Vehicle Caused?']").is(':checked')){
+	$("select[title$='Type of Vehicle']").val("");
+    }
+});
+
+$("input[title$='Property Damaged?']").change(function(){
+    $("nobr:containsExactCase('Type of Damage')").parent('h3').parent('td').parent('tr').toggle();
+	if (!$("input[title$='Property Damaged?']").is(':checked')){
+	$("select[title$='Type of Damage']").val("");
+    }
+});
+
+$("input[title$='Any Witnesses']").change(function(){
+    $("nobr:containsExactCase('Witness Information')").parent('h3').parent('td').parent('tr').toggle();
+	if (!$("input[title$='Any Witnesses']").is(':checked')){
+	$("textarea[title$='Witness Information']").val("");
+	}
+});
+
+$("input[title$='Off Site']").change(function(){
+        $("nobr:containsExactCase('Site')").parent('h3').parent('td').parent('tr').toggle();
+		$("nobr:containsExactCase('Area')").parent('h3').parent('td').parent('tr').toggle();
+		$("nobr:containsExactCase('Sub-area')").parent('h3').parent('td').parent('tr').toggle();
+		$("nobr:containsExactCase('Location')").parent('h3').parent('td').parent('tr').toggle();
+	if ($("input[oldtitle$='Off Site']").is(':checked')){
+		//var siteselect = $("select[title$='Site']");
+		//siteselect[0].selectedIndex = 0;
+		//siteselect.selectmenu("refresh");
+		$("select[title$='Site']").val("");
+		//$("select[title$='Area']").val("(None)");
+		//$("input[title$='Sub-area']").val("");
+		//$("select[title$='Site']").selectedIndex=0;
+		$("select[title$='Area']").val("");
+		$("select[title$='Sub-area']").val("");
+	} else {
+		$("input[oldtitle$='Location']").val("");
+    }
+});
+
+$("input[title$='Any Individual(s) Involved?']").change(function(){
+$("nobr:containsExactCase('Full Name')").parent('h3').parent('td').parent('tr').toggle();
+$("nobr:containsExactCase('Phone Number')").parent('h3').parent('td').parent('tr').toggle();
+$("nobr:containsExactCase('Job Title')").parent('h3').parent('td').parent('tr').toggle();
+$("nobr:containsExactCase('Shift Name')").parent('h3').parent('td').parent('tr').toggle();
+$("nobr:containsExactCase('Employment Type')").parent('h3').parent('td').parent('tr').toggle();
+$("nobr:containsExactCase('Function/Department')").parent('h3').parent('td').parent('tr').toggle();
+$("nobr:containsExactCase('Injured/Diseased')").parent('h3').parent('td').parent('tr').toggle();
+$("nobr:containsExactCase('Incident Time Period')").parent('h3').parent('td').parent('tr').toggle();
+});
+
+$("input[title$='Injured/Diseased']").change(function(){
+$("nobr:containsExactCase('Type of First Aid')").parent('h3').parent('td').parent('tr').toggle();
+$("nobr:containsExactCase('First Aid Treatment')").parent('h3').parent('td').parent('tr').toggle();
+$("nobr:containsExactCase('Body Part - Primary')").parent('h3').parent('td').parent('tr').toggle();
+$("nobr:containsExactCase('Body Part - All affected')").parent('h3').parent('td').parent('tr').toggle();
+});
+
+$("select[title$='Type of First Aid']").change(function(){
+    if ($("select[oldtitle$='Type of First Aid']").val()=="No FA provided") {
+        $("nobr:containsExactCase('First Aid Treatment')").parent('h3').parent('td').parent('tr').hide();
+	 $("textarea[title$='First Aid Treatment']").val("");
+    } else {
+        $("nobr:containsExactCase('First Aid Treatment')").parent('h3').parent('td').parent('tr').show();
+    }
+});
+
+
 
 
 
