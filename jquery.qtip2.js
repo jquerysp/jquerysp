@@ -65,7 +65,8 @@ today = dd+'/'+mm+'/'+yyyy;
     relationshipList: "sa_area",
     relationshipListParentColumn: "site",
     relationshipListChildColumn: "Title",
-	parentColumn: "Site",
+		parentColumn: "Site",
+	simpleChild: true,
     childColumn: "Area"
   });
   $().SPServices.SPCascadeDropdowns({
@@ -74,6 +75,7 @@ today = dd+'/'+mm+'/'+yyyy;
     relationshipListChildColumn: "Title",
     relationshipListSortColumn: "ID",
     parentColumn: "Area",
+	simpleChild: true,
     childColumn: "Sub-area"
   });
 
@@ -82,6 +84,7 @@ today = dd+'/'+mm+'/'+yyyy;
     relationshipListParentColumn: "TOE",
     relationshipListChildColumn: "Title",
 	parentColumn: "Type of Event",
+	simpleChild: true,
     childColumn: "Direct Causes"
   });
   $().SPServices.SPCascadeDropdowns({
@@ -90,6 +93,7 @@ today = dd+'/'+mm+'/'+yyyy;
     relationshipListChildColumn: "Title",
     relationshipListSortColumn: "ID",
     parentColumn: "Direct Causes",
+	simpleChild: true,
     childColumn: "Root Causes"
   });
 
@@ -99,21 +103,9 @@ today = dd+'/'+mm+'/'+yyyy;
     relationshipListChildColumn: "Title",
     relationshipListSortColumn: "ID",
     parentColumn: "Root Causes",
-    childColumn: "Detailed Root Causes"
+	simpleChild: true,
+	childColumn: "Detailed Root Causes"
   });
-
-$().SPServices.SPComplexToSimpleDropdown({
-	columnName: "Direct Causes"
-});
-
-$().SPServices.SPComplexToSimpleDropdown({
-	columnName: "Root Causes"
-});
-
-$().SPServices.SPComplexToSimpleDropdown({
-	columnName: "Detailed Root Causes"
-});
-
 
 $("input[title$='Vehicle Caused?']").change(function(){
     $("nobr:containsExactCase('Type of Vehicle')").parent('h3').parent('td').parent('tr').toggle();
