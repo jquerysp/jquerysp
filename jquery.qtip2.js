@@ -144,7 +144,7 @@ $("input[title$='Off Site']").change(function(){
 		//$("select[title$='Area']").val("");
 		//$("select[title$='Sub-area']").val("");
 		$("select[title$='Site']").selectedIndex = 0;
-		//document.formName.selectName.options[0].selected = true;
+		$("select[title$='Site']").options[0].selected = true;
 	} else {
 		$("input[oldtitle$='Location']").val("");
     }
