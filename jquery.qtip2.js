@@ -202,7 +202,7 @@ $("textarea[title$='Description of Incident']").qtip({
         adjust: {
             x: 215
         }
-	}
+    }
 });
 
 $("input[title$='Location']").qtip({ 
