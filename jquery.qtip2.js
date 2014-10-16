@@ -88,13 +88,12 @@ $("input[title$='Off Site']").change(function(){
 		$("nobr:containsExactCase('Sub-area')").parent('h3').parent('td').parent('tr').toggle();
 		$("nobr:containsExactCase('Location')").parent('h3').parent('td').parent('tr').toggle();
 	if ($("input[oldtitle$='Off Site']").is(':checked')){
-		//var siteselect = $("select[title$='Site']");
-		//alert(siteselect);
-		//siteselect[0].selectedIndex = 0;
-		//siteselect.selectmenu("refresh");
-		$("select[title$='Site']").val("");
-		$("select[title$='Area']").val("(None)");
-		$("input[title$='Sub-area']").val("");
+		var siteselect = $("select[oldtitle$='Site']");
+		siteselect[0].selectedIndex = 0;
+		siteselect.selectmenu("refresh");
+		//$("select[title$='Site']").val("");
+		//$("select[title$='Area']").val("(None)");
+		//$("input[title$='Sub-area']").val("");
 		//$("select[title$='Site']").selectedIndex=0;
 		//$("select[title$='Area']").val("0");
 		//$("select[title$='Sub-area']").val("0");
