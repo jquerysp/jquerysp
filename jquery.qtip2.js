@@ -110,21 +110,21 @@ today = dd+'/'+mm+'/'+yyyy;
 $("input[title$='Vehicle Caused?']").change(function(){
     $("nobr:containsExactCase('Type of Vehicle')").parent('h3').parent('td').parent('tr').toggle();
 	if (!$("input[title$='Vehicle Caused?']").is(':checked')){
-	$("select[title$='Type of Vehicle']").val("");
+	$("select[title$='Type of Vehicle']").val(0);
     }
 });
 
 $("input[title$='Property Damaged?']").change(function(){
     $("nobr:containsExactCase('Type of Damage')").parent('h3').parent('td').parent('tr').toggle();
 	if (!$("input[title$='Property Damaged?']").is(':checked')){
-	$("select[title$='Type of Damage']").val("");
+	$("select[title$='Type of Damage']").val(0);
     }
 });
 
 $("input[title$='Any Witnesses']").change(function(){
     $("nobr:containsExactCase('Witness Information')").parent('h3').parent('td').parent('tr').toggle();
 	if (!$("input[title$='Any Witnesses']").is(':checked')){
-	$("textarea[title$='Witness Information']").val("");
+	$("textarea[oldtitle$='Witness Information']").val("");
 	}
 });
 
@@ -134,16 +134,7 @@ $("input[title$='Off Site']").change(function(){
 		$("nobr:containsExactCase('Sub-area')").parent('h3').parent('td').parent('tr').toggle();
 		$("nobr:containsExactCase('Location')").parent('h3').parent('td').parent('tr').toggle();
 	if ($("input[oldtitle$='Off Site']").is(':checked')){
-		//var siteselect = $("select[title$='Site']");
-		//siteselect[0].selectedIndex = 0;
-		//siteselect.selectmenu("refresh");
-		//$("select[title$='Site']").val("");
-		//$("select[title$='Area']").val("(None)");
-		//$("input[title$='Sub-area']").val("");
-		//$("select[title$='Site']").selectedIndex=0;
-		//$("select[title$='Area']").val("");
-		//$("select[title$='Sub-area']").val("");
-		$("select[title$='Site']").find('option:first').attr('selected', 'selected');
+		$("select[title$='Site']").val(0);
 		$("select[title$='Area']").val(0);
 		$("select[title$='Sub-area']").val(0);
 	} else {
@@ -152,21 +143,41 @@ $("input[title$='Off Site']").change(function(){
 });
 
 $("input[title$='Any Individual(s) Involved?']").change(function(){
-$("nobr:containsExactCase('Full Name')").parent('h3').parent('td').parent('tr').toggle();
-$("nobr:containsExactCase('Phone Number')").parent('h3').parent('td').parent('tr').toggle();
-$("nobr:containsExactCase('Job Title')").parent('h3').parent('td').parent('tr').toggle();
-$("nobr:containsExactCase('Shift Name')").parent('h3').parent('td').parent('tr').toggle();
-$("nobr:containsExactCase('Employment Type')").parent('h3').parent('td').parent('tr').toggle();
-$("nobr:containsExactCase('Function/Department')").parent('h3').parent('td').parent('tr').toggle();
-$("nobr:containsExactCase('Injured/Diseased')").parent('h3').parent('td').parent('tr').toggle();
-$("nobr:containsExactCase('Incident Time Period')").parent('h3').parent('td').parent('tr').toggle();
+	$("nobr:containsExactCase('Full Name')").parent('h3').parent('td').parent('tr').toggle();
+	$("nobr:containsExactCase('Phone Number')").parent('h3').parent('td').parent('tr').toggle();
+	$("nobr:containsExactCase('Job Title')").parent('h3').parent('td').parent('tr').toggle();
+	$("nobr:containsExactCase('Shift Name')").parent('h3').parent('td').parent('tr').toggle();
+	$("nobr:containsExactCase('Employment Type')").parent('h3').parent('td').parent('tr').toggle();
+	$("nobr:containsExactCase('Function/Department')").parent('h3').parent('td').parent('tr').toggle();
+	$("nobr:containsExactCase('Injured/Diseased')").parent('h3').parent('td').parent('tr').toggle();
+	$("nobr:containsExactCase('Incident Time Period')").parent('h3').parent('td').parent('tr').toggle();
+	if (!$("input[oldtitle$='Any Individual(s) Involved?']").is(':checked')){
+		$("input[title$='Full Name']").val("");
+		$("input[title$='Job Title']").val("");
+		$("select[oldtitle$='Function/Department']").val(0);
+		$("select[oldtitle$='Employment Type']").val(0);
+		$("input[title$='Phone Number']").val("");
+		$("select[title$='Shift Name']").val(0);
+		$("select[oldtitle$='Incident Time Period']").val(0);
+		$("input[title$='Injured/Diseased']").removeAttr('checked');
+		$("select[oldtitle$='Type of First Aid']").val(0);
+		$("textarea[title$='First Aid Treatment']").val("");
+		$("input[name$='ctl00$m$g_3163f565_02f1_469b_8750_bbd6965bec7b$ctl00$ListFieldIterator2$ctl23$ctl00$ctl00$ctl04$ctl00$ctl01']").val("");
+		$("input[name$='ctl00$m$g_3163f565_02f1_469b_8750_bbd6965bec7b$ctl00$ListFieldIterator2$ctl24$ctl00$ctl00$ctl04$ctl00$ctl01']").val("");
+    }
 });
 
 $("input[title$='Injured/Diseased']").change(function(){
-$("nobr:containsExactCase('Type of First Aid')").parent('h3').parent('td').parent('tr').toggle();
-$("nobr:containsExactCase('First Aid Treatment')").parent('h3').parent('td').parent('tr').toggle();
-$("nobr:containsExactCase('Body Part - Primary')").parent('h3').parent('td').parent('tr').toggle();
-$("nobr:containsExactCase('Body Part - All affected')").parent('h3').parent('td').parent('tr').toggle();
+	$("nobr:containsExactCase('Type of First Aid')").parent('h3').parent('td').parent('tr').toggle();
+	$("nobr:containsExactCase('First Aid Treatment')").parent('h3').parent('td').parent('tr').toggle();
+	$("nobr:containsExactCase('Body Part - Primary')").parent('h3').parent('td').parent('tr').toggle();
+	$("nobr:containsExactCase('Body Part - All affected')").parent('h3').parent('td').parent('tr').toggle();
+	if (!$("input[oldtitle$='Injured/Diseased']").is(':checked')){
+		$("select[oldtitle$='Type of First Aid']").val(0);
+		$("textarea[title$='First Aid Treatment']").val("");
+		$("input[name$='ctl00$m$g_3163f565_02f1_469b_8750_bbd6965bec7b$ctl00$ListFieldIterator2$ctl23$ctl00$ctl00$ctl04$ctl00$ctl01']").val("");
+		$("input[name$='ctl00$m$g_3163f565_02f1_469b_8750_bbd6965bec7b$ctl00$ListFieldIterator2$ctl24$ctl00$ctl00$ctl04$ctl00$ctl01']").val("");
+    }
 });
 
 $("select[title$='Type of First Aid']").change(function(){
@@ -178,10 +189,16 @@ $("select[title$='Type of First Aid']").change(function(){
     }
 });
 
+$("input[title$='Declaration']").change(function(){
+if ($("input[oldtitle$='Declaration']").is(':checked')){
+		alert("ticked");
+        $("input[title$='Reporter']").val(thisUserAccount.Title);
+   }
+});
 
-
-
-
+////////////////////////////////
+//TOOLTIPS START
+///////////////////////////////
 $("input[title$='Incident Title']").qtip({ 
     content: {
       text: 'Please enter a short description of this incident. Please do NOT mention any names. Eg: Worker slipped in the kitchen.'
@@ -227,6 +244,18 @@ $("input[title$='Phone Number']").qtip({
 $("select[title$='Function/Department']").qtip({ 
     content: {
         text: 'Select an option to indicate the function/department. Eg.: For workers in the factories, Sourcing Unit should be selected. Note: General Management is only for the CEO and associated roles that are not under any specific function or department.'
+    }
+});
+
+$("select[title$='Employment Type']").qtip({ 
+    content: {
+        text: 'Select an option to indicate the Employment Type. Select Contractor - Labour if the person is from a labour hiring agent such as Randstad. They are normally directly supervised by Unilever. Select Contractor - Trade if the person is from a contractor such as Electricians and Plumbers. They normally are not directly supervised by Unilever.'
+    }
+});
+
+$("input[title$='Injured/Diseased']").qtip({ 
+    content: {
+        text: 'Tick the checkbox only when the person is injured or diseased.'
     }
 });
 
