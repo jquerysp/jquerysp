@@ -156,12 +156,18 @@ $("input[title$='Any Individual(s) Involved?']").change(function(){
 		$("input[title$='Job Title']").val("");
 		$("select[oldtitle$='Function/Department']").val("");
 		$("select[oldtitle$='Employment Type']").val("");
-		$("input[title$='Phone Number']").val("");
+		$("input[oldtitle$='Phone Number']").val("");
 		$("select[title$='Shift Name']").val("");
 		$("select[oldtitle$='Incident Time Period']").val("");
 		$("input[oldtitle$='Injured/Diseased']").removeAttr('checked');
 		$("select[oldtitle$='Type of First Aid']").val("");
 		$("textarea[title$='First Aid Treatment']").val("");
+    }
+	if (!$("input[oldtitle$='Injured/Diseased']").is(':checked')){
+		$("nobr:containsExactCase('Type of First Aid')").parent('h3').parent('td').parent('tr').hide();
+		$("nobr:containsExactCase('First Aid Treatment')").parent('h3').parent('td').parent('tr').hide();
+		$("nobr:containsExactCase('Body Part - Primary')").parent('h3').parent('td').parent('tr').hide();
+		$("nobr:containsExactCase('Body Part - All affected')").parent('h3').parent('td').parent('tr').hide();
     }
 });
 
