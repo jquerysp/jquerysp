@@ -109,7 +109,7 @@ today = dd+'/'+mm+'/'+yyyy;
 
 $().SPServices.SPArrangeChoices({
 	columnName: "Body Part - All affected",
-	perRow: 4
+	perRow: 3
 });
   
 $("input[title$='Vehicle Caused?']").change(function(){
