@@ -107,6 +107,11 @@ today = dd+'/'+mm+'/'+yyyy;
 	childColumn: "Detailed Root Causes"
   });
 
+$().SPServices.SPArrangeChoices({
+	columnName: "Body Part - All affected",
+	perRow: 4
+});
+  
 $("input[title$='Vehicle Caused?']").change(function(){
     $("nobr:containsExactCase('Type of Vehicle')").parent('h3').parent('td').parent('tr').toggle();
 	if (!$("input[title$='Vehicle Caused?']").is(':checked')){
@@ -162,6 +167,8 @@ $("input[title$='Any Individual(s) Involved?']").change(function(){
 		$("input[oldtitle$='Injured/Diseased']").removeAttr('checked');
 		$("select[oldtitle$='Type of First Aid']").val("");
 		$("textarea[title$='First Aid Treatment']").val("");
+		$("select[oldtitle$='Body Part - Primary']").val("");
+		$("select[oldtitle$='Incident Time Period']").val("");
     }
 	if (!$("input[oldtitle$='Injured/Diseased']").is(':checked')){
 		$("nobr:containsExactCase('Type of First Aid')").parent('h3').parent('td').parent('tr').hide();
