@@ -168,7 +168,7 @@ $("input[title$='Any Individual(s) Involved?']").change(function(){
 		$("input[oldtitle$='Injured/Diseased']").removeAttr('checked');
 		$("select[oldtitle$='Type of First Aid']").val("");
 		$("textarea[title$='First Aid Treatment']").val("");
-		$("select[oldtitle$='Body Part - Primary']").val("");
+		$("select[title$='Body Part - Primary']").val("");
 		$("select[oldtitle$='Incident Time Period']").val("");
     }
 	if (!$("input[oldtitle$='Injured/Diseased']").is(':checked')){
