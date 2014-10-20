@@ -61,6 +61,7 @@ if(mm<10) {
 today = dd+'/'+mm+'/'+yyyy;
 //alert(today);
 
+
   $().SPServices.SPCascadeDropdowns({
     relationshipList: "sa_area",
     relationshipListParentColumn: "site",
@@ -186,6 +187,10 @@ $("input[title$='Injured/Diseased']").change(function(){
 	if (!$("input[oldtitle$='Injured/Diseased']").is(':checked')){
 		$("select[oldtitle$='Type of First Aid']").val("");
 		$("textarea[title$='First Aid Treatment']").val("");
+		$("select[oldtitle$='Body Part - Primary']").val("");
+		$("nobr:containsExactCase('Body Part - All affected')").parents("td:first").find('input:checkbox').each(function(){
+			$(this).prop('checked',false);
+		});
     }
 });
 
