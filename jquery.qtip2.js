@@ -189,7 +189,6 @@ $("input[title$='Injured/Diseased']").change(function(){
 		$("textarea[title$='First Aid Treatment']").val("");
 		$("select[title$='Body Part - Primary']").val("");
 		$("nobr:containsExactCase('Body Part - All affected')").parents("tr:first").find('input:checkbox').each(function(){
-			alert($(this).val())
 			$(this).prop('checked',false);
 		});
     }
