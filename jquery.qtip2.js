@@ -116,14 +116,14 @@ $().SPServices.SPArrangeChoices({
 $("input[title$='Vehicle Caused?']").change(function(){
     $("nobr:containsExactCase('Type of Vehicle')").parent('h3').parent('td').parent('tr').toggle();
 	if (!$("input[title$='Vehicle Caused?']").is(':checked')){
-	$("select[title$='Type of Vehicle']").val(0);
+	$("select[title$='Type of Vehicle']").val("");
     }
 });
 
 $("input[title$='Property Damaged?']").change(function(){
     $("nobr:containsExactCase('Type of Damage')").parent('h3').parent('td').parent('tr').toggle();
 	if (!$("input[title$='Property Damaged?']").is(':checked')){
-	$("select[title$='Type of Damage']").val(0);
+	$("select[title$='Type of Damage']").val("");
     }
 });
 
