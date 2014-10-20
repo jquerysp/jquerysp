@@ -205,7 +205,6 @@ $("select[title$='Type of First Aid']").change(function(){
 
 $("input[title$='Declaration']").change(function(){
 if ($("input[oldtitle$='Declaration']").is(':checked')){
-		alert("ticked");
         $("input[title$='Reporter']").val(thisUserAccount.Title);
    }
 });
