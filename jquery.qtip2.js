@@ -177,9 +177,6 @@ $("input[title$='Production Related?']").change(function(){
     }
 });
 
-
-
-
 $("input[title$='Any Individual(s) Involved?']").change(function(){
 	$("nobr:containsExactCase('Full Name')").parent('h3').parent('td').parent('tr').toggle();
 	$("nobr:containsExactCase('Phone Number')").parent('h3').parent('td').parent('tr').toggle();
@@ -266,44 +263,6 @@ if ($("input[oldtitle$='Declaration']").is(':checked')){
         $("input[title$='Reporter']").val(thisUserAccount.Title);
    }
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-$("input[title$='Investigation Completed']").change(function(){
-if ($("input[title$='Investigation Completed']").is(':checked')){
-        $("input[title$='Investigation Completed By']").val(thisUserAccount.Title);
-        $("input[title$='Investigation Completed Date']").val(today);
-    } else {
-        $("input[title$='Investigation Completed By']").val("");
-        $("input[title$='Investigation Completed Date']").val("");
-    }
-
-});
-
-
-
 
 ///////////////////////////////////
 //////////TOOLTIPS START///////////
@@ -411,6 +370,12 @@ $("input[title$='Phone Number']").qtip({
     }
 });
 
+$("select[title$='Incident Time Period']").qtip({ 
+    content: {
+        text: 'Select an option to indicate the relationship between the work hours and the incident time. If the person is a field worker then driving between sites are included in working hours.'
+    }
+});
+
 $("nobr:contains('Immediate Manager or Investigator')").parent('h3').parent('td').parent('tr').qtip({ 
     content: {
         text: 'Please enter the name of the Immediate Manager if there is someone involved. For those incidents with on one involved, please nominate the most appropriate investigator here. The investigator should be the person responsible for the area and normally should not be the WHS Coordinators. If you are not sure who you should nominate as the investigator, enter the name of your WHS Coordinator.'
@@ -511,117 +476,6 @@ $("input[title$='Declaration']").qtip({
         text: 'Tick the checkbox when you fill out all the necessary fields above. After ticking off, you can submit this incident report by clicking the save botton at the top left or the bottom right hand side of the page.'
     }
 });
-
-$("select[title$='Incident Time Period']").qtip({ 
-    content: {
-        text: 'Select an option to indicate the relationship between the work hours and the incident time. If the person is a field worker then driving between sites are included in working hours.'
-    }
-});
-
-
-
-$("textarea[title$='Remedial Action Taken']").qtip({ 
-    content: {
-      text: 'Please describe what immediately remedial action was taken after the incident.'
-    }
-});
-
-$("select[title$='Nature of Injury/Disease']").qtip({ 
-    content: {
-        text: 'Select an option to indicate the nature of Injury/Disease. 1.XX are for Injuries and 2.XX are for Diseases.'
-    }
-});
-
-$("select[title$='Primary Agency']").qtip({ 
-    content: {
-        text: 'Select an option to indicate the primary agency of the injury/disease.'
-    }
-});
-
-$("input[title$='Notifiable to Authorities?']").qtip({ 
-    content: {
-        text: 'Tick the checkbox if this incident needs to be reported to the Authority such as NSW WorkCover or Vic WorkCover.'
-    }
-});
-
-$("textarea[title$='Authority Notification Details']").qtip({ 
-    content: {
-      text: 'Please provide information such as who notified authority, which authority and what time the authority was notified.'
-    }
-});
-
-
-$("textarea[title$='EPA Notification Details']").qtip({ 
-    content: {
-      text: 'Please provide information such as who notified EPA, which EPA and what time EPA was notified.'
-    }
-});
-
-$("select[title$='Type of Event']").qtip({ 
-    content: {
-        text: 'Select an option to indicate the type of this incident. Please note that if the incident was a near miss, please select an option to indicate the MOST LIKELY type if injury/disease/property damage/environmental impact were involved.'
-    }
-});
-
-$("textarea[title$='Why-Cause 1']").qtip({ 
-    content: {
-      text: 'Please ask and answer a serial of relevant questions to drill down and find the root cause of the incident. Eg: Question: Why did Event A happen? Answer: Because of Event B. Question: Why did Event B happen? Answer: Because of Event C. Question: Why did Event C happen? Answer: Because of Event D...',
-      title: 'General Guidelines'
-	  }
-});
-
-$("textarea[title$='Corrective Action']").qtip({ 
-    content: {
-      text: 'Please initiate the Corrective Action so that similar incidents can be prevented in the future. Please clearly specify what need to be done.',
-      title: 'Manager / Investigator to complete'
-    }
-});
-
-$("textarea[title$='CA Completed - Comments']").qtip({ 
-    content: {
-      text: 'Please clearly specify what has been done to complete the corrective action.',
-      title: 'Responsible to complete'
-    }
-});
-
-$("textarea[title$='CA Close Out Comments']").qtip({ 
-    content: {
-      text: 'Please comment on the closure of this corrective action.',
-      title: 'Optional - Manager / Investigator to complete'
-    }
-});
-
-$("textarea[title$='Short Description of Incident']").qtip({ 
-    content: {
-      text: 'Please provide a short description of this incident. This will go into the monthly report.'
-    }
-});
-
-$("textarea[title$='Why not a Recordable']").qtip({ 
-    content: {
-      text: 'Please provide reasons why this incident is a workers comp case but not a recordable. This will go into the monthly board report.'
-    }
-});
-
-$("textarea[title$='Comments']").qtip({ 
-    content: {
-      text: 'General comments on this incident.',
-      title: 'Optional'
-    }
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 });
