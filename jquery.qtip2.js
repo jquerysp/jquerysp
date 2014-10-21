@@ -113,28 +113,7 @@ $().SPServices.SPArrangeChoices({
 	perRow: 3
 });
   
-$("input[title$='Vehicle Caused?']").change(function(){
-    $("nobr:containsExactCase('Type of Vehicle')").parent('h3').parent('td').parent('tr').toggle();
-	if (!$("input[title$='Vehicle Caused?']").is(':checked')){
-	$("select[title$='Type of Vehicle']").val("");
-    }
-});
 
-$("input[title$='Property Damaged?']").change(function(){
-    $("nobr:containsExactCase('Type of Damage')").parent('h3').parent('td').parent('tr').toggle();
-	if (!$("input[title$='Property Damaged?']").is(':checked')){
-	$("select[title$='Type of Damage']").val("");
-    }
-});
-
-$("input[title$='Environmental Impact?']").change(function(){
-    $("nobr:containsExactCase('Type of Impact')").parent('h3').parent('td').parent('tr').toggle();
-	$("nobr:containsExactCase('Environmental Impact Details')").parent('h3').parent('td').parent('tr').toggle();
-	if (!$("input[title$='Environmental Impact?']").is(':checked')){
-		$("select[title$='Type of Impact']").val("");
-		$("textarea[oldtitle$='Environmental Impact Details']").val("");
-    }
-});
 
 $("input[title$='Any Witnesses']").change(function(){
     $("nobr:containsExactCase('Witness Information')").parent('h3').parent('td').parent('tr').toggle();
@@ -156,6 +135,36 @@ $("input[title$='Off Site']").change(function(){
 		$("input[oldtitle$='Location']").val("");
     }
 });
+
+$("select[title$='Site']").change(function(){
+    if ($("select[title$='Site']").val()=="Minto" || $("select[title$='Site']").val()=="North Rocks" || $("select[title$='Site']").val()=="Petone" || $("select[title$='Site']").val()=="Tatura") {
+        $("nobr:containsExactCase('Production Related?')").parent('h3').parent('td').parent('tr').show();
+	 	$("textarea[title$='First Aid Treatment']").val("");
+    } else {
+		$("input[oldtitle$='Production Related?']").removeAttr('checked');
+        $("nobr:containsExactCase('Production Related?')").parent('h3').parent('td').parent('tr').hide();
+    }
+});
+
+$("input[title$='Production Related?']").change(function(){
+	$("nobr:containsExactCase('5W1H - the What')").parent('h3').parent('td').parent('tr').toggle();
+	$("nobr:containsExactCase('5W1H - the When')").parent('h3').parent('td').parent('tr').toggle();
+	$("nobr:containsExactCase('5W1H - the Where')").parent('h3').parent('td').parent('tr').toggle();
+	$("nobr:containsExactCase('5W1H - the Who')").parent('h3').parent('td').parent('tr').toggle();
+	$("nobr:containsExactCase('5W1H - the Which')").parent('h3').parent('td').parent('tr').toggle();
+	$("nobr:containsExactCase('5W1H - the How')").parent('h3').parent('td').parent('tr').toggle();
+	if (!$("input[oldtitle$='Production Related?']").is(':checked')){
+		$("textarea[title$='5W1H - the What']").val("");
+		$("textarea[title$='5W1H - the When']").val("");
+		$("textarea[title$='5W1H - the Where']").val("");
+		$("textarea[title$='5W1H - the Who']").val("");
+		$("textarea[title$='5W1H - the Which']").val("");
+		$("textarea[title$='5W1H - the How']").val("");
+    }
+});
+
+
+
 
 $("input[title$='Any Individual(s) Involved?']").change(function(){
 	$("nobr:containsExactCase('Full Name')").parent('h3').parent('td').parent('tr').toggle();
@@ -212,6 +221,29 @@ $("select[title$='Type of First Aid']").change(function(){
 	 $("textarea[title$='First Aid Treatment']").val("");
     } else {
         $("nobr:containsExactCase('First Aid Treatment')").parent('h3').parent('td').parent('tr').show();
+    }
+});
+
+$("input[title$='Vehicle Caused?']").change(function(){
+    $("nobr:containsExactCase('Type of Vehicle')").parent('h3').parent('td').parent('tr').toggle();
+	if (!$("input[title$='Vehicle Caused?']").is(':checked')){
+	$("select[title$='Type of Vehicle']").val("");
+    }
+});
+
+$("input[title$='Property Damaged?']").change(function(){
+    $("nobr:containsExactCase('Type of Damage')").parent('h3').parent('td').parent('tr').toggle();
+	if (!$("input[title$='Property Damaged?']").is(':checked')){
+	$("select[title$='Type of Damage']").val("");
+    }
+});
+
+$("input[title$='Environmental Impact?']").change(function(){
+    $("nobr:containsExactCase('Type of Impact')").parent('h3').parent('td').parent('tr').toggle();
+	$("nobr:containsExactCase('Environmental Impact Details')").parent('h3').parent('td').parent('tr').toggle();
+	if (!$("input[title$='Environmental Impact?']").is(':checked')){
+		$("select[title$='Type of Impact']").val("");
+		$("textarea[oldtitle$='Environmental Impact Details']").val("");
     }
 });
 
