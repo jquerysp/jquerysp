@@ -39,8 +39,8 @@ $.extend( $.expr[":"], {
 $(document).ready(function(){
 
 var thisUserAccount = $().SPServices.SPGetCurrentUser({
-﻿  fieldNames: ["Name", "Title"],
-﻿  debug: false
+	fieldNames: ["Name", "Title"],
+	debug: false
 });
 
 //alert(thisUserAccount.Title);
@@ -66,7 +66,7 @@ today = dd+'/'+mm+'/'+yyyy;
     relationshipList: "sa_area",
     relationshipListParentColumn: "site",
     relationshipListChildColumn: "Title",
-﻿  	parentColumn: "Site",
+		parentColumn: "Site",
 	simpleChild: true,
     childColumn: "Area"
   });
@@ -84,7 +84,7 @@ today = dd+'/'+mm+'/'+yyyy;
     relationshipList: "ir_idc",
     relationshipListParentColumn: "TOE",
     relationshipListChildColumn: "Title",
-﻿  parentColumn: "Type of Event",
+	parentColumn: "Type of Event",
 	simpleChild: true,
     childColumn: "Direct Causes"
   });
@@ -153,7 +153,7 @@ $("input[title$='Off Site']").change(function(){
 $("select[title$='Site']").change(function(){
     if ($("select[title$='Site']").val()=="Minto" || $("select[title$='Site']").val()=="North Rocks" || $("select[title$='Site']").val()=="Petone" || $("select[title$='Site']").val()=="Tatura") {
         $("nobr:containsExactCase('Production Related?')").parent('h3').parent('td').parent('tr').show();
-﻿		$("textarea[title$='First Aid Treatment']").val("");
+	 	$("textarea[title$='First Aid Treatment']").val("");
     } else {
 		$("input[oldtitle$='Production Related?']").removeAttr('checked');
         $("nobr:containsExactCase('Production Related?')").parent('h3').parent('td').parent('tr').hide();
@@ -176,9 +176,6 @@ $("input[title$='Production Related?']").change(function(){
 		$("textarea[oldtitle$='5W1H - the How']").val("");
     }
 });
-
-
-
 
 $("input[title$='Any Individual(s) Involved?']").change(function(){
 	$("nobr:containsExactCase('Full Name')").parent('h3').parent('td').parent('tr').toggle();
@@ -232,7 +229,7 @@ $("input[title$='Injured/Diseased']").change(function(){
 $("select[title$='Type of First Aid']").change(function(){
     if ($("select[oldtitle$='Type of First Aid']").val()=="No FA provided") {
         $("nobr:containsExactCase('First Aid Treatment')").parent('h3').parent('td').parent('tr').hide();
-﻿	$("textarea[title$='First Aid Treatment']").val("");
+	 $("textarea[title$='First Aid Treatment']").val("");
     } else {
         $("nobr:containsExactCase('First Aid Treatment')").parent('h3').parent('td').parent('tr').show();
     }
@@ -266,44 +263,6 @@ if ($("input[oldtitle$='Declaration']").is(':checked')){
         $("input[title$='Reporter']").val(thisUserAccount.Title);
    }
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-$("input[title$='Investigation Completed']").change(function(){
-if ($("input[title$='Investigation Completed']").is(':checked')){
-        $("input[title$='Investigation Completed By']").val(thisUserAccount.Title);
-        $("input[title$='Investigation Completed Date']").val(today);
-    } else {
-        $("input[title$='Investigation Completed By']").val("");
-        $("input[title$='Investigation Completed Date']").val("");
-    }
-
-});
-
-
-
 
 ///////////////////////////////////
 //////////TOOLTIPS START///////////
@@ -346,43 +305,43 @@ $("input[title$='Production Related?']").qtip({
 
 $("textarea[title$='5W1H - the What']").qtip({ 
     content: {
-      text: 'Tooltips to be updated.',
-      title: 'General Guidelines'
+      text: 'Any variation due to production materials? Any materials differences? Differences among lots? Any variation due to different part dimensions, shapes? Eg.: <br>Material, Product Number, Lot Number, Component Name',
+      title: 'What thing or product did you see the problem on?'
     },
 });
 
 $("textarea[title$='5W1H - the When']").qtip({ 
     content: {
-      text: 'Tooltips to be updated.',
-      title: 'General Guidelines'
+      text: 'Any variation related to time or period? Does the problem occur at the start of work? in the middle? During which operations is the problem apt to occur? Is the problem likely to occur after set-up changes? Eg.: <br>Start/End Date, Shift, Time, Event (Is this problem happening on one, two or all shifts? After Start Up? Changeover? Etc.)',
+      title: 'When did the problem occur?'
     },
 });
 
 $("textarea[title$='5W1H - the Where']").qtip({ 
     content: {
-      text: 'Tooltips to be updated.',
-      title: 'General Guidelines'
+      text: 'Any variation due to equipment, fixtures, components? In what process / what machine elements does the problem occur? Any differences among different equipment, machine types? Any variation associated with different figs, fixtures? Eg.: <br>Line# / Equipment / Component, Location, Process.',
+      title: 'Where did you see the problem? Where on the work or material did you see the problem?'
     },
 });
 
 $("textarea[title$='5W1H - the Who']").qtip({ 
     content: {
-      text: 'Tooltips to be updated.',
-      title: 'General Guidelines'
+      text: 'Any variation among people involved in the operation? Any morning/day/night shift difference? Any differences among new operators, floaters, temporary staff? Eg.: <br>If the problem occurs for only certain skills levels, i.e. mechanics, operators, temps, shifts and/or experience levels, it is skill dependent. Skill independent - it could happen to anyone.',
+      title: 'Is the problem related to skill? Skill dependent or independent'
     },
 });
 
 $("textarea[title$='5W1H - the Which']").qtip({ 
     content: {
-      text: 'Tooltips to be updated.',
-      title: 'General Guidelines'
+      text: 'Are there any characteristic trends over time? Does it appear at regular or irregular intervals? Do problems increase or decrease? Any changes before or after? Eg.:<br>Random: Can happen anytime. <br>Periodic: the problem occurrence is predictable such as after start-ups, changeovers, only when it is 100 deg., etc.<br>Continuous: The problem occurs uninterrupted in time or sequence.',
+      title: 'Which trend / pattern did you see the problem have? Is the trend random or is there a pattern?'
     },
 });
 
 $("textarea[title$='5W1H - the How']").qtip({ 
     content: {
-      text: 'Tooltips to be updated.',
-      title: 'General Guidelines'
+      text: 'Any variation in circumstances of occurrence?State as exactly as you can the difference from ideal. <br>Eg.:Is the carton crunched, torn, punctured, etc? Describe the abnormality such as bent, sheared, crushed, rusted, spilled, lost material, not delivered, etc.',
+      title: 'How is the state different from normal condition?'
     },
 });
 
@@ -408,6 +367,12 @@ $("input[title$='Phone Number']").qtip({
     content: {
         text: 'Please enter a landline or mobile phone number.',
       title: 'Optional Field'
+    }
+});
+
+$("select[title$='Incident Time Period']").qtip({ 
+    content: {
+        text: 'Select an option to indicate the relationship between the work hours and the incident time. If the person is a field worker then driving between sites are included in working hours.'
     }
 });
 
@@ -511,117 +476,6 @@ $("input[title$='Declaration']").qtip({
         text: 'Tick the checkbox when you fill out all the necessary fields above. After ticking off, you can submit this incident report by clicking the save botton at the top left or the bottom right hand side of the page.'
     }
 });
-
-$("select[title$='Incident Time Period']").qtip({ 
-    content: {
-        text: 'Select an option to indicate the relationship between the work hours and the incident time. If the person is a field worker then driving between sites are included in working hours.'
-    }
-});
-
-
-
-$("textarea[title$='Remedial Action Taken']").qtip({ 
-    content: {
-      text: 'Please describe what immediately remedial action was taken after the incident.'
-    }
-});
-
-$("select[title$='Nature of Injury/Disease']").qtip({ 
-    content: {
-        text: 'Select an option to indicate the nature of Injury/Disease. 1.XX are for Injuries and 2.XX are for Diseases.'
-    }
-});
-
-$("select[title$='Primary Agency']").qtip({ 
-    content: {
-        text: 'Select an option to indicate the primary agency of the injury/disease.'
-    }
-});
-
-$("input[title$='Notifiable to Authorities?']").qtip({ 
-    content: {
-        text: 'Tick the checkbox if this incident needs to be reported to the Authority such as NSW WorkCover or Vic WorkCover.'
-    }
-});
-
-$("textarea[title$='Authority Notification Details']").qtip({ 
-    content: {
-      text: 'Please provide information such as who notified authority, which authority and what time the authority was notified.'
-    }
-});
-
-
-$("textarea[title$='EPA Notification Details']").qtip({ 
-    content: {
-      text: 'Please provide information such as who notified EPA, which EPA and what time EPA was notified.'
-    }
-});
-
-$("select[title$='Type of Event']").qtip({ 
-    content: {
-        text: 'Select an option to indicate the type of this incident. Please note that if the incident was a near miss, please select an option to indicate the MOST LIKELY type if injury/disease/property damage/environmental impact were involved.'
-    }
-});
-
-$("textarea[title$='Why-Cause 1']").qtip({ 
-    content: {
-      text: 'Please ask and answer a serial of relevant questions to drill down and find the root cause of the incident. Eg: Question: Why did Event A happen? Answer: Because of Event B. Question: Why did Event B happen? Answer: Because of Event C. Question: Why did Event C happen? Answer: Because of Event D...',
-      title: 'General Guidelines'
-	  }
-});
-
-$("textarea[title$='Corrective Action']").qtip({ 
-    content: {
-      text: 'Please initiate the Corrective Action so that similar incidents can be prevented in the future. Please clearly specify what need to be done.',
-      title: 'Manager / Investigator to complete'
-    }
-});
-
-$("textarea[title$='CA Completed - Comments']").qtip({ 
-    content: {
-      text: 'Please clearly specify what has been done to complete the corrective action.',
-      title: 'Responsible to complete'
-    }
-});
-
-$("textarea[title$='CA Close Out Comments']").qtip({ 
-    content: {
-      text: 'Please comment on the closure of this corrective action.',
-      title: 'Optional - Manager / Investigator to complete'
-    }
-});
-
-$("textarea[title$='Short Description of Incident']").qtip({ 
-    content: {
-      text: 'Please provide a short description of this incident. This will go into the monthly report.'
-    }
-});
-
-$("textarea[title$='Why not a Recordable']").qtip({ 
-    content: {
-      text: 'Please provide reasons why this incident is a workers comp case but not a recordable. This will go into the monthly board report.'
-    }
-});
-
-$("textarea[title$='Comments']").qtip({ 
-    content: {
-      text: 'General comments on this incident.',
-      title: 'Optional'
-    }
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 });
