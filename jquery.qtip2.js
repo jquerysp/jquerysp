@@ -127,6 +127,15 @@ $("input[title$='Property Damaged?']").change(function(){
     }
 });
 
+$("input[title$='Environmental Impact?']").change(function(){
+    $("nobr:containsExactCase('Type of Impact')").parent('h3').parent('td').parent('tr').toggle();
+	$("nobr:containsExactCase('Environmental Impact Details')").parent('h3').parent('td').parent('tr').toggle();
+	if (!$("input[title$='Environmental Impact?']").is(':checked')){
+		$("select[oldtitle$='Type of Impact']").val("");
+		$("textarea[oldtitle$='Environmental Impact Details']").val("");
+    }
+});
+
 $("input[title$='Any Witnesses']").change(function(){
     $("nobr:containsExactCase('Witness Information')").parent('h3').parent('td').parent('tr').toggle();
 	if (!$("input[title$='Any Witnesses']").is(':checked')){
@@ -209,9 +218,48 @@ if ($("input[oldtitle$='Declaration']").is(':checked')){
    }
 });
 
-////////////////////////////////
-//TOOLTIPS START
-///////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$("input[title$='Investigation Completed']").change(function(){
+if ($("input[title$='Investigation Completed']").is(':checked')){
+        $("input[title$='Investigation Completed By']").val(thisUserAccount.Title);
+        $("input[title$='Investigation Completed Date']").val(today);
+    } else {
+        $("input[title$='Investigation Completed By']").val("");
+        $("input[title$='Investigation Completed Date']").val("");
+    }
+
+});
+
+
+
+
+///////////////////////////////////
+//////////TOOLTIPS START///////////
+///////////////////////////////////
+
 $("input[title$='Incident Title']").qtip({ 
     content: {
       text: 'Please enter a short description of this incident. Please do NOT mention any names. Eg: Worker slipped in the kitchen.'
@@ -247,13 +295,6 @@ $("input[title$='Any Individual(s) Involved?']").qtip({
     }
 });
 
-$("input[title$='Phone Number']").qtip({ 
-    content: {
-        text: 'Please enter a landline or mobile phone number.',
-      title: 'Optional Field'
-    }
-});
-
 $("select[title$='Function/Department']").qtip({ 
     content: {
         text: 'Select an option to indicate the function/department. Eg.: For workers in the factories, Sourcing Unit should be selected. Note: General Management is only for the CEO and associated roles that are not under any specific function or department.'
@@ -266,9 +307,56 @@ $("select[title$='Employment Type']").qtip({
     }
 });
 
+$("input[title$='Phone Number']").qtip({ 
+    content: {
+        text: 'Please enter a landline or mobile phone number.',
+      title: 'Optional Field'
+    }
+});
+
+$("nobr:contains('Immediate Manager or Investigator')").parent('h3').parent('td').parent('tr').qtip({ 
+    content: {
+        text: 'Please enter the name of the Immediate Manager if there is someone involved. For those incidents with on one involved, please nominate the most appropriate investigator here. The investigator should be the person responsible for the area and normally should not be the WHS Coordinators. If you are not sure who you should nominate as the investigator, enter the name of your WHS Coordinator.'
+    },
+    position: {
+        adjust: {
+            x: 215
+        }
+    }
+});
+
 $("input[title$='Injured/Diseased']").qtip({ 
     content: {
         text: 'Tick the checkbox only when the person is injured or diseased.'
+    }
+});
+
+$("select[title$='Type of First Aid']").qtip({ 
+    content: {
+      text: 'Please select the propery type of first aid provided. Examples for Preventative First Aid: Heat or ice pack was provided to prevent injury, rinse eyes after contact with chemical before any injury. An example for Applied First Aid: Applying a band-aid to a finger cut.',
+      title: 'General Guidelines'
+    }
+});
+
+$("nobr:contains('Body Part - Primary')").parent('h3').parent('td').parent('tr').qtip({ 
+    content: {
+        text: 'Please select from the list to identify the part of the body affected by the most serious injury or disease. You may choose ONLY ONE option from the list.'
+    },
+    position: {
+        adjust: {
+            x: 215
+        }
+    }
+});
+
+$("nobr:contains('Body Part - All affected')").parent('h3').parent('td').parent('tr').qtip({ 
+    content: {
+        text: 'Please select from the list to identify all body parts affected by the injury or disease. You may choose MORE THAN ONE option from the list.'
+    },
+    position: {
+        adjust: {
+            x: 215
+        }
     }
 });
 
@@ -281,6 +369,25 @@ $("input[title$='Vehicle Caused?']").qtip({
 $("input[title$='Property Damaged?']").qtip({ 
     content: {
         text: 'Tick the checkbox if this incident caused any property damage such as buildings, plants, vehicles, etc.'
+    }
+});
+
+$("input[title$='Environmental Impact?']").qtip({ 
+    content: {
+        text: '- an unauthorised release of chemicals to the air from a factory stack.<br>- a milk tanker rollover into a creek.<br>- a sewerage system overflow.<br>- a factory fire.<br>- illegal dumping of waste',
+      title: 'Examples'
+    }
+});
+
+$("textarea[title$='Environmental Impact Details']").qtip({ 
+    content: {
+      text: 'Please provide specifics of the incident. Examples:<br>- 10,000 litres of Sodium Hydroxide into storm water drain and subsequently into storm water containment ponds.<br>- Large dust cloud of soda ash covering bulk solids inloading area.',
+      title: 'General Guidelines'
+    },
+    position: {
+        adjust: {
+            x: 215
+        }
     }
 });
 
@@ -314,64 +421,106 @@ $("select[title$='Incident Time Period']").qtip({
     }
 });
 
-$("nobr:contains('Immediate Manager or Investigator')").parent('h3').parent('td').parent('tr').qtip({ 
+
+
+$("textarea[title$='Remedial Action Taken']").qtip({ 
     content: {
-        text: 'Please enter the name of the Immediate Manager if there is someone involved. For those incidents with on one involved, please nominate the most appropriate investigator here. The investigator should be the person responsible for the area and normally should not be the WHS Coordinators. If you are not sure who you should nominate as the investigator, enter the name of your WHS Coordinator.'
-    },
-    position: {
-        adjust: {
-            x: 215
-        }
+      text: 'Please describe what immediately remedial action was taken after the incident.'
     }
 });
 
-$("select[title$='Type of First Aid']").qtip({ 
+$("select[title$='Nature of Injury/Disease']").qtip({ 
     content: {
-      text: 'Please select the propery type of first aid provided. Examples for Preventative First Aid: Heat or ice pack was provided to prevent injury, rinse eyes after contact with chemical before any injury. An example for Applied First Aid: Applying a band-aid to a finger cut.',
+        text: 'Select an option to indicate the nature of Injury/Disease. 1.XX are for Injuries and 2.XX are for Diseases.'
+    }
+});
+
+$("select[title$='Primary Agency']").qtip({ 
+    content: {
+        text: 'Select an option to indicate the primary agency of the injury/disease.'
+    }
+});
+
+$("input[title$='Notifiable to Authorities?']").qtip({ 
+    content: {
+        text: 'Tick the checkbox if this incident needs to be reported to the Authority such as NSW WorkCover or Vic WorkCover.'
+    }
+});
+
+$("textarea[title$='Authority Notification Details']").qtip({ 
+    content: {
+      text: 'Please provide information such as who notified authority, which authority and what time the authority was notified.'
+    }
+});
+
+
+$("textarea[title$='EPA Notification Details']").qtip({ 
+    content: {
+      text: 'Please provide information such as who notified EPA, which EPA and what time EPA was notified.'
+    }
+});
+
+$("select[title$='Type of Event']").qtip({ 
+    content: {
+        text: 'Select an option to indicate the type of this incident. Please note that if the incident was a near miss, please select an option to indicate the MOST LIKELY type if injury/disease/property damage/environmental impact were involved.'
+    }
+});
+
+$("textarea[title$='Why-Cause 1']").qtip({ 
+    content: {
+      text: 'Please ask and answer a serial of relevant questions to drill down and find the root cause of the incident. Eg: Question: Why did Event A happen? Answer: Because of Event B. Question: Why did Event B happen? Answer: Because of Event C. Question: Why did Event C happen? Answer: Because of Event D...',
       title: 'General Guidelines'
-    }
+	  }
 });
 
-$("nobr:contains('Body Part - Primary')").parent('h3').parent('td').parent('tr').qtip({ 
+$("textarea[title$='Corrective Action']").qtip({ 
     content: {
-        text: 'Please select from the list to identify the part of the body affected by the most serious injury or disease. You may choose ONLY ONE option from the list.'
-    },
-    position: {
-        adjust: {
-            x: 215
-        }
+      text: 'Please initiate the Corrective Action so that similar incidents can be prevented in the future. Please clearly specify what need to be done.',
+      title: 'Manager / Investigator to complete'
     }
 });
 
-$("nobr:contains('Body Part - All affected')").parent('h3').parent('td').parent('tr').qtip({ 
+$("textarea[title$='CA Completed - Comments']").qtip({ 
     content: {
-        text: 'Please select from the list to identify all body parts affected by the injury or disease. You may choose MORE THAN ONE option from the list.'
-    },
-    position: {
-        adjust: {
-            x: 215
-        }
+      text: 'Please clearly specify what has been done to complete the corrective action.',
+      title: 'Responsible to complete'
     }
 });
 
-$("input[title$='Investigation Completed']").change(function(){
-if ($("input[title$='Investigation Completed']").is(':checked')){
-//        $("nobr:contains('Investigation Completed By')").parent('h3').parent('td').parent('tr').show();
-//        $("nobr:contains('Investigation Completed Date')").parent('h3').parent('td').parent('tr').show();
-        $("input[title$='Investigation Completed By']").val(thisUserAccount.Title);
-        $("input[title$='Investigation Completed Date']").val(today);
-//        $("nobr:contains('Investigation Completed By')").parent('h3').parent('td').parent('tr').hide();
-//        $("nobr:contains('Investigation Completed Date')").parent('h3').parent('td').parent('tr').hide();
-    } else {
-//        $("nobr:contains('Investigation Completed By')").parent('h3').parent('td').parent('tr').show();
-//        $("nobr:contains('Investigation Completed Date')").parent('h3').parent('td').parent('tr').show();
-        $("input[title$='Investigation Completed By']").val("");
-        $("input[title$='Investigation Completed Date']").val("");
-//        $("nobr:contains('Investigation Completed By')").parent('h3').parent('td').parent('tr').hide();
-//        $("nobr:contains('Investigation Completed Date')").parent('h3').parent('td').parent('tr').hide();
+$("textarea[title$='CA Close Out Comments']").qtip({ 
+    content: {
+      text: 'Please comment on the closure of this corrective action.',
+      title: 'Optional - Manager / Investigator to complete'
     }
-
 });
+
+$("textarea[title$='Short Description of Incident']").qtip({ 
+    content: {
+      text: 'Please provide a short description of this incident. This will go into the monthly report.'
+    }
+});
+
+$("textarea[title$='Why not a Recordable']").qtip({ 
+    content: {
+      text: 'Please provide reasons why this incident is a workers comp case but not a recordable. This will go into the monthly board report.'
+    }
+});
+
+$("textarea[title$='Comments']").qtip({ 
+    content: {
+      text: 'General comments on this incident.',
+      title: 'Optional'
+    }
+});
+
+
+
+
+
+
+
+
+
 
 
 
