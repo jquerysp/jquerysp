@@ -131,6 +131,20 @@ $("input[title$='Off Site']").change(function(){
 		$("select[title$='Site']").find('option:first').attr('selected', 'selected');
 		$("select[title$='Area']").val(0);
 		$("select[title$='Sub-area']").val(0);
+		$("input[oldtitle$='Production Related?']").removeAttr('checked');
+		$("nobr:containsExactCase('Production Related?')").parent('h3').parent('td').parent('tr').hide();
+		$("textarea[title$='5W1H - the What']").val("");
+		$("textarea[title$='5W1H - the When']").val("");
+		$("textarea[title$='5W1H - the Where']").val("");
+		$("textarea[title$='5W1H - the Who']").val("");
+		$("textarea[title$='5W1H - the Which']").val("");
+		$("textarea[title$='5W1H - the How']").val("");
+		$("nobr:containsExactCase('5W1H - the What')").parent('h3').parent('td').parent('tr').hide();
+		$("nobr:containsExactCase('5W1H - the When')").parent('h3').parent('td').parent('tr').hide();
+		$("nobr:containsExactCase('5W1H - the Where')").parent('h3').parent('td').parent('tr').hide();
+		$("nobr:containsExactCase('5W1H - the Who')").parent('h3').parent('td').parent('tr').hide();
+		$("nobr:containsExactCase('5W1H - the Which')").parent('h3').parent('td').parent('tr').hide();
+		$("nobr:containsExactCase('5W1H - the How')").parent('h3').parent('td').parent('tr').hide();
 	} else {
 		$("input[oldtitle$='Location']").val("");
     }
@@ -306,6 +320,12 @@ $("input[title$='Off Site']").qtip({
     }
 });
 
+$("input[title$='Location']").qtip({ 
+    content: {
+      text: 'Please enter the location where the incident occurred.'
+    }
+});
+
 $("textarea[title$='Description of Incident']").qtip({ 
     content: {
       text: 'Please DO Not mention any personal health information. Clearly describe what happened. Give as much information as you can.',
@@ -318,10 +338,52 @@ $("textarea[title$='Description of Incident']").qtip({
     }
 });
 
-$("input[title$='Location']").qtip({ 
+$("input[title$='Production Related?']").qtip({ 
     content: {
-      text: 'Please enter the location where the incident occurred.'
+      text: 'Please tick the checkbox if the incident is production related. Eg.: a machine, a product or a production process was involved.'
     }
+});
+
+$("textarea[title$='5W1H - the What']").qtip({ 
+    content: {
+      text: 'Tooltips to be updated.',
+      title: 'General Guidelines'
+    },
+});
+
+$("textarea[title$='5W1H - the When']").qtip({ 
+    content: {
+      text: 'Tooltips to be updated.',
+      title: 'General Guidelines'
+    },
+});
+
+$("textarea[title$='5W1H - the Where']").qtip({ 
+    content: {
+      text: 'Tooltips to be updated.',
+      title: 'General Guidelines'
+    },
+});
+
+$("textarea[title$='5W1H - the Who']").qtip({ 
+    content: {
+      text: 'Tooltips to be updated.',
+      title: 'General Guidelines'
+    },
+});
+
+$("textarea[title$='5W1H - the Which']").qtip({ 
+    content: {
+      text: 'Tooltips to be updated.',
+      title: 'General Guidelines'
+    },
+});
+
+$("textarea[title$='5W1H - the How']").qtip({ 
+    content: {
+      text: 'Tooltips to be updated.',
+      title: 'General Guidelines'
+    },
 });
 
 $("input[title$='Any Individual(s) Involved?']").qtip({ 
