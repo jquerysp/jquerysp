@@ -113,7 +113,12 @@ $().SPServices.SPArrangeChoices({
 	perRow: 3
 });
   
-
+if ($("select[title$='Site']").val()=="Minto" || $("select[title$='Site']").val()=="North Rocks" || $("select[title$='Site']").val()=="Petone" || $("select[title$='Site']").val()=="Tatura") {
+	$("nobr:containsExactCase('Production Related?')").parent('h3').parent('td').parent('tr').show();
+} else {
+	$("input[oldtitle$='Production Related?']").removeAttr('checked');
+	$("nobr:containsExactCase('Production Related?')").parent('h3').parent('td').parent('tr').hide();
+}
 
 $("input[title$='Any Witnesses']").change(function(){
     $("nobr:containsExactCase('Witness Information')").parent('h3').parent('td').parent('tr').toggle();
@@ -153,7 +158,6 @@ $("input[title$='Off Site']").change(function(){
 $("select[title$='Site']").change(function(){
     if ($("select[title$='Site']").val()=="Minto" || $("select[title$='Site']").val()=="North Rocks" || $("select[title$='Site']").val()=="Petone" || $("select[title$='Site']").val()=="Tatura") {
         $("nobr:containsExactCase('Production Related?')").parent('h3').parent('td').parent('tr').show();
-	 	$("textarea[title$='First Aid Treatment']").val("");
     } else {
 		$("input[oldtitle$='Production Related?']").removeAttr('checked');
         $("nobr:containsExactCase('Production Related?')").parent('h3').parent('td').parent('tr').hide();
@@ -211,6 +215,8 @@ $("input[title$='Any Individual(s) Involved?']").change(function(){
 		$("nobr:containsExactCase('First Aid Treatment')").parent('h3').parent('td').parent('tr').hide();
 		$("nobr:containsExactCase('Body Part - Primary')").parent('h3').parent('td').parent('tr').hide();
 		$("nobr:containsExactCase('Body Part - All affected')").parent('h3').parent('td').parent('tr').hide();
+		$("nobr:containsExactCase('Nature of Injury/Disease')").parent('h3').parent('td').parent('tr').hide();
+		$("nobr:containsExactCase('Primary Agency')").parent('h3').parent('td').parent('tr').hide();
     }
 });
 
@@ -219,6 +225,10 @@ $("input[title$='Injured/Diseased']").change(function(){
 	$("nobr:containsExactCase('First Aid Treatment')").parent('h3').parent('td').parent('tr').toggle();
 	$("nobr:containsExactCase('Body Part - Primary')").parent('h3').parent('td').parent('tr').toggle();
 	$("nobr:containsExactCase('Body Part - All affected')").parent('h3').parent('td').parent('tr').toggle();
+	$("nobr:containsExactCase('Nature of Injury/Disease')").parent('h3').parent('td').parent('tr').toggle();
+	$("nobr:containsExactCase('Primary Agency')").parent('h3').parent('td').parent('tr').toggle();
+	$("nobr:containsExactCase('Notifiable to Authorities?')").parent('h3').parent('td').parent('tr').toggle();
+	$("nobr:containsExactCase('Authority Notification Details')").parent('h3').parent('td').parent('tr').toggle();
 	if (!$("input[oldtitle$='Injured/Diseased']").is(':checked')){
 		$("select[oldtitle$='Type of First Aid']").val("");
 		$("textarea[title$='First Aid Treatment']").val("");
@@ -226,6 +236,10 @@ $("input[title$='Injured/Diseased']").change(function(){
 		$("nobr:containsExactCase('Body Part - All affected')").parents("tr:first").find('input:checkbox').each(function(){
 			$(this).prop('checked',false);
 		});
+		$("select[oldtitle$='Nature of Injury/Disease']").val("");
+		$("select[oldtitle$='Primary Agency']").val("");
+		$("input[oldtitle$='Notifiable to Authorities?']").removeAttr('checked');
+		$("textarea[oldtitle$='Authority Notification Details']").val("");
     }
 });
 
@@ -258,6 +272,14 @@ $("input[title$='Environmental Impact?']").change(function(){
 	if (!$("input[title$='Environmental Impact?']").is(':checked')){
 		$("select[title$='Type of Impact']").val("");
 		$("textarea[oldtitle$='Environmental Impact Details']").val("");
+		$("input[oldtitle$='Notifiable to EPA?']").removeAttr('checked');
+		$("textarea[oldtitle$='Why Not Notifiable to EPA']").val("");
+		$("textarea[oldtitle$='EPA Notification Details']").val("");
+		$("nobr:containsExactCase('Notifiable to EPA?')").parent('h3').parent('td').parent('tr').hide();
+		$("nobr:containsExactCase('Why Not Notifiable to EPA')").parent('h3').parent('td').parent('tr').hide();
+    } else {
+		$("nobr:containsExactCase('Notifiable to EPA?')").parent('h3').parent('td').parent('tr').show();
+		$("nobr:containsExactCase('Why Not Notifiable to EPA')").parent('h3').parent('td').parent('tr').show();
     }
 });
 
@@ -267,29 +289,26 @@ if ($("input[oldtitle$='Declaration']").is(':checked')){
    }
 });
 
+///////////////////////////////////////////
+//////////INVESTIGATION FUNCTION///////////
+///////////////////////////////////////////
 
+$("input[title$='Notifiable to Authorities?']").change(function(){
+	$("nobr:containsExactCase('Authority Notification Details')").parent('h3').parent('td').parent('tr').toggle();
+	if (!$("input[title$='Notifiable to Authorities?']").is(':checked')){
+		$("textarea[oldtitle$='Authority Notification Details']").val("");
+    }
+});
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+$("input[title$='Notifiable to EPA?']").change(function(){
+    $("nobr:containsExactCase('Why Not Notifiable to EPA')").parent('h3').parent('td').parent('tr').toggle();
+	$("nobr:containsExactCase('EPA Notification Details')").parent('h3').parent('td').parent('tr').toggle();
+	if (!$("input[title$='Notifiable to EPA?']").is(':checked')){
+		$("textarea[oldtitle$='EPA Notification Details']").val("");
+    } else {
+		$("textarea[oldtitle$='Why Not Notifiable to EPA']").val("");
+    }
+});
 
 $("input[title$='Investigation Completed']").change(function(){
 if ($("input[title$='Investigation Completed']").is(':checked')){
@@ -299,8 +318,89 @@ if ($("input[title$='Investigation Completed']").is(':checked')){
         $("input[title$='Investigation Completed By']").val("");
         $("input[title$='Investigation Completed Date']").val("");
     }
-
 });
+
+$("input[title$='Corrective Action Needed']").change(function(){
+    $("nobr:containsExactCase('Corrective Action')").parent('h3').parent('td').parent('tr').toggle();
+	$("nobr:containsExactCase('CA Responsible Person')").parent('h3').parent('td').parent('tr').toggle();
+	$("nobr:containsExactCase('CA Due Date')").parent('h3').parent('td').parent('tr').toggle();
+	$("nobr:containsExactCase('CA Completed')").parent('h3').parent('td').parent('tr').toggle();
+	$("nobr:containsExactCase('CA Completion Verified & Close Out')").parent('h3').parent('td').parent('tr').toggle();
+	if (!$("input[title$='Corrective Action Needed']").is(':checked')){
+		$("textarea[oldtitle$='Corrective Action']").val("");
+		$().SPServices.SPFindPeoplePicker({
+			peoplePickerDisplayName: "CA Responsible Person",
+			valueToSet: "",
+		});
+		$("input[title$='CA Due Date']").val("");
+		$("input[title$='CA Completed']").removeAttr('checked');
+		$("textarea[oldtitle$='CA Completed - Comments']").val("");
+		$("input[title$='CA Completed By']").val("");
+		$("input[title$='CA Completed Date']").val("");
+		$("input[title$='CA Completion Verified & Close Out']").removeAttr('checked');
+		$("textarea[oldtitle$='CA Close Out Comments']").val("");
+		$("input[title$='CA Closed Out By']").val("");
+		$("input[title$='CA Close Out Date']").val("");
+    }
+});
+
+$("input[title$='CA Completed']").change(function(){
+	$("nobr:containsExactCase('CA Completed - Comments')").parent('h3').parent('td').parent('tr').toggle();
+	if ($("input[title$='CA Completed']").is(':checked')){
+        $("input[title$='CA Completed By']").val(thisUserAccount.Title);
+        $("input[title$='CA Completed Date']").val(today);
+    } else {
+		$("textarea[oldtitle$='CA Completed - Comments']").val("");
+        $("input[title$='CA Completed By']").val("");
+        $("input[title$='CA Completed Date']").val("");
+    }
+});
+
+$("input[title$='CA Completion Verified & Close Out']").change(function(){
+	$("nobr:containsExactCase('CA Close Out Comments')").parent('h3').parent('td').parent('tr').toggle();
+	if ($("input[title$='CA Completion Verified & Close Out']").is(':checked')){
+        $("input[title$='CA Closed Out By']").val(thisUserAccount.Title);
+        $("input[title$='CA Close Out Date']").val(today);
+    } else {
+		$("textarea[oldtitle$='CA Close Out Comments']").val("");
+        $("input[title$='CA Closed Out By']").val("");
+        $("input[title$='CA Close Out Date']").val("");
+    }
+});
+
+$("input[title$='Process Safety Incident?']").change(function(){
+	$("nobr:containsExactCase('Process Safety Category')").parent('h3').parent('td').parent('tr').toggle();
+	if (!$("input[title$='Process Safety Incident?']").is(':checked')){
+        $("select[oldtitle$='Process Safety Category']").val("");
+    }
+});
+
+$("input[title$='Workers Comp Case?']").change(function(){
+	if ($("input[title$='Workers Comp Case?']").is(':checked')){
+		if ($("input[title$='Classification']").val().substring(0, 3)=="LTA" || $("input[title$='Classification']").val().substring(0, 3)=="RWC" || $("input[title$='Classification']").val().substring(0, 3)=="MTC"){
+			$("nobr:containsExactCase('Why not a Recordable')").parent('h3').parent('td').parent('tr').show();
+		} else {
+			$("nobr:containsExactCase('Why not a Recordable')").parent('h3').parent('td').parent('tr').hide();
+			$("textarea[oldtitle$='Why not a Recordable']").val("");
+		}
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -584,6 +684,12 @@ $("textarea[title$='Why-Cause 1']").qtip({
 	  }
 });
 
+$("select[title$='Feedback Channel']").qtip({ 
+    content: {
+        text: 'The investigation result must be communicated to the all involved persons. Select an option to indicate the channel via which you provided the feedback.'
+    }
+});
+
 $("textarea[title$='Corrective Action']").qtip({ 
     content: {
       text: 'Please initiate the Corrective Action so that similar incidents can be prevented in the future. Please clearly specify what need to be done.',
@@ -608,6 +714,12 @@ $("textarea[title$='CA Close Out Comments']").qtip({
 $("textarea[title$='Short Description of Incident']").qtip({ 
     content: {
       text: 'Please provide a short description of this incident. This will go into the monthly report.'
+    }
+});
+
+$("input[title$='Process Safety Incident?']").qtip({
+    content: {
+        text: 'Please tick the checkbox if this incident is a Process Safety Incident. The incident can be considered to relate to Process Safety if it involves loss of hazardous material from primary containment or release of  stored energy and  occurs in production, distribution, storage, utilities or in a pilot plant. This includes tank farms, ancillary support areas. Eg., boiler houses and waste water treatment plants, and distribution piping under control of the site.'
     }
 });
 
