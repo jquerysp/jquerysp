@@ -153,7 +153,6 @@ $("input[title$='Off Site']").change(function(){
 $("select[title$='Site']").change(function(){
     if ($("select[title$='Site']").val()=="Minto" || $("select[title$='Site']").val()=="North Rocks" || $("select[title$='Site']").val()=="Petone" || $("select[title$='Site']").val()=="Tatura") {
         $("nobr:containsExactCase('Production Related?')").parent('h3').parent('td').parent('tr').show();
-	 	$("textarea[title$='First Aid Treatment']").val("");
     } else {
 		$("input[oldtitle$='Production Related?']").removeAttr('checked');
         $("nobr:containsExactCase('Production Related?')").parent('h3').parent('td').parent('tr').hide();
