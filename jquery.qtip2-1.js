@@ -346,7 +346,7 @@ $("input[title$='Corrective Action Needed']").change(function(){
 
 $("input[title$='CA Completed']").change(function(){
 	$("nobr:containsExactCase('CA Completed - Comments')").parent('h3').parent('td').parent('tr').toggle();
-	$("nobr:containsExactCase('CA Completed By')").parent('h3').parent('td').parent('tr').toggle();
+	$("nobr:containsExactCase('CA Completion Verified & Close Out')").parent('h3').parent('td').parent('tr').toggle();
 	if ($("input[title$='CA Completed']").is(':checked')){
         $("input[title$='CA Completed By']").val(thisUserAccount.Title);
         $("input[title$='CA Completed Date']").val(today);
