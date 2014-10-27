@@ -325,7 +325,7 @@ $("input[title$='Corrective Action Needed']").change(function(){
 	$("nobr:containsExactCase('CA Responsible Person')").parent('h3').parent('td').parent('tr').toggle();
 	$("nobr:containsExactCase('CA Due Date')").parent('h3').parent('td').parent('tr').toggle();
 	$("nobr:containsExactCase('CA Completed')").parent('h3').parent('td').parent('tr').toggle();
-	$("nobr:containsExactCase('CA Completion Verified & Close Out')").parent('h3').parent('td').parent('tr').toggle();
+	$("nobr:containsExactCase('CA Completion Verified/Close Out')").parent('h3').parent('td').parent('tr').toggle();
 	if (!$("input[title$='Corrective Action Needed']").is(':checked')){
 		$("textarea[oldtitle$='Corrective Action']").val("");
 		$().SPServices.SPFindPeoplePicker({
@@ -337,7 +337,7 @@ $("input[title$='Corrective Action Needed']").change(function(){
 		$("textarea[oldtitle$='CA Completed - Comments']").val("");
 		$("input[title$='CA Completed By']").val("");
 		$("input[title$='CA Completed Date']").val("");
-		$("input[title$='CA Completion Verified & Close Out']").removeAttr('checked');
+		$("input[title$='CA Completion Verified/Close Out']").removeAttr('checked');
 		$("textarea[oldtitle$='CA Close Out Comments']").val("");
 		$("input[title$='CA Closed Out By']").val("");
 		$("input[title$='CA Close Out Date']").val("");
@@ -346,11 +346,10 @@ $("input[title$='Corrective Action Needed']").change(function(){
 
 $("input[title$='CA Completed']").change(function(){
 	$("nobr:containsExactCase('CA Completed - Comments')").parent('h3').parent('td').parent('tr').toggle();
-	$("nobr:containsExactCase('CA Completion Verified & Close Out')").parent('h3').parent('td').parent('tr').toggle();
 	if ($("input[title$='CA Completed']").is(':checked')){
         $("input[title$='CA Completed By']").val(thisUserAccount.Title);
         $("input[title$='CA Completed Date']").val(today);
-		$("nobr:containsExactCase('CA Completion Verified & Close Out')").parent('h3').parent('td').parent('tr').toggle();
+		$("nobr:containsExactCase('CA Completion Verified/Close Out')").parent('h3').parent('td').parent('tr').toggle();
     } else {
 		$("textarea[oldtitle$='CA Completed - Comments']").val("");
         $("input[title$='CA Completed By']").val("");
@@ -358,9 +357,9 @@ $("input[title$='CA Completed']").change(function(){
     }
 });
 
-$("input[title$='CA Completion Verified & Close Out']").change(function(){
+$("input[title$='CA Completion Verified/Close Out']").change(function(){
 	$("nobr:containsExactCase('CA Close Out Comments')").parent('h3').parent('td').parent('tr').toggle();
-	if ($("input[title$='CA Completion Verified & Close Out']").is(':checked')){
+	if ($("input[title$='CA Completion Verified/Close Out']").is(':checked')){
         $("input[title$='CA Closed Out By']").val(thisUserAccount.Title);
         $("input[title$='CA Close Out Date']").val(today);
     } else {
