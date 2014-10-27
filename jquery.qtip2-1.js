@@ -325,7 +325,6 @@ $("input[title$='Corrective Action Needed']").change(function(){
 	$("nobr:containsExactCase('CA Responsible Person')").parent('h3').parent('td').parent('tr').toggle();
 	$("nobr:containsExactCase('CA Due Date')").parent('h3').parent('td').parent('tr').toggle();
 	$("nobr:containsExactCase('CA Completed')").parent('h3').parent('td').parent('tr').toggle();
-	$("nobr:containsExactCase('CA Completion Verified/Close Out')").parent('h3').parent('td').parent('tr').toggle();
 	if (!$("input[title$='Corrective Action Needed']").is(':checked')){
 		$("textarea[oldtitle$='Corrective Action']").val("");
 		$().SPServices.SPFindPeoplePicker({
@@ -341,7 +340,13 @@ $("input[title$='Corrective Action Needed']").change(function(){
 		$("textarea[oldtitle$='CA Close Out Comments']").val("");
 		$("input[title$='CA Closed Out By']").val("");
 		$("input[title$='CA Close Out Date']").val("");
-    }
+    } else {
+		if ($("input[title$='CA Completed']").is(':checked')){
+        $("nobr:containsExactCase('CA Completion Verified/Close Out')").parent('h3').parent('td').parent('tr').show();
+		} else {
+		$("nobr:containsExactCase('CA Completion Verified/Close Out')").parent('h3').parent('td').parent('tr').hide();
+		}
+	}
 });
 
 $("input[title$='CA Completed']").change(function(){
@@ -349,9 +354,11 @@ $("input[title$='CA Completed']").change(function(){
 	if ($("input[title$='CA Completed']").is(':checked')){
         $("input[title$='CA Completed By']").val(thisUserAccount.Title);
         $("input[title$='CA Completed Date']").val(today);
-		$("nobr:containsExactCase('CA Completion Verified/Close Out')").parent('h3').parent('td').parent('tr').toggle();
+		$("nobr:containsExactCase('CA Completion Verified/Close Out')").parent('h3').parent('td').parent('tr').show();
     } else {
 		$("textarea[oldtitle$='CA Completed - Comments']").val("");
+		$("nobr:containsExactCase('CA Completion Verified/Close Out')").parent('h3').parent('td').parent('tr').hide();
+		$("input[title$='CA Completion Verified/Close Out']").removeAttr('checked');
         $("input[title$='CA Completed By']").val("");
         $("input[title$='CA Completed Date']").val("");
     }
