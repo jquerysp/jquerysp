@@ -329,7 +329,7 @@ $("input[title$='Corrective Action Needed']").change(function(){
 		$("textarea[oldtitle$='Corrective Action']").val("");
 		$().SPServices.SPFindPeoplePicker({
 			peoplePickerDisplayName: "CA Responsible Person",
-			valueToSet: "",
+			valueToSet: ""
 		});
 		$("input[title$='CA Due Date']").val("");
 		$("input[title$='CA Completed']").removeAttr('checked');
@@ -340,12 +340,14 @@ $("input[title$='Corrective Action Needed']").change(function(){
 		$("textarea[oldtitle$='CA Close Out Comments']").val("");
 		$("input[title$='CA Closed Out By']").val("");
 		$("input[title$='CA Close Out Date']").val("");
-    } else {
-		if ($("input[title$='CA Completed']").is(':checked')){
-        $("nobr:containsExactCase('CA Completion Verified/Close Out')").parent('h3').parent('td').parent('tr').show();
-		} else {
-		$("nobr:containsExactCase('CA Completion Verified/Close Out')").parent('h3').parent('td').parent('tr').hide();
-		}
+		$("nobr:containsExactCase('CA Completed - Comments')").parent('h3').parent('td').parent('tr').hide();
+		$("nobr:containsExactCase('CA Completion Verified/Close Out')").parent('h3').parent('td').parent('tr').toggle();
+    //} else {
+	//	if ($("input[title$='CA Completed']").is(':checked')){
+    //    $("nobr:containsExactCase('CA Completion Verified/Close Out')").parent('h3').parent('td').parent('tr').show();
+	//	} else {
+	//	$("nobr:containsExactCase('CA Completion Verified/Close Out')").parent('h3').parent('td').parent('tr').hide();
+	//	}
 	}
 });
 
