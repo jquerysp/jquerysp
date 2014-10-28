@@ -387,7 +387,8 @@ $("input[title$='Process Safety Incident?']").change(function(){
 });
 
 $("input[title$='Workers Comp Case?']").change(function(){
-	if (!$("input[oldtitle$='Workers Comp Case?']").is(':checked')){
+alert("wcc");
+	if (!$("input[title$='Workers Comp Case?']").is(':checked')){
 		alert("unticked wcc");
 		if ($("input[title$='Classification']").val().substring(0, 3)=="LTA" || $("input[title$='Classification']").val().substring(0, 3)=="RWC" || $("input[title$='Classification']").val().substring(0, 3)=="MTC"){
 		alert("recordables");
