@@ -327,10 +327,13 @@ $("input[title$='Corrective Action Needed']").change(function(){
 	$("nobr:containsExactCase('CA Completed')").parent('h3').parent('td').parent('tr').toggle();
 	if (!$("input[oldtitle$='Corrective Action Needed']").is(':checked')){
 		$("textarea[oldtitle$='Corrective Action']").val("");
-		$().SPServices.SPFindPeoplePicker({
-			peoplePickerDisplayName: "CA Responsible Person",
-			valueToSet: ""
-		});
+
+		
+		if (document.getElementById('ctl00_m_g_a0e6e363_500e_4f4a_97ef_18c7499447e8_ctl00_ListFieldIterator2_ctl71_ctl00_ctl00_ctl04_ctl00_ctl00_UserField_upLevelDiv') != null) {
+			document.getElementById('ctl00_m_g_a0e6e363_500e_4f4a_97ef_18c7499447e8_ctl00_ListFieldIterator2_ctl71_ctl00_ctl00_ctl04_ctl00_ctl00_UserField_upLevelDiv').innerHTML = '';
+			updateControlValue('ctl00_m_g_a0e6e363_500e_4f4a_97ef_18c7499447e8_ctl00_ListFieldIterator2_ctl71_ctl00_ctl00_ctl04_ctl00_ctl00_UserField');
+		}
+		
 		$("input[title$='CA Due Date']").val("");
 		$("input[oldtitle$='CA Completed']").removeAttr('checked');
 		$("textarea[oldtitle$='CA Completed - Comments']").val("");
