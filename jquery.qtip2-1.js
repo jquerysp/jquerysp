@@ -343,12 +343,7 @@ $("input[title$='Corrective Action Needed']").change(function(){
 		$("nobr:containsExactCase('CA Completed - Comments')").parent('h3').parent('td').parent('tr').hide();
 		$("nobr:containsExactCase('CA Completion Verified/Close Out')").parent('h3').parent('td').parent('tr').hide();
 		$("nobr:containsExactCase('CA Close Out Comments')").parent('h3').parent('td').parent('tr').hide();
-    //} else {
-	//	if ($("input[oldtitle$='CA Completed']").is(':checked')){
-    //    $("nobr:containsExactCase('CA Completion Verified/Close Out')").parent('h3').parent('td').parent('tr').show();
-	//	} else {
-	//	$("nobr:containsExactCase('CA Completion Verified/Close Out')").parent('h3').parent('td').parent('tr').hide();
-	//	}
+
 	}
 });
 
@@ -388,8 +383,8 @@ $("input[title$='Process Safety Incident?']").change(function(){
 
 $("input[title$='Workers Comp Case?']").change(function(){
 	if (!$("input[oldtitle$='Workers Comp Case?']").is(':checked')){
+	alert($("input[title$='Classification']").options[$("input[title$='Classification']").selectedIndex].text);
 		if ($("input[title$='Classification']").val().substring(0, 3)=="LTA" || $("input[title$='Classification']").val().substring(0, 3)=="RWC" || $("input[title$='Classification']").val().substring(0, 3)=="MTC"){
-		alert($("input[title$='Classification']").options[$("input[title$='Classification']").selectedIndex].text);
 			$("nobr:containsExactCase('Why not a Recordable')").parent('h3').parent('td').parent('tr').show();
 		} else {
 			$("nobr:containsExactCase('Why not a Recordable')").parent('h3').parent('td').parent('tr').hide();
