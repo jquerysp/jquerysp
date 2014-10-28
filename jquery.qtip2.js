@@ -212,7 +212,7 @@ $("input[title$='Any Individual(s) Involved?']").change(function(){
 
 $("input[title$='Injured/Diseased']").change(function(){
 	$("nobr:containsExactCase('Type of First Aid')").parent('h3').parent('td').parent('tr').toggle();
-	$("nobr:containsExactCase('First Aid Treatment')").parent('h3').parent('td').parent('tr').toggle();
+	$("nobr:containsExactCase('First Aid Treatment')").parent('h3').parent('td').parent('tr').hide();
 	$("nobr:containsExactCase('Body Part - Primary')").parent('h3').parent('td').parent('tr').toggle();
 	$("nobr:containsExactCase('Body Part - All affected')").parent('h3').parent('td').parent('tr').toggle();
 	if (!$("input[oldtitle$='Injured/Diseased']").is(':checked')){
