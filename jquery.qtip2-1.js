@@ -382,12 +382,12 @@ $("input[title$='Process Safety Incident?']").change(function(){
 });
 
 $("input[title$='Workers Comp Case?']").change(function(){
-	if (!$("input[oldtitle$='Workers Comp Case?']").is(':checked')){
-		if ($("select[title$='Incident Classification']").val().substring(0, 3)=="LTA" || $("select[title$='Incident Classification']").val().substring(0, 3)=="RWC" || $("select[title$='Incident Classification']").val().substring(0, 3)=="MTC"){
+	if ($("input[oldtitle$='Workers Comp Case?']").is(':checked')){
+		if (!($("select[title$='Incident Classification']").val().substring(0, 3)=="LTA" || $("select[title$='Incident Classification']").val().substring(0, 3)=="RWC" || $("select[title$='Incident Classification']").val().substring(0, 3)=="MTC")){
+			$("nobr:containsExactCase('Why not a Recordable')").parent('h3').parent('td').parent('tr').show();
+		} else {
 			$("nobr:containsExactCase('Why not a Recordable')").parent('h3').parent('td').parent('tr').hide();
 			$("textarea[oldtitle$='Why not a Recordable']").val("");
-		} else {
-			$("nobr:containsExactCase('Why not a Recordable')").parent('h3').parent('td').parent('tr').show();
 		}
 	} else {
 		$("nobr:containsExactCase('Why not a Recordable')").parent('h3').parent('td').parent('tr').hide();
