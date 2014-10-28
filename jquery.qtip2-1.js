@@ -387,11 +387,9 @@ $("input[title$='Process Safety Incident?']").change(function(){
 });
 
 $("input[title$='Workers Comp Case?']").change(function(){
-alert("wcc");
 	if (!$("input[oldtitle$='Workers Comp Case?']").is(':checked')){
-		alert("unticked wcc");
 		if ($("input[title$='Classification']").val().substring(0, 3)=="LTA" || $("input[title$='Classification']").val().substring(0, 3)=="RWC" || $("input[title$='Classification']").val().substring(0, 3)=="MTC"){
-		alert("recordables");
+		alert($("input[title$='Classification']").options[$("input[title$='Classification']").selectedIndex].text);
 			$("nobr:containsExactCase('Why not a Recordable')").parent('h3').parent('td').parent('tr').show();
 		} else {
 			$("nobr:containsExactCase('Why not a Recordable')").parent('h3').parent('td').parent('tr').hide();
