@@ -325,18 +325,18 @@ $("input[title$='Corrective Action Needed']").change(function(){
 	$("nobr:containsExactCase('CA Responsible Person')").parent('h3').parent('td').parent('tr').toggle();
 	$("nobr:containsExactCase('CA Due Date')").parent('h3').parent('td').parent('tr').toggle();
 	$("nobr:containsExactCase('CA Completed')").parent('h3').parent('td').parent('tr').toggle();
-	if (!$("input[title$='Corrective Action Needed']").is(':checked')){
+	if (!$("input[oldtitle$='Corrective Action Needed']").is(':checked')){
 		$("textarea[oldtitle$='Corrective Action']").val("");
 		$().SPServices.SPFindPeoplePicker({
 			peoplePickerDisplayName: "CA Responsible Person",
 			valueToSet: ""
 		});
 		$("input[title$='CA Due Date']").val("");
-		$("input[title$='CA Completed']").removeAttr('checked');
+		$("input[oldtitle$='CA Completed']").removeAttr('checked');
 		$("textarea[oldtitle$='CA Completed - Comments']").val("");
 		$("input[title$='CA Completed By']").val("");
 		$("input[title$='CA Completed Date']").val("");
-		$("input[title$='CA Completion Verified/Close Out']").removeAttr('checked');
+		$("input[oldtitle$='CA Completion Verified/Close Out']").removeAttr('checked');
 		$("textarea[oldtitle$='CA Close Out Comments']").val("");
 		$("input[title$='CA Closed Out By']").val("");
 		$("input[title$='CA Close Out Date']").val("");
@@ -344,7 +344,7 @@ $("input[title$='Corrective Action Needed']").change(function(){
 		$("nobr:containsExactCase('CA Completion Verified/Close Out')").parent('h3').parent('td').parent('tr').hide();
 		$("nobr:containsExactCase('CA Close Out Comments')").parent('h3').parent('td').parent('tr').hide();
     //} else {
-	//	if ($("input[title$='CA Completed']").is(':checked')){
+	//	if ($("input[oldtitle$='CA Completed']").is(':checked')){
     //    $("nobr:containsExactCase('CA Completion Verified/Close Out')").parent('h3').parent('td').parent('tr').show();
 	//	} else {
 	//	$("nobr:containsExactCase('CA Completion Verified/Close Out')").parent('h3').parent('td').parent('tr').hide();
@@ -354,14 +354,14 @@ $("input[title$='Corrective Action Needed']").change(function(){
 
 $("input[title$='CA Completed']").change(function(){
 	$("nobr:containsExactCase('CA Completed - Comments')").parent('h3').parent('td').parent('tr').toggle();
-	if ($("input[title$='CA Completed']").is(':checked')){
+	if ($("input[oldtitle$='CA Completed']").is(':checked')){
         $("input[title$='CA Completed By']").val(thisUserAccount.Title);
         $("input[title$='CA Completed Date']").val(today);
 		$("nobr:containsExactCase('CA Completion Verified/Close Out')").parent('h3').parent('td').parent('tr').show();
     } else {
 		$("textarea[oldtitle$='CA Completed - Comments']").val("");
 		$("nobr:containsExactCase('CA Completion Verified/Close Out')").parent('h3').parent('td').parent('tr').hide();
-		$("input[title$='CA Completion Verified/Close Out']").removeAttr('checked');
+		$("input[oldtitle$='CA Completion Verified/Close Out']").removeAttr('checked');
         $("input[title$='CA Completed By']").val("");
         $("input[title$='CA Completed Date']").val("");
     }
@@ -369,7 +369,7 @@ $("input[title$='CA Completed']").change(function(){
 
 $("input[title$='CA Completion Verified/Close Out']").change(function(){
 	$("nobr:containsExactCase('CA Close Out Comments')").parent('h3').parent('td').parent('tr').toggle();
-	if ($("input[title$='CA Completion Verified/Close Out']").is(':checked')){
+	if ($("input[oldtitle$='CA Completion Verified/Close Out']").is(':checked')){
         $("input[title$='CA Closed Out By']").val(thisUserAccount.Title);
         $("input[title$='CA Close Out Date']").val(today);
     } else {
@@ -701,6 +701,13 @@ $("select[title$='Feedback Channel']").qtip({
     }
 });
 
+$("input[title$='Corrective Action Needed']").qtip({
+    content: {
+        text: 'Please tick the checkbox if a corrective action is needed.',
+		title: 'Manager / Investigator to complete'
+    }
+});
+
 $("textarea[title$='Corrective Action']").qtip({ 
     content: {
       text: 'Please initiate the Corrective Action so that similar incidents can be prevented in the future. Please clearly specify what need to be done.',
@@ -708,10 +715,24 @@ $("textarea[title$='Corrective Action']").qtip({
     }
 });
 
+$("input[title$='CA Completed']").qtip({
+    content: {
+        text: 'Please tick the checkbox if the corrective action was completed.',
+		title: 'Responsible Person to complete'
+    }
+});
+
 $("textarea[title$='CA Completed - Comments']").qtip({ 
     content: {
       text: 'Please clearly specify what has been done to complete the corrective action.',
       title: 'Responsible Person to complete'
+    }
+});
+
+$("input[title$='CA Completion Verified/Close Out']").qtip({
+    content: {
+        text: 'Please tick the checkbox if the completion of this corrective action was verified so that the corrective action can be closed out.',
+		title: 'Manager / Investigator to complete'
     }
 });
 
