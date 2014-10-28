@@ -341,7 +341,8 @@ $("input[title$='Corrective Action Needed']").change(function(){
 		$("input[title$='CA Closed Out By']").val("");
 		$("input[title$='CA Close Out Date']").val("");
 		$("nobr:containsExactCase('CA Completed - Comments')").parent('h3').parent('td').parent('tr').hide();
-		$("nobr:containsExactCase('CA Completion Verified/Close Out')").parent('h3').parent('td').parent('tr').toggle();
+		$("nobr:containsExactCase('CA Completion Verified/Close Out')").parent('h3').parent('td').parent('tr').hide();
+		$("nobr:containsExactCase('CA Close Out Comments')").parent('h3').parent('td').parent('tr').hide();
     //} else {
 	//	if ($("input[title$='CA Completed']").is(':checked')){
     //    $("nobr:containsExactCase('CA Completion Verified/Close Out')").parent('h3').parent('td').parent('tr').show();
