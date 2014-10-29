@@ -286,7 +286,7 @@ $("input[title$='Location']").qtip({
 
 $("textarea[title$='Description of Incident']").qtip({ 
     content: {
-      text: 'Please DO Not mention any personal health information. Clearly describe what happened. Give as much information as you can.',
+      text: 'Please do NOT mention any personal health information. Clearly describe what happened. Give as much information as you can.',
       title: 'General Guidelines'
     },
     position: {
