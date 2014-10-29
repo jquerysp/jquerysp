@@ -188,16 +188,16 @@ $("input[title$='Any Individual(s) Involved?']").change(function(){
 	if (!$("input[oldtitle$='Any Individual(s) Involved?']").is(':checked')){
 		$("input[title$='Full Name']").val("");
 		$("input[title$='Job Title']").val("");
-		$("select[oldtitle$='Function/Department']").val("");
-		$("select[oldtitle$='Employment Type']").val("");
+		$("select[oldtitle$='Function/Department']").val("");
+		$("select[oldtitle$='Employment Type']").val("");
 		$("input[oldtitle$='Phone Number']").val("");
-		$("select[title$='Shift Name']").val("");
-		$("select[oldtitle$='Incident Time Period']").val("");
+		$("select[title$='Shift Name']").val("");
+		$("select[oldtitle$='Incident Time Period']").val("");
 		$("input[oldtitle$='Injured/Diseased']").removeAttr('checked');
-		$("select[oldtitle$='Type of First Aid']").val("");
+		$("select[oldtitle$='Type of First Aid']").val("");
 		$("textarea[title$='First Aid Treatment']").val("");
-		$("select[title$='Body Part - Primary']").val("");
-		$("select[oldtitle$='Incident Time Period']").val("");
+		$("select[title$='Body Part - Primary']").val("");
+		$("select[oldtitle$='Incident Time Period']").val("");
 		$("nobr:containsExactCase('Body Part - All affected')").parents("tr:first").find('input:checkbox').each(function(){
 			$(this).prop('checked',false);
 		});
@@ -216,9 +216,9 @@ $("input[title$='Injured/Diseased']").change(function(){
 	$("nobr:containsExactCase('Body Part - Primary')").parent('h3').parent('td').parent('tr').toggle();
 	$("nobr:containsExactCase('Body Part - All affected')").parent('h3').parent('td').parent('tr').toggle();
 	if (!$("input[oldtitle$='Injured/Diseased']").is(':checked')){
-		$("select[oldtitle$='Type of First Aid']").val("");
+		$("select[oldtitle$='Type of First Aid']").val("");
 		$("textarea[title$='First Aid Treatment']").val("");
-		$("select[title$='Body Part - Primary']").val("");
+		$("select[title$='Body Part - Primary']").val("");
 		$("nobr:containsExactCase('Body Part - All affected')").parents("tr:first").find('input:checkbox').each(function(){
 			$(this).prop('checked',false);
 		});
@@ -237,14 +237,14 @@ $("select[title$='Type of First Aid']").change(function(){
 $("input[title$='Vehicle Caused?']").change(function(){
     $("nobr:containsExactCase('Type of Vehicle')").parent('h3').parent('td').parent('tr').toggle();
 	if (!$("input[title$='Vehicle Caused?']").is(':checked')){
-	$("select[title$='Type of Vehicle']").val("");
+	$("select[title$='Type of Vehicle']").val("");
     }
 });
 
 $("input[title$='Property Damaged?']").change(function(){
     $("nobr:containsExactCase('Type of Damage')").parent('h3').parent('td').parent('tr').toggle();
 	if (!$("input[title$='Property Damaged?']").is(':checked')){
-	$("select[title$='Type of Damage']").val("");
+	$("select[title$='Type of Damage']").val("");
     }
 });
 
@@ -252,7 +252,7 @@ $("input[title$='Environmental Impact?']").change(function(){
     $("nobr:containsExactCase('Type of Impact')").parent('h3').parent('td').parent('tr').toggle();
 	$("nobr:containsExactCase('Environmental Impact Details')").parent('h3').parent('td').parent('tr').toggle();
 	if (!$("input[title$='Environmental Impact?']").is(':checked')){
-		$("select[title$='Type of Impact']").val("");
+		$("select[title$='Type of Impact']").val("");
 		$("textarea[oldtitle$='Environmental Impact Details']").val("");
     }
 });
