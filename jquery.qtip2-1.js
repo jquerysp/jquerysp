@@ -230,9 +230,9 @@ $("input[title$='Injured/Diseased']").change(function(){
 	$("nobr:containsExactCase('Notifiable to Authorities?')").parent('h3').parent('td').parent('tr').toggle();
 	$("nobr:containsExactCase('Authority Notification Details')").parent('h3').parent('td').parent('tr').toggle();
 	if (!$("input[oldtitle$='Injured/Diseased']").is(':checked')){
-		$("select[oldtitle$='Type of First Aid']").val(0);
+		$("select[oldtitle$='Type of First Aid']").val("");
 		$("textarea[title$='First Aid Treatment']").val("");
-		$("select[oldtitle$='Body Part - Primary']").val(0);
+		$("select[oldtitle$='Body Part - Primary']").val("");
 		$("nobr:containsExactCase('Body Part - All affected')").parents("tr:first").find('input:checkbox').each(function(){
 			$(this).prop('checked',false);
 		});
