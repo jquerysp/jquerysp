@@ -269,7 +269,7 @@ $("input[title$='Property Damaged?']").change(function(){
 $("input[title$='Environmental Impact?']").change(function(){
     $("nobr:containsExactCase('Type of Impact')").parent('h3').parent('td').parent('tr').toggle();
 	$("nobr:containsExactCase('Environmental Impact Details')").parent('h3').parent('td').parent('tr').toggle();
-	if (!$("input[title$='Environmental Impact?']").is(':checked')){
+	if (!$("input[oldtitle$='Environmental Impact?']").is(':checked')){
 		$("select[title$='Type of Impact']").val("");
 		$("textarea[oldtitle$='Environmental Impact Details']").val("");
 		$("input[oldtitle$='Notifiable to EPA?']").removeAttr('checked');
