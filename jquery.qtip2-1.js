@@ -355,7 +355,7 @@ $("input[title$='Not Work Related']").change(function(){
 		$("input[title$='Investigation Completed']").removeAttr('checked');
 		
 	} else {
-
+		alert("ticked");
 		$("nobr:containsExactCase('Type of Event')").parent('h3').parent('td').parent('tr').show();
 		$("nobr:containsExactCase('Why-Cause 1')").parent('h3').parent('td').parent('tr').show();
 		$("nobr:containsExactCase('Why-Cause 2')").parent('h3').parent('td').parent('tr').show();
