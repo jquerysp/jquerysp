@@ -209,6 +209,14 @@ $("input[title$='Any Individual(s) Involved?']").change(function(){
 		$("nobr:containsExactCase('Body Part - All affected')").parents("tr:first").find('input:checkbox').each(function(){
 			$(this).prop('checked',false);
 		});
+		$("nobr:containsExactCase('Notifiable to Authorities?')").parent('h3').parent('td').parent('tr').hide();
+		$("nobr:containsExactCase('Authority Notification Details')").parent('h3').parent('td').parent('tr').hide();
+		$("nobr:containsExactCase('Nature of Injury/Disease')").parent('h3').parent('td').parent('tr').hide();
+		$("nobr:containsExactCase('Primary Agency')").parent('h3').parent('td').parent('tr').hide();
+		$("select[oldtitle$='Nature of Injury/Disease']").val("");
+		$("select[oldtitle$='Primary Agency']").val("");
+		$("input[oldtitle$='Notifiable to Authorities?']").removeAttr('checked');
+		$("textarea[oldtitle$='Authority Notification Details']").val("");
     }
 	if (!$("input[oldtitle$='Injured/Diseased']").is(':checked')){
 		$("nobr:containsExactCase('Type of First Aid')").parent('h3').parent('td').parent('tr').hide();
