@@ -250,6 +250,7 @@ $("input[title$='Injured/Diseased']").change(function(){
 		$("select[oldtitle$='Primary Agency']").val("");
 		$("input[oldtitle$='Notifiable to Authorities?']").removeAttr('checked');
 		$("textarea[oldtitle$='Authority Notification Details']").val("");
+		$("nobr:containsExactCase('Authority Notification Details')").parent('h3').parent('td').parent('tr').hide();
 	}
 	if ($("input[oldtitle$='Not Work Related']").is(':checked')){
 		$("nobr:containsExactCase('Notifiable to Authorities?')").parent('h3').parent('td').parent('tr').hide();
