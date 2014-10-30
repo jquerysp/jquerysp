@@ -218,6 +218,16 @@ $("input[title$='Any Individual(s) Involved?']").change(function(){
 		$("nobr:containsExactCase('Nature of Injury/Disease')").parent('h3').parent('td').parent('tr').hide();
 		$("nobr:containsExactCase('Primary Agency')").parent('h3').parent('td').parent('tr').hide();
     }
+	if ($("input[oldtitle$='Not Work Related']").is(':checked')){
+		$("nobr:containsExactCase('Notifiable to Authorities?')").parent('h3').parent('td').parent('tr').hide();
+		$("nobr:containsExactCase('Authority Notification Details')").parent('h3').parent('td').parent('tr').hide();
+		$("nobr:containsExactCase('Nature of Injury/Disease')").parent('h3').parent('td').parent('tr').hide();
+		$("nobr:containsExactCase('Primary Agency')").parent('h3').parent('td').parent('tr').hide();
+		$("select[oldtitle$='Nature of Injury/Disease']").val("");
+		$("select[oldtitle$='Primary Agency']").val("");
+		$("input[oldtitle$='Notifiable to Authorities?']").removeAttr('checked');
+		$("textarea[oldtitle$='Authority Notification Details']").val("");
+	}
 });
 
 $("input[title$='Injured/Diseased']").change(function(){
@@ -240,7 +250,19 @@ $("input[title$='Injured/Diseased']").change(function(){
 		$("select[oldtitle$='Primary Agency']").val("");
 		$("input[oldtitle$='Notifiable to Authorities?']").removeAttr('checked');
 		$("textarea[oldtitle$='Authority Notification Details']").val("");
-    }
+	}
+	if ($("input[oldtitle$='Not Work Related']").is(':checked')){
+		$("nobr:containsExactCase('Notifiable to Authorities?')").parent('h3').parent('td').parent('tr').hide();
+		$("nobr:containsExactCase('Authority Notification Details')").parent('h3').parent('td').parent('tr').hide();
+		$("nobr:containsExactCase('Nature of Injury/Disease')").parent('h3').parent('td').parent('tr').hide();
+		$("nobr:containsExactCase('Primary Agency')").parent('h3').parent('td').parent('tr').hide();
+		$("select[oldtitle$='Nature of Injury/Disease']").val("");
+		$("select[oldtitle$='Primary Agency']").val("");
+		$("input[oldtitle$='Notifiable to Authorities?']").removeAttr('checked');
+		$("textarea[oldtitle$='Authority Notification Details']").val("");
+	}
+	
+
 });
 
 $("select[title$='Type of First Aid']").change(function(){
@@ -280,8 +302,79 @@ $("input[title$='Environmental Impact?']").change(function(){
 		$("nobr:containsExactCase('Notifiable to EPA?')").parent('h3').parent('td').parent('tr').hide();
 		$("nobr:containsExactCase('Why Not Notifiable to EPA')").parent('h3').parent('td').parent('tr').hide();
     } else {
-		$("nobr:containsExactCase('Notifiable to EPA?')").parent('h3').parent('td').parent('tr').show();
-		$("nobr:containsExactCase('Why Not Notifiable to EPA')").parent('h3').parent('td').parent('tr').show();
+		if ($("input[oldtitle$='Not Work Related']").is(':checked')){
+			$("nobr:containsExactCase('Notifiable to EPA?')").parent('h3').parent('td').parent('tr').hide();
+			$("nobr:containsExactCase('Why Not Notifiable to EPA')").parent('h3').parent('td').parent('tr').hide();
+		} else {
+			$("nobr:containsExactCase('Notifiable to EPA?')").parent('h3').parent('td').parent('tr').show();
+			$("nobr:containsExactCase('Why Not Notifiable to EPA')").parent('h3').parent('td').parent('tr').show();
+		}
+    }
+});
+
+$("input[title$='Not Work Related']").change(function(){
+	if (!$("input[title$='Not Work Related']").is(':checked')){
+		$("nobr:containsExactCase('Nature of Injury/Disease')").parent('h3').parent('td').parent('tr').hide();
+		$("nobr:containsExactCase('Primary Agency')").parent('h3').parent('td').parent('tr').hide();
+		$("nobr:containsExactCase('Notifiable to Authorities?')").parent('h3').parent('td').parent('tr').hide();
+		$("nobr:containsExactCase('Authority Notification Details')").parent('h3').parent('td').parent('tr').hide();
+		$("nobr:containsExactCase('Notifiable to EPA?')").parent('h3').parent('td').parent('tr').hide();
+		$("nobr:containsExactCase('Why Not Notifiable to EPA')").parent('h3').parent('td').parent('tr').hide();
+		$("nobr:containsExactCase('EPA Notification Details')").parent('h3').parent('td').parent('tr').hide();
+		$("nobr:containsExactCase('Type of Event')").parent('h3').parent('td').parent('tr').hide();
+		$("nobr:containsExactCase('Why-Cause 1')").parent('h3').parent('td').parent('tr').hide();
+		$("nobr:containsExactCase('Why-Cause 2')").parent('h3').parent('td').parent('tr').hide();
+		$("nobr:containsExactCase('Why-Cause 3')").parent('h3').parent('td').parent('tr').hide();
+		$("nobr:containsExactCase('Why-Cause 4')").parent('h3').parent('td').parent('tr').hide();
+		$("nobr:containsExactCase('Why-Cause 5')").parent('h3').parent('td').parent('tr').hide();
+		
+		$("nobr:containsExactCase('Direct Causes')").parent('h3').parent('td').parent('tr').hide();
+		$("nobr:containsExactCase('Root Causes')").parent('h3').parent('td').parent('tr').hide();
+		$("nobr:containsExactCase('Detailed Root Causes')").parent('h3').parent('td').parent('tr').hide();
+		$("nobr:containsExactCase('Feedback Channel')").parent('h3').parent('td').parent('tr').hide();
+		$("nobr:containsExactCase('Investigation Completed')").parent('h3').parent('td').parent('tr').hide();
+		
+		$("select[oldtitle$='Nature of Injury/Disease']").val("");
+		$("select[oldtitle$='Primary Agency']").val("");
+		$("input[oldtitle$='Notifiable to Authorities?']").removeAttr('checked');
+		$("textarea[oldtitle$='Authority Notification Details']").val("");
+		$("input[oldtitle$='Notifiable to EPA?']").removeAttr('checked');
+		$("textarea[oldtitle$='Why Not Notifiable to EPA']").val("");
+		$("textarea[oldtitle$='EPA Notification Details']").val("");
+		$("select[oldtitle$='Type of Event']").val("");
+		$("textarea[oldtitle$='Why-Cause 1']").val("");
+		$("textarea[title$='Why-Cause 2']").val("");
+		$("textarea[title$='Why-Cause 3']").val("");
+		$("textarea[title$='Why-Cause 4']").val("");
+		$("textarea[title$='Why-Cause 5']").val("");
+		$("select[title$='Direct Causes']").val(0);
+		$("select[title$='Root Causes']").val(0);
+		$("select[title$='Detailed Root Causes']").val(0);
+		
+		$("select[oldtitle$='Feedback Channel']").val("");
+		$("input[title$='Investigation Completed']").removeAttr('checked');
+		
+	} else {
+		if ($("input[oldtitle$='Injured/Diseased']").is(':checked')){
+			$("nobr:containsExactCase('Nature of Injury/Disease')").parent('h3').parent('td').parent('tr').show();
+			$("nobr:containsExactCase('Primary Agency')").parent('h3').parent('td').parent('tr').show();
+			$("nobr:containsExactCase('Notifiable to Authorities?')").parent('h3').parent('td').parent('tr').show();
+		}
+		if ($("input[oldtitle$='Environmental Impact?']").is(':checked')){
+			$("nobr:containsExactCase('Notifiable to EPA?')").parent('h3').parent('td').parent('tr').show();
+			$("nobr:containsExactCase('Why Not Notifiable to EPA')").parent('h3').parent('td').parent('tr').show();
+		}
+		$("nobr:containsExactCase('Type of Event')").parent('h3').parent('td').parent('tr').show();
+		$("nobr:containsExactCase('Why-Cause 1')").parent('h3').parent('td').parent('tr').show();
+		$("nobr:containsExactCase('Why-Cause 2')").parent('h3').parent('td').parent('tr').show();
+		$("nobr:containsExactCase('Why-Cause 3')").parent('h3').parent('td').parent('tr').show();
+		$("nobr:containsExactCase('Why-Cause 4')").parent('h3').parent('td').parent('tr').show();
+		$("nobr:containsExactCase('Why-Cause 5')").parent('h3').parent('td').parent('tr').show();
+		$("nobr:containsExactCase('Direct Causes')").parent('h3').parent('td').parent('tr').show();
+		$("nobr:containsExactCase('Root Causes')").parent('h3').parent('td').parent('tr').show();
+		$("nobr:containsExactCase('Detailed Root Causes')").parent('h3').parent('td').parent('tr').show();
+		$("nobr:containsExactCase('Feedback Channel')").parent('h3').parent('td').parent('tr').show();
+		$("nobr:containsExactCase('Investigation Completed')").parent('h3').parent('td').parent('tr').show();
     }
 });
 
