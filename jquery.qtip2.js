@@ -243,8 +243,10 @@ $("input[title$='Vehicle Caused?']").change(function(){
 
 $("input[title$='Property Damaged?']").change(function(){
     $("nobr:containsExactCase('Type of Damage')").parent('h3').parent('td').parent('tr').toggle();
+	$("nobr:containsExactCase('Property Damaged Details')").parent('h3').parent('td').parent('tr').toggle();
 	if (!$("input[title$='Property Damaged?']").is(':checked')){
-	$("select[title$='Type of Damage']").val("");
+		$("select[title$='Type of Damage']").val("");
+		$("textarea[oldtitle$='Property Damaged Details']").val("");
     }
 });
 
@@ -430,6 +432,18 @@ $("input[title$='Vehicle Caused?']").qtip({
 $("input[title$='Property Damaged?']").qtip({ 
     content: {
         text: 'Tick the checkbox if this incident caused any property damage such as buildings, plants, vehicles, etc.'
+    }
+});
+
+$("textarea[title$='Property Damaged Details']").qtip({ 
+    content: {
+      text: 'Please provide specifics of the property damage in this incident. Please provide as much information as possible.',
+      title: 'General Guidelines'
+    },
+    position: {
+        adjust: {
+            x: 215
+        }
     }
 });
 
