@@ -238,7 +238,6 @@ $("input[title$='Injured/Diseased']").change(function(){
 	$("nobr:containsExactCase('Nature of Injury/Disease')").parent('h3').parent('td').parent('tr').toggle();
 	$("nobr:containsExactCase('Primary Agency')").parent('h3').parent('td').parent('tr').toggle();
 	$("nobr:containsExactCase('Notifiable to Authorities?')").parent('h3').parent('td').parent('tr').toggle();
-	$("nobr:containsExactCase('Authority Notification Details')").parent('h3').parent('td').parent('tr').toggle();
 	if (!$("input[oldtitle$='Injured/Diseased']").is(':checked')){
 		$("select[oldtitle$='Type of First Aid']").val("");
 		$("textarea[title$='First Aid Treatment']").val("");
