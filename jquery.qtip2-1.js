@@ -313,7 +313,7 @@ $("input[title$='Environmental Impact?']").change(function(){
 });
 
 $("input[title$='Not Work Related']").change(function(){
-	if (!$("input[title$='Not Work Related']").is(':checked')){
+	if ($("input[title$='Not Work Related']").is(':checked')){
 		$("nobr:containsExactCase('Nature of Injury/Disease')").parent('h3').parent('td').parent('tr').hide();
 		$("nobr:containsExactCase('Primary Agency')").parent('h3').parent('td').parent('tr').hide();
 		$("nobr:containsExactCase('Notifiable to Authorities?')").parent('h3').parent('td').parent('tr').hide();
