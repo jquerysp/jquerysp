@@ -313,7 +313,7 @@ $("input[title$='Environmental Impact?']").change(function(){
 });
 
 $("input[title$='Not Work Related']").change(function(){
-	if ($("input[title$='Not Work Related']").is(':checked')){
+	if ($("input[oldtitle$='Not Work Related']").is(':checked')){
 		$("nobr:containsExactCase('Nature of Injury/Disease')").parent('h3').parent('td').parent('tr').hide();
 		$("nobr:containsExactCase('Primary Agency')").parent('h3').parent('td').parent('tr').hide();
 		$("nobr:containsExactCase('Notifiable to Authorities?')").parent('h3').parent('td').parent('tr').hide();
@@ -355,7 +355,6 @@ $("input[title$='Not Work Related']").change(function(){
 		$("input[title$='Investigation Completed']").removeAttr('checked');
 		
 	} else {
-		alert("ticked");
 		$("nobr:containsExactCase('Type of Event')").parent('h3').parent('td').parent('tr').show();
 		$("nobr:containsExactCase('Why-Cause 1')").parent('h3').parent('td').parent('tr').show();
 		$("nobr:containsExactCase('Why-Cause 2')").parent('h3').parent('td').parent('tr').show();
