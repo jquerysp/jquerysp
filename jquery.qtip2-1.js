@@ -355,11 +355,7 @@ $("input[title$='Not Work Related']").change(function(){
 		$("input[title$='Investigation Completed']").removeAttr('checked');
 		
 	} else {
-		if ($("input[oldtitle$='Injured/Diseased']").is(':checked')){
-			$("nobr:containsExactCase('Nature of Injury/Disease')").parent('h3').parent('td').parent('tr').show();
-			$("nobr:containsExactCase('Primary Agency')").parent('h3').parent('td').parent('tr').show();
-			$("nobr:containsExactCase('Notifiable to Authorities?')").parent('h3').parent('td').parent('tr').show();
-		}
+
 		$("nobr:containsExactCase('Type of Event')").parent('h3').parent('td').parent('tr').show();
 		$("nobr:containsExactCase('Why-Cause 1')").parent('h3').parent('td').parent('tr').show();
 		$("nobr:containsExactCase('Why-Cause 2')").parent('h3').parent('td').parent('tr').show();
@@ -371,7 +367,11 @@ $("input[title$='Not Work Related']").change(function(){
 		$("nobr:containsExactCase('Detailed Root Causes')").parent('h3').parent('td').parent('tr').show();
 		$("nobr:containsExactCase('Feedback Channel')").parent('h3').parent('td').parent('tr').show();
 		$("nobr:containsExactCase('Investigation Completed')").parent('h3').parent('td').parent('tr').show();
-		
+		if ($("input[oldtitle$='Injured/Diseased']").is(':checked')){
+			$("nobr:containsExactCase('Nature of Injury/Disease')").parent('h3').parent('td').parent('tr').show();
+			$("nobr:containsExactCase('Primary Agency')").parent('h3').parent('td').parent('tr').show();
+			$("nobr:containsExactCase('Notifiable to Authorities?')").parent('h3').parent('td').parent('tr').show();
+		}		
 		if ($("input[oldtitle$='Environmental Impact?']").is(':checked')){
 			$("nobr:containsExactCase('Notifiable to EPA?')").parent('h3').parent('td').parent('tr').show();
 			$("nobr:containsExactCase('Why Not Notifiable to EPA')").parent('h3').parent('td').parent('tr').show();
