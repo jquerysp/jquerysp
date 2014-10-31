@@ -112,8 +112,11 @@ $().SPServices.SPArrangeChoices({
 	columnName: "Body Part - All affected",
 	perRow: 3
 });
-  
 
+$("legend:containsExactCase('Investigation - Manager / Investigator to Complete')").parent('fieldset').parent('div').parent('td').parent('tr').hide(); 
+$("legend:containsExactCase('Corrective Action - Manager / Investigator / Responsible Person to Complete')").parent('fieldset').parent('div').parent('td').parent('tr').hide(); 
+$("legend:containsExactCase('Classification and Miscellaneous - WHS Coordinator to Complete')").parent('fieldset').parent('div').parent('td').parent('tr').hide(); 
+$("legend:containsExactCase('Safety Matrix Related - WHS Coordinator to Complete')").parent('fieldset').parent('div').parent('td').parent('tr').hide(); 
 
 $("input[title$='Any Witnesses']").change(function(){
     $("nobr:containsExactCase('Witness Information')").parent('h3').parent('td').parent('tr').toggle();
