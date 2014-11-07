@@ -116,7 +116,7 @@ $().SPServices.SPArrangeChoices({
 $("legend:containsExactCase('Investigation - Manager / Investigator to Complete')").parent('fieldset').parent('div').parent('td').parent('tr').hide(); 
 $("legend:containsExactCase('Corrective Action - Manager / Investigator / Responsible Person to Complete')").parent('fieldset').parent('div').parent('td').parent('tr').hide(); 
 $("legend:containsExactCase('Classification and Miscellaneous - WHS Coordinator to Complete')").parent('fieldset').parent('div').parent('td').parent('tr').hide(); 
-$("legend:containsExactCase('Safety Matrix Related - WHS Coordinator to Complete')").parent('fieldset').parent('div').parent('td').parent('tr').hide(); 
+ 
 
 $("input[title$='Any Witnesses']").change(function(){
     $("nobr:containsExactCase('Witness Information')").parent('h3').parent('td').parent('tr').toggle();
@@ -179,16 +179,16 @@ $("input[title$='Production Related?']").change(function(){
     }
 });
 
-$("input[title$='Any Individual(s) Involved?']").change(function(){
+$("input[title$='Individual Affected?']").change(function(){
 	$("nobr:containsExactCase('Full Name')").parent('h3').parent('td').parent('tr').toggle();
 	$("nobr:containsExactCase('Phone Number')").parent('h3').parent('td').parent('tr').toggle();
 	$("nobr:containsExactCase('Job Title')").parent('h3').parent('td').parent('tr').toggle();
 	$("nobr:containsExactCase('Shift Name')").parent('h3').parent('td').parent('tr').toggle();
 	$("nobr:containsExactCase('Employment Type')").parent('h3').parent('td').parent('tr').toggle();
 	$("nobr:containsExactCase('Function/Department')").parent('h3').parent('td').parent('tr').toggle();
-	$("nobr:containsExactCase('Injured/Diseased')").parent('h3').parent('td').parent('tr').toggle();
+	$("nobr:containsExactCase('Injured/Disease')").parent('h3').parent('td').parent('tr').toggle();
 	$("nobr:containsExactCase('Incident Time Period')").parent('h3').parent('td').parent('tr').toggle();
-	if (!$("input[oldtitle$='Any Individual(s) Involved?']").is(':checked')){
+	if (!$("input[oldtitle$='Individual Affected?']").is(':checked')){
 		$("input[title$='Full Name']").val("");
 		$("input[title$='Job Title']").val("");
 		$("select[oldtitle$='Function/Department']").val("");
@@ -196,7 +196,7 @@ $("input[title$='Any Individual(s) Involved?']").change(function(){
 		$("input[oldtitle$='Phone Number']").val("");
 		$("select[title$='Shift Name']").val("");
 		$("select[oldtitle$='Incident Time Period']").val("");
-		$("input[oldtitle$='Injured/Diseased']").removeAttr('checked');
+		$("input[oldtitle$='Injured/Disease']").removeAttr('checked');
 		$("select[oldtitle$='Type of First Aid']").val("");
 		$("textarea[title$='First Aid Treatment']").val("");
 		$("select[title$='Body Part - Primary']").val("");
@@ -205,7 +205,7 @@ $("input[title$='Any Individual(s) Involved?']").change(function(){
 			$(this).prop('checked',false);
 		});
     }
-	if (!$("input[oldtitle$='Injured/Diseased']").is(':checked')){
+	if (!$("input[oldtitle$='Injured/Disease']").is(':checked')){
 		$("nobr:containsExactCase('Type of First Aid')").parent('h3').parent('td').parent('tr').hide();
 		$("nobr:containsExactCase('First Aid Treatment')").parent('h3').parent('td').parent('tr').hide();
 		$("nobr:containsExactCase('Body Part - Primary')").parent('h3').parent('td').parent('tr').hide();
@@ -213,12 +213,12 @@ $("input[title$='Any Individual(s) Involved?']").change(function(){
     }
 });
 
-$("input[title$='Injured/Diseased']").change(function(){
+$("input[title$='Injured/Disease']").change(function(){
 	$("nobr:containsExactCase('Type of First Aid')").parent('h3').parent('td').parent('tr').toggle();
 	$("nobr:containsExactCase('First Aid Treatment')").parent('h3').parent('td').parent('tr').hide();
 	$("nobr:containsExactCase('Body Part - Primary')").parent('h3').parent('td').parent('tr').toggle();
 	$("nobr:containsExactCase('Body Part - All affected')").parent('h3').parent('td').parent('tr').toggle();
-	if (!$("input[oldtitle$='Injured/Diseased']").is(':checked')){
+	if (!$("input[oldtitle$='Injured/Disease']").is(':checked')){
 		$("select[oldtitle$='Type of First Aid']").val("");
 		$("textarea[title$='First Aid Treatment']").val("");
 		$("select[title$='Body Part - Primary']").val("");
@@ -349,9 +349,9 @@ $("textarea[title$='5W1H - the How']").qtip({
     },
 });
 
-$("input[title$='Any Individual(s) Involved?']").qtip({ 
+$("input[title$='Individual Affected?']").qtip({ 
     content: {
-        text: 'Please tick the checkbox if someone is involved. When more than one person is involved, only identify the primary one.'
+        text: 'Please tick the checkbox if someone is affected. When more than one person is affected, only identify the primary one.'
     }
 });
 
@@ -391,7 +391,7 @@ $("nobr:contains('Immediate Manager or Investigator')").parent('h3').parent('td'
     }
 });
 
-$("input[title$='Injured/Diseased']").qtip({ 
+$("input[title$='Injured/Disease']").qtip({ 
     content: {
         text: 'Tick the checkbox only when the person is injured or diseased.'
     }
