@@ -915,6 +915,9 @@ $("textarea[title$='Comments']").qtip({
 $("select[title$='Root Causes - S.Mat']").qtip({ 
     content: {
         text: 'Here are some examples for each root cause:<br><br><b>Unsafe Act - 1. Competence Knowledge</b><br><ul>  <li>Inadequate training, Little or no experience in specific job</li></ul><b>Unsafe Act - 2. Attitude Behavior</b><br><ul><li>Negligence, Incorrect/lack of use of PPE, No regard of safety rules</li><li>Work cycles out of sequence</li><li>Dubious event</li></ul><b>Unsafe Act - 3. Management</b><br><ul><li>Lack of training, Poor physical attitude known, PPE not available/inadequate</li><li>Maintenance/cleaning cycle not performed<li>No regard of procedures and regulations</li></ul><b>Unsafe Act - 4. Precautions Attention</b><br><ul><li>Lack of attention, Misunderstanding</li><li>Operations not scheduled</li></ul><b>Unsafe Act - 5. Personal Conditions</b><br><ul> <li>Mental/Physical deficiency/instability</li><li>Impaired state - due to alcohol, drugs, Pr.Med</li>  <li>Familial/health/personal problems</li></ul><b>Unsafe Condition - 6. Tools Equipments</b><br><ul>  <li>Tool/equipment insufficient, Lack of maintenance, Weakness in design</li>  <li>Unexpected running of equipment/tool, Unschedule cleaning cycles, Incorrect install/fabrication</li>  <li>Climatic condition</li><li>Insufficient lighting, Excessive noise</li></ul><b>Unsafe Condition - 7. Procedures Systems</b><br><ul><li>Lack of/insufficient/unclear/undefined standard procedures</li><li>PPE inadquate/unexpected</li></ul>'
+    },
+	style: {
+        width: 600
     }
 });
 
