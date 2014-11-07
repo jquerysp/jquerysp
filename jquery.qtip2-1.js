@@ -107,6 +107,16 @@ today = dd+'/'+mm+'/'+yyyy;
 	simpleChild: true,
 	childColumn: "Detailed Root Causes"
   });
+  
+  $().SPServices.SPCascadeDropdowns({
+    relationshipList: "ir_cm",
+    relationshipListParentColumn: "rc",
+    relationshipListChildColumn: "Title",
+    relationshipListSortColumn: "ID",
+    parentColumn: "Root Causes - S.Mat",
+	simpleChild: true,
+	childColumn: "Countermeasures"
+  });
 
 $().SPServices.SPArrangeChoices({
 	columnName: "Body Part - All affected",
@@ -184,16 +194,16 @@ $("input[title$='Production Related?']").change(function(){
 
 
 
-$("input[title$='Any Individual(s) Involved?']").change(function(){
+$("input[title$='Individual Affected?']").change(function(){
 	$("nobr:containsExactCase('Full Name')").parent('h3').parent('td').parent('tr').toggle();
 	$("nobr:containsExactCase('Phone Number')").parent('h3').parent('td').parent('tr').toggle();
 	$("nobr:containsExactCase('Job Title')").parent('h3').parent('td').parent('tr').toggle();
 	$("nobr:containsExactCase('Shift Name')").parent('h3').parent('td').parent('tr').toggle();
 	$("nobr:containsExactCase('Employment Type')").parent('h3').parent('td').parent('tr').toggle();
 	$("nobr:containsExactCase('Function/Department')").parent('h3').parent('td').parent('tr').toggle();
-	$("nobr:containsExactCase('Injured/Diseased')").parent('h3').parent('td').parent('tr').toggle();
+	$("nobr:containsExactCase('Injured/Disease')").parent('h3').parent('td').parent('tr').toggle();
 	$("nobr:containsExactCase('Incident Time Period')").parent('h3').parent('td').parent('tr').toggle();
-	if (!$("input[oldtitle$='Any Individual(s) Involved?']").is(':checked')){
+	if (!$("input[oldtitle$='Individual Affected?']").is(':checked')){
 		$("input[title$='Full Name']").val("");
 		$("input[title$='Job Title']").val("");
 		$("select[oldtitle$='Function/Department']").val("");
@@ -201,7 +211,7 @@ $("input[title$='Any Individual(s) Involved?']").change(function(){
 		$("input[oldtitle$='Phone Number']").val("");
 		$("select[title$='Shift Name']").val("");
 		$("select[oldtitle$='Incident Time Period']").val("");
-		$("input[oldtitle$='Injured/Diseased']").removeAttr('checked');
+		$("input[oldtitle$='Injured/Disease']").removeAttr('checked');
 		$("select[oldtitle$='Type of First Aid']").val("");
 		$("textarea[title$='First Aid Treatment']").val("");
 		$("select[title$='Body Part - Primary']").val("");
@@ -218,7 +228,7 @@ $("input[title$='Any Individual(s) Involved?']").change(function(){
 		$("input[oldtitle$='Notifiable to Authorities?']").removeAttr('checked');
 		$("textarea[oldtitle$='Authority Notification Details']").val("");
     }
-	if (!$("input[oldtitle$='Injured/Diseased']").is(':checked')){
+	if (!$("input[oldtitle$='Injured/Disease']").is(':checked')){
 		$("nobr:containsExactCase('Type of First Aid')").parent('h3').parent('td').parent('tr').hide();
 		$("nobr:containsExactCase('First Aid Treatment')").parent('h3').parent('td').parent('tr').hide();
 		$("nobr:containsExactCase('Body Part - Primary')").parent('h3').parent('td').parent('tr').hide();
@@ -238,7 +248,7 @@ $("input[title$='Any Individual(s) Involved?']").change(function(){
 	}
 });
 
-$("input[title$='Injured/Diseased']").change(function(){
+$("input[title$='Injured/Disease']").change(function(){
 	$("nobr:containsExactCase('Type of First Aid')").parent('h3').parent('td').parent('tr').toggle();
 	$("nobr:containsExactCase('First Aid Treatment')").parent('h3').parent('td').parent('tr').hide();
 	$("nobr:containsExactCase('Body Part - Primary')").parent('h3').parent('td').parent('tr').toggle();
@@ -246,7 +256,7 @@ $("input[title$='Injured/Diseased']").change(function(){
 	$("nobr:containsExactCase('Nature of Injury/Disease')").parent('h3').parent('td').parent('tr').toggle();
 	$("nobr:containsExactCase('Primary Agency')").parent('h3').parent('td').parent('tr').toggle();
 	$("nobr:containsExactCase('Notifiable to Authorities?')").parent('h3').parent('td').parent('tr').toggle();
-	if (!$("input[oldtitle$='Injured/Diseased']").is(':checked')){
+	if (!$("input[oldtitle$='Injured/Disease']").is(':checked')){
 		$("select[oldtitle$='Type of First Aid']").val("");
 		$("textarea[title$='First Aid Treatment']").val("");
 		$("select[title$='Body Part - Primary']").val("");
@@ -374,7 +384,7 @@ $("input[title$='Not Work Related']").change(function(){
 		$("nobr:containsExactCase('Detailed Root Causes')").parent('h3').parent('td').parent('tr').show();
 		$("nobr:containsExactCase('Feedback Channel')").parent('h3').parent('td').parent('tr').show();
 		$("nobr:containsExactCase('Investigation Completed')").parent('h3').parent('td').parent('tr').show();
-		if ($("input[oldtitle$='Injured/Diseased']").is(':checked')){
+		if ($("input[oldtitle$='Injured/Disease']").is(':checked')){
 			$("nobr:containsExactCase('Nature of Injury/Disease')").parent('h3').parent('td').parent('tr').show();
 			$("nobr:containsExactCase('Primary Agency')").parent('h3').parent('td').parent('tr').show();
 			$("nobr:containsExactCase('Notifiable to Authorities?')").parent('h3').parent('td').parent('tr').show();
@@ -613,9 +623,9 @@ $("textarea[title$='5W1H - the How']").qtip({
     },
 });
 
-$("input[title$='Any Individual(s) Involved?']").qtip({ 
+$("input[title$='Individual Affected?']").qtip({ 
     content: {
-        text: 'Please tick the checkbox if someone is involved. When more than one person is involved, only identify the primary one.'
+        text: 'Please tick the checkbox if someone is affected. When more than one person is affected, only identify the primary one.'
     }
 });
 
@@ -649,7 +659,7 @@ $("nobr:contains('Immediate Manager or Investigator')").parent('h3').parent('td'
     }
 });
 
-$("input[title$='Injured/Diseased']").qtip({ 
+$("input[title$='Injured/Disease']").qtip({ 
     content: {
         text: 'Tick the checkbox only when the person is injured or diseased.'
     }
@@ -902,10 +912,11 @@ $("textarea[title$='Comments']").qtip({
     }
 });
 
-
-
-
-
+$("select[title$='Root Causes - S.Mat']").qtip({ 
+    content: {
+        text: 'Here are some examples for each root cause:<br><b>Unsafe Act - 1. Competence Knowledge</b><br><ul>  <li>Inadequate training</li><li>Little or no experience in specific job</li></ul><b>Unsafe Act - 2. Attitude Behavior</b><br><ul><li>Negligence</li><li>Incorrect use of PPE</li><li>No regard of safety rules</li><li>Work cycles out of sequence</li><li>Lack of use of PPE</li><li>Dubious event</li></ul><b>Unsafe Act - 3. Management</b><br><ul><li>Lack of training</li><li>Poor physical attitude known</li><li>PPE not available</li><li>Inadequate PPE</li><li>Physical attitude</li> <li>Maintenance not performed</li><li>Cleaning cycle not performed</li><li>No regard of procedures and regulations</li></ul><b>Unsafe Act - 4. Precautions Attention</b><br><ul><li>Lack of attention</li><li>Operations not scheduled</li><li>Misunderstanding</li><li>Not correct use of PPE</li></ul><b>Unsafe Act - 5. Personal Conditions</b><br><ul> <li>Mental deficiency/instability</li><li>Physical deficiency/instability</li>  <li>Impaired state - due to alcohol, drugs, Pr.Med</li>  <li>Familial problems</li>  <li>Health problems</li>  <li>Unexpected illness</li>  <li>Personal problems</li></ul><b>Unsafe Condition - 6. Tools Equipments</b><br><ul>  <li>Tool/equipment insufficient</li>  <li>Lack of maintenance</li>  <li>Weakness design</li>  <li>Unexpected running of equipment/tool</li>  <li>Unschedule cleaning cycles</li>  <li>Climatic condition</li>  <li>Incorrect install/fabrication</li>  <li>Insufficient lighting</li>  <li>Excessive noise</li></ul><b>Unsafe Condition - 7. Procedures Systems</b><br><ul>  <li>Lack of standard procedures</li>  <li>Insufficient procedures</li>  <li>Undefined roles</li>  <li>Unclear procedures</li>  <li>Undefined safety practices and procedures</li>  <li>PPE inadquate</li>  <li>PPE unexpected</li></ul>'
+    }
+});
 
 
 
