@@ -434,17 +434,20 @@ if ($("input[title$='Investigation Completed']").is(':checked')){
 });
 
 $("input[title$='Corrective Action Needed']").change(function(){
-    $("nobr:containsExactCase('Corrective Action')").parent('h3').parent('td').parent('tr').toggle();
+    $("nobr:containsExactCase('Root Causes - S.Mat')").parent('h3').parent('td').parent('tr').toggle();
+	$("nobr:containsExactCase('Countermeasures')").parent('h3').parent('td').parent('tr').toggle();
+	$("nobr:containsExactCase('Corrective Action')").parent('h3').parent('td').parent('tr').toggle();
 	$("nobr:containsExactCase('CA Responsible Person')").parent('h3').parent('td').parent('tr').toggle();
 	$("nobr:containsExactCase('CA Due Date')").parent('h3').parent('td').parent('tr').toggle();
 	$("nobr:containsExactCase('CA Completed')").parent('h3').parent('td').parent('tr').toggle();
 	if (!$("input[oldtitle$='Corrective Action Needed']").is(':checked')){
 		$("textarea[oldtitle$='Corrective Action']").val("");
-
+		$("select[title$='Root Causes - S.Mat']").find('option:first').attr('selected', 'selected');
+		$("select[title$='Countermeasures']").val(0);
 		
-		if (document.getElementById('ctl00_m_g_a0e6e363_500e_4f4a_97ef_18c7499447e8_ctl00_ListFieldIterator2_ctl71_ctl00_ctl00_ctl04_ctl00_ctl00_UserField_upLevelDiv') != null) {
-			document.getElementById('ctl00_m_g_a0e6e363_500e_4f4a_97ef_18c7499447e8_ctl00_ListFieldIterator2_ctl71_ctl00_ctl00_ctl04_ctl00_ctl00_UserField_upLevelDiv').innerHTML = '';
-			updateControlValue('ctl00_m_g_a0e6e363_500e_4f4a_97ef_18c7499447e8_ctl00_ListFieldIterator2_ctl71_ctl00_ctl00_ctl04_ctl00_ctl00_UserField');
+		if (document.getElementById('ctl00_m_g_a0e6e363_500e_4f4a_97ef_18c7499447e8_ctl00_ListFieldIterator2_ctl74_ctl00_ctl00_ctl04_ctl00_ctl00_UserField_upLevelDiv') != null) {
+			document.getElementById('ctl00_m_g_a0e6e363_500e_4f4a_97ef_18c7499447e8_ctl00_ListFieldIterator2_ctl74_ctl00_ctl00_ctl04_ctl00_ctl00_UserField_upLevelDiv').innerHTML = '';
+			updateControlValue('ctl00_m_g_a0e6e363_500e_4f4a_97ef_18c7499447e8_ctl00_ListFieldIterator2_ctl74_ctl00_ctl00_ctl04_ctl00_ctl00_UserField');
 		}
 		
 		$("input[title$='CA Due Date']").val("");
@@ -499,7 +502,7 @@ $("input[title$='Process Safety Incident?']").change(function(){
 
 $("input[title$='Workers Comp Case?']").change(function(){
 	if ($("input[oldtitle$='Workers Comp Case?']").is(':checked')){
-		if (!($("select[title$='Incident Classification']").val().substring(0, 3)=="LTA" || $("select[title$='Incident Classification']").val().substring(0, 3)=="RWC" || $("select[title$='Incident Classification']").val().substring(0, 3)=="MTC")){
+		if (!($("select[title$='Unilever Incident Classification']").val().substring(0, 3)=="LTA" || $("select[title$='Unilever Incident Classification']").val().substring(0, 3)=="RWC" || $("select[title$='Unilever Incident Classification']").val().substring(0, 3)=="MTC")){
 			$("nobr:containsExactCase('Why not a Recordable')").parent('h3').parent('td').parent('tr').show();
 		} else {
 			$("nobr:containsExactCase('Why not a Recordable')").parent('h3').parent('td').parent('tr').hide();
@@ -511,9 +514,9 @@ $("input[title$='Workers Comp Case?']").change(function(){
 	}
 });
 
-$("select[title$='Incident Classification']").change(function(){
+$("select[title$='Unilever Incident Classification']").change(function(){
 	if ($("input[oldtitle$='Workers Comp Case?']").is(':checked')){
-		if (!($("select[title$='Incident Classification']").val().substring(0, 3)=="LTA" || $("select[title$='Incident Classification']").val().substring(0, 3)=="RWC" || $("select[title$='Incident Classification']").val().substring(0, 3)=="MTC")){
+		if (!($("select[title$='Unilever Incident Classification']").val().substring(0, 3)=="LTA" || $("select[title$='Unilever Incident Classification']").val().substring(0, 3)=="RWC" || $("select[title$='Unilever Incident Classification']").val().substring(0, 3)=="MTC")){
 			$("nobr:containsExactCase('Why not a Recordable')").parent('h3').parent('td').parent('tr').show();
 		} else {
 			$("nobr:containsExactCase('Why not a Recordable')").parent('h3').parent('td').parent('tr').hide();
