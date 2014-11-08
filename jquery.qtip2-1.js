@@ -442,7 +442,7 @@ $("input[title$='Corrective Action Needed']").change(function(){
 	$("nobr:containsExactCase('CA Completed')").parent('h3').parent('td').parent('tr').toggle();
 	if (!$("input[oldtitle$='Corrective Action Needed']").is(':checked')){
 		$("textarea[oldtitle$='Corrective Action']").val("");
-		$("select[title$='Root Causes - S.Mat']").find('option:first').attr('selected', 'selected');
+		$("select[title$='Root Causes - S.Mat']").val("");
 		$("select[title$='Countermeasures']").val(0);
 		
 		if (document.getElementById('ctl00_m_g_a0e6e363_500e_4f4a_97ef_18c7499447e8_ctl00_ListFieldIterator2_ctl74_ctl00_ctl00_ctl04_ctl00_ctl00_UserField_upLevelDiv') != null) {
