@@ -110,7 +110,7 @@ today = dd+'/'+mm+'/'+yyyy;
   
   $().SPServices.SPCascadeDropdowns({
     relationshipList: "ir_cm",
-    relationshipListParentColumn: "%5Fx0072%5Fc",
+    relationshipListParentColumn: "ROOTC",
     relationshipListChildColumn: "Title",
     relationshipListSortColumn: "ID",
     parentColumn: "Root Causes - S.Mat",
