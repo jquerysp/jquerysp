@@ -248,7 +248,7 @@ $("input[title$='Property Damaged?']").change(function(){
     $("nobr:containsExactCase('Type of Damage')").parent('h3').parent('td').parent('tr').toggle();
 	$("nobr:containsExactCase('Property Damaged Details')").parent('h3').parent('td').parent('tr').toggle();
 	if (!$("input[title$='Property Damaged?']").is(':checked')){
-		$("select[title$='Type of Damage']").val("");
+		$("select[oldtitle$='Type of Damage']").val("");
 		$("textarea[oldtitle$='Property Damaged Details']").val("");
     }
 });
@@ -428,13 +428,19 @@ $("nobr:contains('Body Part - All affected')").parent('h3').parent('td').parent(
 
 $("input[title$='Vehicle Caused?']").qtip({ 
     content: {
-        text: 'Tick the checkbox if this incident was caused by a motor vehicle.'
+        text: 'Tick the checkbox if this incident was caused by a vehicle including fork lift truck.'
     }
 });
 
 $("input[title$='Property Damaged?']").qtip({ 
     content: {
         text: 'Tick the checkbox if this incident caused any property damage such as buildings, plants, vehicles, etc.'
+    }
+});
+
+$("select[title$='Type of Damage']").qtip({ 
+    content: {
+        text: 'Please select the most significant type of property damage in this incident. Here are some examples: <br><br><b>Storage Racking</b> including warehouse racking and other storage POS racking. <br><b>Roller Doors</b> including rapid roller doors as well as regular roller doors.<br><b>Site Infrastructure</b> including buildings, roads, fence, bollards, water supplies, electrical grid, etc.. <br><b>Plants/Equipment</b> including gas tanks, vessels, ammonia plant, production line, mobile plant, etc..<br><b>Goods/Material</b> including finished goods, raw material, etc..<br><b>Vehicles</b> including all motor vehicles.'
     }
 });
 
