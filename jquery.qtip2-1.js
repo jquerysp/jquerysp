@@ -200,13 +200,11 @@ $("input[title$='Individual Affected?']").change(function(){
 	$("nobr:containsExactCase('Job Title')").parent('h3').parent('td').parent('tr').toggle();
 	$("nobr:containsExactCase('Shift Name')").parent('h3').parent('td').parent('tr').toggle();
 	$("nobr:containsExactCase('Employment Type')").parent('h3').parent('td').parent('tr').toggle();
-	$("nobr:containsExactCase('Function/Department')").parent('h3').parent('td').parent('tr').toggle();
 	$("nobr:containsExactCase('Injured/Disease')").parent('h3').parent('td').parent('tr').toggle();
 	$("nobr:containsExactCase('Incident Time Period')").parent('h3').parent('td').parent('tr').toggle();
 	if (!$("input[oldtitle$='Individual Affected?']").is(':checked')){
 		$("input[title$='Full Name']").val("");
 		$("input[title$='Job Title']").val("");
-		$("select[oldtitle$='Function/Department']").val("");
 		$("select[oldtitle$='Employment Type']").val("");
 		$("input[oldtitle$='Phone Number']").val("");
 		$("select[title$='Shift Name']").val("");
