@@ -144,6 +144,7 @@ $("input[title$='Completed']").change(function(){
 $("input[title$='Verified and Closed']").change(function(){
 	$("nobr:containsExactCase('Comments on Verification')").parent('h3').parent('td').parent('tr').toggle();
 	if ($("input[oldtitle$='Verified and Closed']").is(':checked')){
+		alert("checked")
 		var resper = $().SPFindPeoplePicker({peoplePickerDisplayName: "Responsible Person"});
 		alert(resper);
         if (resper==thisUserAccount.Title){
