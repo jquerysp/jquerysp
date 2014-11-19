@@ -98,7 +98,6 @@ $("input[title$='Recommended Due Date']").focusout(function(){
 	alert(ddate);
 	if (!ddate===""){
 		$("input[oldtitle$='Agreed Due Date']").val(ddate);
-		}
 	} 
 });
 
@@ -111,7 +110,6 @@ $("input[title$='Proposed Due Date']").focusout(function(){
 			$("input[oldtitle$='Agreed Due Date']").val(pdate);
 		}
 	}
-	} 
 });
 
 
