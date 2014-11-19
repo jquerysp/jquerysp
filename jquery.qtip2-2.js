@@ -149,9 +149,10 @@ $("input[title$='Verified and Closed']").change(function(){
         if (resper==thisUserAccount.Title){
 			alert("As the responsible person you are not allowed to verify and close this corrective action. Please get someone else appropriate to verify and close instead. You may seek clarification from your WHS Coordinator.");
 			$("input[oldtitle$='Verified and Closed']").removeAttr('checked');
-		}
+		} else {
 		$("input[title$='Verified and Closed by']").val(thisUserAccount.Title);
         $("input[title$='Verified and Closed Date']").val(today);
+		}
     } else {
 		$("textarea[oldtitle$='Comments on Verification']").val("");
         $("input[title$='Verified and Closed by']").val("");
