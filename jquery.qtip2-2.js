@@ -145,7 +145,7 @@ $("input[title$='Verified and Closed']").change(function(){
 	$("nobr:containsExactCase('Comments on Verification')").parent('h3').parent('td').parent('tr').toggle();
 	if ($("input[oldtitle$='Verified and Closed']").is(':checked')){
 		var resper = $().SPFindPeoplePicker({peoplePickerDisplayName: "Responsible Person"});
-		alert(resper)
+		alert(resper);
         if (resper==thisUserAccount.Title){
 			alert("As the responsible person you are not allowed to verify and close this corrective action. Please get someone else appropriate to verify and close instead. You may seek clarification from your WHS Coordinator.");
 			$("input[oldtitle$='Verified and Closed']").removeAttr('checked');
