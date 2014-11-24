@@ -87,9 +87,9 @@ $("textarea[title$='Discription of Issue']").focus(function(){
 
 $("textarea[title$='Action required']").focus(function(){
 	if ($("input[oldtitle$='On Behalf']").is(':checked')){
-		var oriper1 = $().SPFindPeoplePicker({peoplePickerDisplayName: "Originator Name"});
-		alert(oriper1);
-		$("input[title$='Originator']").val(oriper1);
+		var oriper1 = $().SPServices.SPFindPeoplePicker({peoplePickerDisplayName: "Originator Name"});
+		alert(oriper1.currentValue);
+		$("input[title$='Originator']").val(oriper1.currentValue);
 	} 
 });
 
@@ -146,7 +146,7 @@ $("input[title$='Verified and Closed']").change(function(){
 	if ($("input[oldtitle$='Verified and Closed']").is(':checked')){
 		alert("checked");
 		var resper = $().SPServices.SPFindPeoplePicker({peoplePickerDisplayName: "Responsible Person"});
-		alert(resper.currentValue);
+		alert(resper.currentValue.substring(resper.currentValue.length-2));
 		alert("test");
         if (resper.currentValue==thisUserAccount.Title){
 			alert("As the responsible person you are not allowed to verify and close this corrective action. Please get someone else appropriate to verify and close instead. You may seek clarification from your WHS Coordinator.");
