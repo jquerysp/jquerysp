@@ -143,10 +143,9 @@ $("input[title$='Completed']").change(function(){
 });
 
 $("input[title$='Verified and Closed']").change(function(){
-	$("nobr:containsExactCase('Comments on Verification')").parent('h3').parent('td').parent('tr').toggle();
 	if ($("input[oldtitle$='Verified and Closed']").is(':checked')){
 		alert("checked");
-		var resper = $().SPFindPeoplePicker({peoplePickerDisplayName: "Responsible Person"});
+		var resper = $().SPServices.SPFindPeoplePicker({peoplePickerDisplayName: "Responsible Person"});
 		alert(resper.currentValue);
 		alert("test");
         if (resper.currentValue==thisUserAccount.Title){
@@ -155,11 +154,13 @@ $("input[title$='Verified and Closed']").change(function(){
 		} else {
 		$("input[title$='Verified and Closed by']").val(thisUserAccount.Title);
         $("input[title$='Verified and Closed Date']").val(today);
+		$("nobr:containsExactCase('Comments on Verification')").parent('h3').parent('td').parent('tr').show();
 		}
     } else {
 		$("textarea[oldtitle$='Comments on Verification']").val("");
         $("input[title$='Verified and Closed by']").val("");
         $("input[title$='Verified and Closed Date']").val("");
+		$("nobr:containsExactCase('Comments on Verification')").parent('h3').parent('td').parent('tr').hide();
     }
 });
 
