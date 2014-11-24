@@ -146,9 +146,8 @@ $("input[title$='Verified and Closed']").change(function(){
 	if ($("input[oldtitle$='Verified and Closed']").is(':checked')){
 		alert("checked");
 		var resper = $().SPServices.SPFindPeoplePicker({peoplePickerDisplayName: "Responsible Person"});
-		alert(resper.currentValue.substring(resper.currentValue.length-2));
-		alert("test");
-        if (resper.currentValue==thisUserAccount.Title){
+		alert(resper.currentValue.substring(0,resper.currentValue.length-2));
+        if (resper.currentValue.substring(0,resper.currentValue.length-2)==thisUserAccount.Title){
 			alert("As the responsible person you are not allowed to verify and close this corrective action. Please get someone else appropriate to verify and close instead. You may seek clarification from your WHS Coordinator.");
 			$("input[oldtitle$='Verified and Closed']").removeAttr('checked');
 		} else {
