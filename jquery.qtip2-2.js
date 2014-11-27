@@ -93,7 +93,8 @@ $("textarea[oldtitle$='Action required']").focus(function(){
 	} 
 });
 
-$("input[title$='Recommended Due Date']").focusout(function(){
+$("input[oldtitle$='Recommended Due Date']").focusout(function(){
+	alert("out");
 	var ddate=$("input[title$='Recommended Due Date']").val();
 	alert(ddate);
 	if (!ddate===""){
