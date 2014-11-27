@@ -128,6 +128,7 @@ $("input[title$='Recommended Due Date']").focusout(function(){
 	var ddate=$("input[oldtitle$='Recommended Due Date']").val();
 	alert(ddate);
 	if (!ddate===""){
+	alert("not empty");
 		$("input[oldtitle$='Agreed Due Date']").val(ddate);
 	} 
 });
