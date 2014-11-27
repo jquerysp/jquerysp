@@ -125,7 +125,7 @@ $("input[oldtitle$='Recommended Due Date']").focusout(function(){
 
 $("input[title$='Recommended Due Date']").focusout(function(){
 	alert("out");
-	var ddate=$("input[title$='Recommended Due Date']").val();
+	var ddate=$("input[oldtitle$='Recommended Due Date']").val();
 	alert(ddate);
 	if (!ddate===""){
 		$("input[oldtitle$='Agreed Due Date']").val(ddate);
