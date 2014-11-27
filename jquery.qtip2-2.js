@@ -78,20 +78,18 @@ $("input[title$='On Behalf']").change(function(){
 
 $("textarea[oldtitle$='Discription of Issue']").focus(function(){
 	if ($("input[oldtitle$='On Behalf']").is(':checked')){
-		alert("checked");
 		var oriper = $().SPServices.SPFindPeoplePicker({peoplePickerDisplayName: "Originator Name"});
-		alert(oriper.currentValue.substring(0,oriper.currentValue.length-2));
 		if (oriper.currentValue.length<1) {
 			alert("Please make sure you enter a proper Originator Name above before you proceed.");
 		}
 	} 
 });
 
-$("textarea[title$='Action required']").focus(function(){
+$("textarea[oldtitle$='Action required']").focus(function(){
 	if ($("input[oldtitle$='On Behalf']").is(':checked')){
 		var oriper1 = $().SPServices.SPFindPeoplePicker({peoplePickerDisplayName: "Originator Name"});
-		alert(oriper1.currentValue);
-		$("input[title$='Originator']").val(oriper1.currentValue);
+		var oriper2 = $().SPServices.SPFindPeoplePicker({peoplePickerDisplayName: "Originator Name"});
+		$("input[title$='Originator']").val(oriper2.currentValue);
 	} 
 });
 
