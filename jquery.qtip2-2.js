@@ -71,15 +71,19 @@ $("input[title$='On Behalf']").change(function(){
 			updateControlValue('ctl00_m_g_a762efd1_8480_41c8_aeac_25368e4cdf72_ctl00_ListFieldIterator2_ctl03_ctl00_ctl00_ctl04_ctl00_ctl00_UserField');
 		$("input[title$='Originator']").val(thisUserAccount.Title);
 		}
+	} else {
+		$("input[title$='Originator']").val("");
 	}
 });
 
 $("textarea[title$='Discription of Issue']").focus(function(){
 	if ($("input[oldtitle$='On Behalf']").is(':checked')){
-		var oriper = $().SPFindPeoplePicker({peoplePickerDisplayName: "Originator Name"});
+		var oriper = $().SPServices.SPFindPeoplePicker({peoplePickerDisplayName: "Originator Name"});
+		alert(oriper.currentValue.substring(0,oriper.currentValue.length-2));
+
 		alert(oriper);
 		alert(oriper.length);
-		if (oriper.length<1) {
+		if (oriper.currentValue.length<1) {
 			alert("Please make sure you enter a proper Originator Name above before you proceed.");
 		}
 	} 
@@ -144,10 +148,8 @@ $("input[title$='Completed']").change(function(){
 
 $("input[title$='Verified and Closed']").change(function(){
 	if ($("input[oldtitle$='Verified and Closed']").is(':checked')){
-		alert("checked");
 		var resper = $().SPServices.SPFindPeoplePicker({peoplePickerDisplayName: "Responsible Person"});
-		alert(resper.currentValue.substring(0,resper.currentValue.length-2));
-        if (resper.currentValue.substring(0,resper.currentValue.length-2)==thisUserAccount.Title){
+		if (resper.currentValue.substring(0,resper.currentValue.length-2)==thisUserAccount.Title){
 			alert("As the responsible person you are not allowed to verify and close this corrective action. Please get someone else appropriate to verify and close instead. You may seek clarification from your WHS Coordinator.");
 			$("input[oldtitle$='Verified and Closed']").removeAttr('checked');
 		} else {
