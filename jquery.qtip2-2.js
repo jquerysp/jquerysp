@@ -77,6 +77,17 @@ $("input[title$='On Behalf']").change(function(){
 });
 
 $("textarea[oldtitle$='Discription of Issue']").focus(function(){
+	alert("doi old");
+	if ($("input[oldtitle$='On Behalf']").is(':checked')){
+		var oriper = $().SPServices.SPFindPeoplePicker({peoplePickerDisplayName: "Originator Name"});
+		if (oriper.currentValue.length<1) {
+			alert("Please make sure you enter a proper Originator Name above before you proceed.");
+		}
+	} 
+});
+
+$("textarea[title$='Discription of Issue']").focus(function(){
+	alert("doi");
 	if ($("input[oldtitle$='On Behalf']").is(':checked')){
 		var oriper = $().SPServices.SPFindPeoplePicker({peoplePickerDisplayName: "Originator Name"});
 		if (oriper.currentValue.length<1) {
@@ -86,6 +97,16 @@ $("textarea[oldtitle$='Discription of Issue']").focus(function(){
 });
 
 $("textarea[oldtitle$='Action required']").focus(function(){
+	alert("ar old");
+	if ($("input[oldtitle$='On Behalf']").is(':checked')){
+		var oriper1 = $().SPServices.SPFindPeoplePicker({peoplePickerDisplayName: "Originator Name"});
+		var oriper2 = $().SPServices.SPFindPeoplePicker({peoplePickerDisplayName: "Originator Name"});
+		$("input[title$='Originator']").val(oriper2.currentValue);
+	} 
+});
+
+$("textarea[title$='Action required']").focus(function(){
+	alert("ar");
 	if ($("input[oldtitle$='On Behalf']").is(':checked')){
 		var oriper1 = $().SPServices.SPFindPeoplePicker({peoplePickerDisplayName: "Originator Name"});
 		var oriper2 = $().SPServices.SPFindPeoplePicker({peoplePickerDisplayName: "Originator Name"});
@@ -94,6 +115,15 @@ $("textarea[oldtitle$='Action required']").focus(function(){
 });
 
 $("input[oldtitle$='Recommended Due Date']").focusout(function(){
+	alert("out old");
+	var ddate=$("input[title$='Recommended Due Date']").val();
+	alert(ddate);
+	if (!ddate===""){
+		$("input[oldtitle$='Agreed Due Date']").val(ddate);
+	} 
+});
+
+$("input[title$='Recommended Due Date']").focusout(function(){
 	alert("out");
 	var ddate=$("input[title$='Recommended Due Date']").val();
 	alert(ddate);
