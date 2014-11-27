@@ -78,11 +78,9 @@ $("input[title$='On Behalf']").change(function(){
 
 $("textarea[title$='Discription of Issue']").focus(function(){
 	if ($("input[oldtitle$='On Behalf']").is(':checked')){
+		alert("checked");
 		var oriper = $().SPServices.SPFindPeoplePicker({peoplePickerDisplayName: "Originator Name"});
 		alert(oriper.currentValue.substring(0,oriper.currentValue.length-2));
-
-		alert(oriper);
-		alert(oriper.length);
 		if (oriper.currentValue.length<1) {
 			alert("Please make sure you enter a proper Originator Name above before you proceed.");
 		}
