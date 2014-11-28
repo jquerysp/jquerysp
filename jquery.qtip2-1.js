@@ -441,13 +441,16 @@ $("input[title$='Corrective Action Needed']").change(function(){
 	$("nobr:containsExactCase('Countermeasures')").parent('h3').parent('td').parent('tr').toggle();
 	$("nobr:containsExactCase('Corrective Action')").parent('h3').parent('td').parent('tr').toggle();
 	$("nobr:containsExactCase('CA Responsible Person')").parent('h3').parent('td').parent('tr').toggle();
+	$("nobr:containsExactCase('CA Responsible Function')").parent('h3').parent('td').parent('tr').toggle();
+	$("nobr:containsExactCase('CA Responsible Country')").parent('h3').parent('td').parent('tr').toggle();
 	$("nobr:containsExactCase('CA Due Date')").parent('h3').parent('td').parent('tr').toggle();
 	$("nobr:containsExactCase('CA Completed')").parent('h3').parent('td').parent('tr').toggle();
 	if (!$("input[oldtitle$='Corrective Action Needed']").is(':checked')){
 		$("textarea[oldtitle$='Corrective Action']").val("");
 		$("select[oldtitle$='Root Causes - S.Mat']").val("");
 		$("select[title$='Countermeasures']").val(0);
-		
+		$("select[title$='CA Responsible Function']").val("");
+		$("select[title$='CA Responsible Country']").val("");
 		if (document.getElementById('ctl00_m_g_a0e6e363_500e_4f4a_97ef_18c7499447e8_ctl00_ListFieldIterator2_ctl74_ctl00_ctl00_ctl04_ctl00_ctl00_UserField_upLevelDiv') != null) {
 			document.getElementById('ctl00_m_g_a0e6e363_500e_4f4a_97ef_18c7499447e8_ctl00_ListFieldIterator2_ctl74_ctl00_ctl00_ctl04_ctl00_ctl00_UserField_upLevelDiv').innerHTML = '';
 			updateControlValue('ctl00_m_g_a0e6e363_500e_4f4a_97ef_18c7499447e8_ctl00_ListFieldIterator2_ctl74_ctl00_ctl00_ctl04_ctl00_ctl00_UserField');
