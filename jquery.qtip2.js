@@ -113,6 +113,11 @@ $().SPServices.SPArrangeChoices({
 	perRow: 3
 });
 
+$().SPServices.SPArrangeChoices({
+	columnName: "Country",
+	perRow: 5
+});
+
 $("legend:containsExactCase('Investigation - Manager / Investigator to Complete')").parent('fieldset').parent('div').parent('td').parent('tr').hide(); 
 $("legend:containsExactCase('Corrective Action - Manager / Investigator / Responsible Person to Complete')").parent('fieldset').parent('div').parent('td').parent('tr').hide(); 
 $("legend:containsExactCase('Classification and Miscellaneous - WHS Coordinator to Complete')").parent('fieldset').parent('div').parent('td').parent('tr').hide(); 
@@ -355,7 +360,7 @@ $("input[title$='Individual Affected?']").qtip({
 
 $("select[title$='Function/Department']").qtip({ 
     content: {
-        text: 'Select an option to indicate the function/department. Eg.: For workers in the factories, Sourcing Unit should be selected. Note: General Management is only for the CEO and associated roles that are not under any specific function or department.'
+        text: 'Select an option to indicate the function/department of the person affected. Eg.: For workers in the factories, Sourcing Unit should be selected. Note: General Management is only for the CEO and associated roles that are not under any specific function or department.<br>If no one affected in this incident, select the function/department of the investigator.'
     }
 });
 
