@@ -122,6 +122,11 @@ $().SPServices.SPArrangeChoices({
 	columnName: "Body Part - All affected",
 	perRow: 3
 });
+
+$().SPServices.SPArrangeChoices({
+	columnName: "Country",
+	perRow: 5
+});
   
 if ($("select[title$='Site']").val()=="Minto" || $("select[title$='Site']").val()=="North Rocks" || $("select[title$='Site']").val()=="Petone" || $("select[title$='Site']").val()=="Tatura") {
 	$("nobr:containsExactCase('Production Related?')").parent('h3').parent('td').parent('tr').show();
@@ -632,7 +637,7 @@ $("input[title$='Individual Affected?']").qtip({
 
 $("select[title$='Function/Department']").qtip({ 
     content: {
-        text: 'Select an option to indicate the function/department. Eg.: For workers in the factories, Sourcing Unit should be selected. Note: General Management is only for the CEO and associated roles that are not under any specific function or department.'
+        text: 'Select an option to indicate the function/department of the person affected. Eg.: For workers in the factories, Sourcing Unit should be selected. Note: General Management is only for the CEO and associated roles that are not under any specific function or department.<br>If no one affected in this incident, select the function/department of the investigator.'
     }
 });
 
