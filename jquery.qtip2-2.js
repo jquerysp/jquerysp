@@ -82,7 +82,9 @@ $("textarea[title$='Discription of Issue']").focus(function(){
 		if (oriper.currentValue.length<1) {
 			alert("Please make sure you enter a proper Originator Name above before you proceed.");
 		}
-	} 
+	} else {
+		$("input[title$='Originator']").val(thisUserAccount.Title);
+	}
 });
 
 $("select[title$='Source']").focus(function(){
