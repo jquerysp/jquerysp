@@ -940,6 +940,12 @@ $("input[title$='Coordinator Fields Completed']").qtip({
     }
 });
 
+$("input[title$='Security Issue?']").qtip({ 
+    content: {
+      text: 'Please tick this checkbox if this incident is security related. Eg, burglary, threatened by an external party, fire, natural disasters, etc.'
+    }
+});
+
 
 
 
