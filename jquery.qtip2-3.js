@@ -96,22 +96,13 @@ $("select[title$='Source']").focus(function(){
 
 $("input[title$='Recommended Due Date']").focusout(function(){
 	var ddate=$("input[oldtitle$='Recommended Due Date']").val();
-	alert(ddate);
 	$("input[oldtitle$='Agreed Due Date']").val(ddate);
-
 });
 
 $("input[title$='Proposed Due Date']").focusout(function(){
-	var pdate=$("input[title$='Proposed Due Date']").val();
-	var ddate1=$("input[title$='Agreed Due Date']").val();
-	alert(pdate);
-	if (!pdate===""){
-		if (pdate>ddate1){
-			$("input[oldtitle$='Agreed Due Date']").val(pdate);
-		}
-	}
+	var pdate=$("input[oldtitle$='Proposed Due Date']").val();
+	$("input[oldtitle$='Agreed Due Date']").val(pdate);
 });
-
 
 
 $("input[title$='Propose a Due Date?']").change(function(){
