@@ -39,8 +39,8 @@ $.extend( $.expr[":"], {
 $(document).ready(function(){
 
 var thisUserAccount = $().SPServices.SPGetCurrentUser({
-﻿  fieldNames: ["Name", "Title"],
-﻿  debug: false
+	fieldNames: ["Name", "Title"],
+	debug: false
 });
 
 //alert(thisUserAccount.Title);
@@ -66,9 +66,9 @@ today = dd+'/'+mm+'/'+yyyy;
 $("input[title$='On Behalf']").change(function(){
     $("nobr:containsExactCase('Originator Name')").parent('h3').parent('td').parent('tr').toggle();
 	if (!$("input[oldtitle$='On Behalf']").is(':checked')){
-		if (document.getElementById('ctl00_m_g_a762efd1_8480_41c8_aeac_25368e4cdf72_ctl00_ListFieldIterator2_ctl03_ctl00_ctl00_ctl04_ctl00_ctl00_UserField_upLevelDiv') != null) {
-			document.getElementById('ctl00_m_g_a762efd1_8480_41c8_aeac_25368e4cdf72_ctl00_ListFieldIterator2_ctl03_ctl00_ctl00_ctl04_ctl00_ctl00_UserField_upLevelDiv').innerHTML = '';
-			updateControlValue('ctl00_m_g_a762efd1_8480_41c8_aeac_25368e4cdf72_ctl00_ListFieldIterator2_ctl03_ctl00_ctl00_ctl04_ctl00_ctl00_UserField');
+		if (document.getElementById('ctl00_m_g_a4c2d660_a40c_42b3_9d12_56111f9310e5_ctl00_ListFieldIterator2_ctl03_ctl00_ctl00_ctl04_ctl00_ctl00_UserField_upLevelDiv') != null) {
+			document.getElementById('ctl00_m_g_a4c2d660_a40c_42b3_9d12_56111f9310e5_ctl00_ListFieldIterator2_ctl03_ctl00_ctl00_ctl04_ctl00_ctl00_UserField_upLevelDiv').innerHTML = '';
+			updateControlValue('ctl00_m_g_a4c2d660_a40c_42b3_9d12_56111f9310e5_ctl00_ListFieldIterator2_ctl10_ctl00_ctl00_ctl04_ctl00_ctl00_UserField');
 		$("input[title$='Originator']").val(thisUserAccount.Title);
 		}
 	} else {
