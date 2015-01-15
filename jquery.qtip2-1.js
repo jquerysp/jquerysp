@@ -352,6 +352,7 @@ $("input[title$='Not Work Related']").change(function(){
 		$("nobr:containsExactCase('Direct Causes')").parent('h3').parent('td').parent('tr').hide();
 		$("nobr:containsExactCase('Root Causes')").parent('h3').parent('td').parent('tr').hide();
 		$("nobr:containsExactCase('Detailed Root Causes')").parent('h3').parent('td').parent('tr').hide();
+		$("nobr:containsExactCase('Findings')").parent('h3').parent('td').parent('tr').hide();
 		$("nobr:containsExactCase('Feedback Channel')").parent('h3').parent('td').parent('tr').hide();
 		$("nobr:containsExactCase('Investigation Completed')").parent('h3').parent('td').parent('tr').hide();
 		
@@ -371,7 +372,7 @@ $("input[title$='Not Work Related']").change(function(){
 		$("select[title$='Direct Causes']").val(0);
 		$("select[title$='Root Causes']").val(0);
 		$("select[title$='Detailed Root Causes']").val(0);
-		
+		$("textarea[title$='Findings']").val("");
 		$("select[oldtitle$='Feedback Channel']").val("");
 		$("input[title$='Investigation Completed']").removeAttr('checked');
 		
@@ -386,6 +387,7 @@ $("input[title$='Not Work Related']").change(function(){
 		$("nobr:containsExactCase('Root Causes')").parent('h3').parent('td').parent('tr').show();
 		$("nobr:containsExactCase('Detailed Root Causes')").parent('h3').parent('td').parent('tr').show();
 		$("nobr:containsExactCase('Feedback Channel')").parent('h3').parent('td').parent('tr').show();
+		$("nobr:containsExactCase('Findings')").parent('h3').parent('td').parent('tr').show();
 		$("nobr:containsExactCase('Investigation Completed')").parent('h3').parent('td').parent('tr').show();
 		if ($("input[oldtitle$='Injured/Disease']").is(':checked')){
 			$("nobr:containsExactCase('Nature of Injury/Disease')").parent('h3').parent('td').parent('tr').show();
@@ -851,6 +853,12 @@ $("textarea[title$='Why-Cause 1']").qtip({
 $("select[title$='Feedback Channel']").qtip({ 
     content: {
         text: 'The investigation result must be communicated to the all involved persons. Select an option to indicate the channel via which you provided the feedback.'
+    }
+});
+
+$("textarea[title$='Findings']").qtip({ 
+    content: {
+        text: 'Please provide the detailed findings after the investigation of this incident. Key information: who was involved in the investigation, how did the incident happen, the analysis and outcomes and any recommendations to prevent or minimise the recurrence of the incident. You can attach all your working paper to this incident report. Corrective actions can be initiated in the next section of this report.'
     }
 });
 
