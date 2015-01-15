@@ -845,7 +845,7 @@ $("select[title$='Type of Event']").qtip({
 
 $("textarea[title$='Why-Cause 1']").qtip({ 
     content: {
-      text: 'Please ask and answer a serial of relevant questions to drill down and find the root cause of the incident. Eg: Question: Why did Event A happen? Answer: Because of Event B. Question: Why did Event B happen? Answer: Because of Event C. Question: Why did Event C happen? Answer: Because of Event D...',
+      text: 'Please ask and answer a serial of relevant questions to drill down and find the root cause of the incident. Eg: <br>Why-Cause 1: Question: Why did Event A happen? Answer: Because of Event B. <br>Why-Cause 2: Question: Why did Event B happen? Answer: Because of Event C. <br>Why-Cause 3: Question: Why did Event C happen? Answer: Because of Event D. <br>Why-Cause 4: Question: Why did Event D happen? Answer: Because of Event E. <br>Why-Cause 5: Question: Why did Event E happen? Answer: Because of Event F.',
       title: 'General Guidelines'
 	  }
 });
