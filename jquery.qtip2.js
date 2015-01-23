@@ -185,14 +185,14 @@ $("input[title$='Production Related?']").change(function(){
 });
 
 $("input[title$='Individual Affected?']").change(function(){
-	$("nobr:containsExactCase('Full Name')").parent('h3').parent('td').parent('tr').toggle();
-	$("nobr:containsExactCase('Phone Number')").parent('h3').parent('td').parent('tr').toggle();
-	$("nobr:containsExactCase('Job Title')").parent('h3').parent('td').parent('tr').toggle();
 	$("nobr:containsExactCase('Shift Name')").parent('h3').parent('td').parent('tr').toggle();
 	$("nobr:containsExactCase('Employment Type')").parent('h3').parent('td').parent('tr').toggle();
 	$("nobr:containsExactCase('Injured/Disease')").parent('h3').parent('td').parent('tr').toggle();
 	$("nobr:containsExactCase('Incident Time Period')").parent('h3').parent('td').parent('tr').toggle();
 	if (!$("input[oldtitle$='Individual Affected?']").is(':checked')){
+		$("nobr:containsExactCase('Full Name')").parent('h3').parent('td').parent('tr').hide();
+		$("nobr:containsExactCase('Phone Number')").parent('h3').parent('td').parent('tr').hide();
+		$("nobr:containsExactCase('Job Title')").parent('h3').parent('td').parent('tr').hide();
 		$("input[title$='Full Name']").val("");
 		$("input[title$='Job Title']").val("");
 		$("select[oldtitle$='Employment Type']").val("");
@@ -207,7 +207,11 @@ $("input[title$='Individual Affected?']").change(function(){
 		$("nobr:containsExactCase('Body Part - All affected')").parents("tr:first").find('input:checkbox').each(function(){
 			$(this).prop('checked',false);
 		});
-    }
+    } else {
+		$("nobr:containsExactCase('Full Name')").parent('h3').parent('td').parent('tr').show();
+		$("nobr:containsExactCase('Phone Number')").parent('h3').parent('td').parent('tr').show();
+		$("nobr:containsExactCase('Job Title')").parent('h3').parent('td').parent('tr').show();	
+	}
 	if (!$("input[oldtitle$='Injured/Disease']").is(':checked')){
 		$("nobr:containsExactCase('Type of First Aid')").parent('h3').parent('td').parent('tr').hide();
 		$("nobr:containsExactCase('First Aid Treatment')").parent('h3').parent('td').parent('tr').hide();
@@ -385,7 +389,7 @@ $("select[title$='Incident Time Period']").qtip({
 
 $("nobr:contains('Immediate Manager or Investigator')").parent('h3').parent('td').parent('tr').qtip({ 
     content: {
-        text: 'Please enter the name of the Immediate Manager if there is someone involved. For those incidents with on one involved, please nominate the most appropriate investigator here. The investigator should be the person responsible for the area and normally should not be the WHS Coordinators. If you are not sure who you should nominate as the investigator, enter the name of your WHS Coordinator.'
+        text: 'Please enter the name of the Immediate Manager if there is someone affected. For those incidents with no one affected, please nominate the most appropriate investigator here. The investigator should be the person responsible for the area and normally should not be the WHS Coordinators. If you are not sure who you should nominate as the investigator, enter the name of your WHS Coordinator.'
     },
     position: {
         adjust: {
