@@ -357,8 +357,8 @@ $("input[title$='Not Work Related']").change(function(){
 		$("nobr:containsExactCase('Root Causes')").parent('h3').parent('td').parent('tr').hide();
 		$("nobr:containsExactCase('Detailed Root Causes')").parent('h3').parent('td').parent('tr').hide();
 		$("nobr:containsExactCase('Findings')").parent('h3').parent('td').parent('tr').hide();
-		$("nobr:containsExactCase('Feedback Channel')").parent('h3').parent('td').parent('tr').hide();
-		$("nobr:containsExactCase('Investigation Completed')").parent('h3').parent('td').parent('tr').hide();
+		//$("nobr:containsExactCase('Feedback Channel')").parent('h3').parent('td').parent('tr').hide();
+		//$("nobr:containsExactCase('Investigation Completed')").parent('h3').parent('td').parent('tr').hide();
 		
 		$("select[oldtitle$='Nature of Injury/Disease']").val("");
 		$("select[oldtitle$='Primary Agency']").val("");
