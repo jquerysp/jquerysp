@@ -473,8 +473,7 @@ $("input[title$='Notifiable to EPA?']").change(function(){
 	$("nobr:containsExactCase('EPA Notification Details')").parent('h3').parent('td').parent('tr').toggle();
 	if (!$("input[title$='Notifiable to EPA?']").is(':checked')){
 		$("textarea[oldtitle$='EPA Notification Details']").val("");
-    } 
-	if ($("input[title$='Notifiable to EPA?']").is(':checked')){
+    } else {
 		$("textarea[oldtitle$='Why Not Notifiable to EPA']").val("");
     }
 });
