@@ -128,7 +128,7 @@ $().SPServices.SPArrangeChoices({
 	perRow: 5
 });
 
-if (!$("textarea[oldtitle$='Short Description of Incident']").is(':visible')){
+if ($("textarea[oldtitle$='Short Description of Incident']").is(':hidden')){
 $("legend:containsExactCase('Classification and Miscellaneous - WHS Coordinator to Complete')").parent('fieldset').parent('div').parent('td').parent('tr').hide(); 
 } else {
 	$("legend:containsExactCase('Classification and Miscellaneous - WHS Coordinator to Complete')").parent('fieldset').parent('div').parent('td').parent('tr').show(); 
