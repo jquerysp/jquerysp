@@ -161,27 +161,67 @@ $("input[title$='Off Site']").change(function(){
 $("select[title$='Site']").change(function(){
     if ($("select[title$='Site']").val()=="Minto" || $("select[title$='Site']").val()=="North Rocks" || $("select[title$='Site']").val()=="Petone" || $("select[title$='Site']").val()=="Tatura") {
         $("nobr:containsExactCase('Production Related?')").parent('h3').parent('td').parent('tr').show();
+		if (!$("input[oldtitle$='Production Related?']").is(':checked')){
+			$("textarea[oldtitle$='5W1H - the What']").val("");
+			$("textarea[oldtitle$='5W1H - the When']").val("");
+			$("textarea[oldtitle$='5W1H - the Where']").val("");
+			$("textarea[oldtitle$='5W1H - the Who']").val("");
+			$("textarea[oldtitle$='5W1H - the Which']").val("");
+			$("textarea[oldtitle$='5W1H - the How']").val("");
+			$("nobr:containsExactCase('5W1H - the What')").parent('h3').parent('td').parent('tr').hide();
+			$("nobr:containsExactCase('5W1H - the When')").parent('h3').parent('td').parent('tr').hide();
+			$("nobr:containsExactCase('5W1H - the Where')").parent('h3').parent('td').parent('tr').hide();
+			$("nobr:containsExactCase('5W1H - the Who')").parent('h3').parent('td').parent('tr').hide();
+			$("nobr:containsExactCase('5W1H - the Which')").parent('h3').parent('td').parent('tr').hide();
+			$("nobr:containsExactCase('5W1H - the How')").parent('h3').parent('td').parent('tr').hide();
+		} else {
+			$("nobr:containsExactCase('5W1H - the What')").parent('h3').parent('td').parent('tr').show();
+			$("nobr:containsExactCase('5W1H - the When')").parent('h3').parent('td').parent('tr').show();
+			$("nobr:containsExactCase('5W1H - the Where')").parent('h3').parent('td').parent('tr').show();
+			$("nobr:containsExactCase('5W1H - the Who')").parent('h3').parent('td').parent('tr').show();
+			$("nobr:containsExactCase('5W1H - the Which')").parent('h3').parent('td').parent('tr').show();
+			$("nobr:containsExactCase('5W1H - the How')").parent('h3').parent('td').parent('tr').show();
+		}
     } else {
 		$("input[oldtitle$='Production Related?']").removeAttr('checked');
         $("nobr:containsExactCase('Production Related?')").parent('h3').parent('td').parent('tr').hide();
+			$("textarea[oldtitle$='5W1H - the What']").val("");
+			$("textarea[oldtitle$='5W1H - the When']").val("");
+			$("textarea[oldtitle$='5W1H - the Where']").val("");
+			$("textarea[oldtitle$='5W1H - the Who']").val("");
+			$("textarea[oldtitle$='5W1H - the Which']").val("");
+			$("textarea[oldtitle$='5W1H - the How']").val("");
+			$("nobr:containsExactCase('5W1H - the What')").parent('h3').parent('td').parent('tr').hide();
+			$("nobr:containsExactCase('5W1H - the When')").parent('h3').parent('td').parent('tr').hide();
+			$("nobr:containsExactCase('5W1H - the Where')").parent('h3').parent('td').parent('tr').hide();
+			$("nobr:containsExactCase('5W1H - the Who')").parent('h3').parent('td').parent('tr').hide();
+			$("nobr:containsExactCase('5W1H - the Which')").parent('h3').parent('td').parent('tr').hide();
+			$("nobr:containsExactCase('5W1H - the How')").parent('h3').parent('td').parent('tr').hide();
     }
 });
 
 $("input[title$='Production Related?']").change(function(){
-	$("nobr:containsExactCase('5W1H - the What')").parent('h3').parent('td').parent('tr').toggle();
-	$("nobr:containsExactCase('5W1H - the When')").parent('h3').parent('td').parent('tr').toggle();
-	$("nobr:containsExactCase('5W1H - the Where')").parent('h3').parent('td').parent('tr').toggle();
-	$("nobr:containsExactCase('5W1H - the Who')").parent('h3').parent('td').parent('tr').toggle();
-	$("nobr:containsExactCase('5W1H - the Which')").parent('h3').parent('td').parent('tr').toggle();
-	$("nobr:containsExactCase('5W1H - the How')").parent('h3').parent('td').parent('tr').toggle();
 	if (!$("input[oldtitle$='Production Related?']").is(':checked')){
-		$("textarea[oldtitle$='5W1H - the What']").val("");
-		$("textarea[oldtitle$='5W1H - the When']").val("");
-		$("textarea[oldtitle$='5W1H - the Where']").val("");
-		$("textarea[oldtitle$='5W1H - the Who']").val("");
-		$("textarea[oldtitle$='5W1H - the Which']").val("");
-		$("textarea[oldtitle$='5W1H - the How']").val("");
-    }
+			$("textarea[oldtitle$='5W1H - the What']").val("");
+			$("textarea[oldtitle$='5W1H - the When']").val("");
+			$("textarea[oldtitle$='5W1H - the Where']").val("");
+			$("textarea[oldtitle$='5W1H - the Who']").val("");
+			$("textarea[oldtitle$='5W1H - the Which']").val("");
+			$("textarea[oldtitle$='5W1H - the How']").val("");
+			$("nobr:containsExactCase('5W1H - the What')").parent('h3').parent('td').parent('tr').hide();
+			$("nobr:containsExactCase('5W1H - the When')").parent('h3').parent('td').parent('tr').hide();
+			$("nobr:containsExactCase('5W1H - the Where')").parent('h3').parent('td').parent('tr').hide();
+			$("nobr:containsExactCase('5W1H - the Who')").parent('h3').parent('td').parent('tr').hide();
+			$("nobr:containsExactCase('5W1H - the Which')").parent('h3').parent('td').parent('tr').hide();
+			$("nobr:containsExactCase('5W1H - the How')").parent('h3').parent('td').parent('tr').hide();
+		} else {
+			$("nobr:containsExactCase('5W1H - the What')").parent('h3').parent('td').parent('tr').show();
+			$("nobr:containsExactCase('5W1H - the When')").parent('h3').parent('td').parent('tr').show();
+			$("nobr:containsExactCase('5W1H - the Where')").parent('h3').parent('td').parent('tr').show();
+			$("nobr:containsExactCase('5W1H - the Who')").parent('h3').parent('td').parent('tr').show();
+			$("nobr:containsExactCase('5W1H - the Which')").parent('h3').parent('td').parent('tr').show();
+			$("nobr:containsExactCase('5W1H - the How')").parent('h3').parent('td').parent('tr').show();
+		}
 });
 
 $("input[title$='Individual Affected?']").change(function(){
