@@ -61,6 +61,12 @@ if(mm<10) {
 today = dd+'/'+mm+'/'+yyyy;
 //alert(today);
 
+
+$().SPServices.SPArrangeChoices({
+	columnName: "Country",
+	perRow: 5
+});
+
 $("legend:containsExactCase('[OPTIONAL] Proposed Due Date - Responsible Person to Complete')").parent('fieldset').parent('div').parent('td').parent('tr').hide(); 
 $("legend:containsExactCase('Agreed Due Date - Originator may Update')").parent('fieldset').parent('div').parent('td').parent('tr').hide(); 
 $("legend:containsExactCase('Completion of Corrrective Actions - Responsible Person to Complete')").parent('fieldset').parent('div').parent('td').parent('tr').hide();
@@ -208,7 +214,13 @@ $("textarea[title$='Action required']").qtip({
 
 $("select[title$='Function/Department']").qtip({ 
     content: {
-        text: 'Select an option to indicate the function/department. Eg.: For workers in the factories, Sourcing Unit should be selected. Note: General Management is only for the CEO and associated roles that are not under any specific function or department.'
+        text: 'Select an option to indicate the function/department for the responsible person. Eg.: For workers in the factories, Sourcing Unit should be selected. Note: General Management is only for the CEO and associated roles that are not under any specific function or department.'
+    }
+});
+
+$("select[title$='Country']").qtip({ 
+    content: {
+        text: 'Select the country for the responsible person. <br><br>Note: This is not about where the issue is but where the responsible person is.'
     }
 });
 
