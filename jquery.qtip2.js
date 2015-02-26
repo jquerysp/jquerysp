@@ -322,17 +322,32 @@ if ($("input[oldtitle$='Declaration']").is(':checked')){
 $("input[title$='Incident Title']").qtip({ 
     content: {
       text: 'Please enter a short description of this incident. Please do NOT mention any names. Eg: Worker slipped in the kitchen.'
+    },
+    position: {
+        adjust: {
+            x: 215
+        }
     }
 });
 $("input[title$='Off Site']").qtip({ 
     content: {
       text: 'Tick the checkbox if the incident did not happen at one of the sites listed in the Site field below. Eg: tick the checkbox if the incident happened on the road.'
+    },
+    position: {
+        adjust: {
+            x: 215
+        }
     }
 });
 
 $("input[title$='Location']").qtip({ 
     content: {
       text: 'Please enter the location where the incident occurred.'
+    },
+    position: {
+        adjust: {
+            x: 215
+        }
     }
 });
 
@@ -351,6 +366,11 @@ $("textarea[title$='Description of Incident']").qtip({
 $("input[title$='Production Related?']").qtip({ 
     content: {
       text: 'Please tick the checkbox if the incident is production related. Eg.: a machine, a product or a production process was involved.'
+    },
+    position: {
+        adjust: {
+            x: 215
+        }
     }
 });
 
@@ -359,6 +379,11 @@ $("textarea[title$='5W1H - the What']").qtip({
       text: 'Any variation due to production materials? Any materials differences? Differences among lots? Any variation due to different part dimensions, shapes? Eg.: <br>Material, Product Number, Lot Number, Component Name',
       title: 'What thing or product did you see the problem on?'
     },
+    position: {
+        adjust: {
+            x: 215
+        }
+    }
 });
 
 $("textarea[title$='5W1H - the When']").qtip({ 
@@ -366,6 +391,11 @@ $("textarea[title$='5W1H - the When']").qtip({
       text: 'Any variation related to time or period? Does the problem occur at the start of work? in the middle? During which operations is the problem apt to occur? Is the problem likely to occur after set-up changes? Eg.: <br>Start/End Date, Shift, Time, Event (Is this problem happening on one, two or all shifts? After Start Up? Changeover? Etc.)',
       title: 'When did the problem occur?'
     },
+    position: {
+        adjust: {
+            x: 215
+        }
+    }
 });
 
 $("textarea[title$='5W1H - the Where']").qtip({ 
@@ -373,6 +403,11 @@ $("textarea[title$='5W1H - the Where']").qtip({
       text: 'Any variation due to equipment, fixtures, components? In what process / what machine elements does the problem occur? Any differences among different equipment, machine types? Any variation associated with different figs, fixtures? Eg.: <br>Line# / Equipment / Component, Location, Process.',
       title: 'Where did you see the problem? Where on the work or material did you see the problem?'
     },
+    position: {
+        adjust: {
+            x: 215
+        }
+    }
 });
 
 $("textarea[title$='5W1H - the Who']").qtip({ 
@@ -380,6 +415,11 @@ $("textarea[title$='5W1H - the Who']").qtip({
       text: 'Any variation among people involved in the operation? Any morning/day/night shift difference? Any differences among new operators, floaters, temporary staff? Eg.: <br>If the problem occurs for only certain skills levels, i.e. mechanics, operators, temps, shifts and/or experience levels, it is skill dependent. Skill independent - it could happen to anyone.',
       title: 'Is the problem related to skill? Skill dependent or independent'
     },
+    position: {
+        adjust: {
+            x: 215
+        }
+    }
 });
 
 $("textarea[title$='5W1H - the Which']").qtip({ 
@@ -387,6 +427,11 @@ $("textarea[title$='5W1H - the Which']").qtip({
       text: 'Are there any characteristic trends over time? Does it appear at regular or irregular intervals? Do problems increase or decrease? Any changes before or after? Eg.:<br>Random: Can happen anytime. <br>Periodic: the problem occurrence is predictable such as after start-ups, changeovers, only when it is 100 deg., etc.<br>Continuous: The problem occurs uninterrupted in time or sequence.',
       title: 'Which trend / pattern did you see the problem have? Is the trend random or is there a pattern?'
     },
+    position: {
+        adjust: {
+            x: 215
+        }
+    }
 });
 
 $("textarea[title$='5W1H - the How']").qtip({ 
@@ -394,23 +439,43 @@ $("textarea[title$='5W1H - the How']").qtip({
       text: 'Any variation in circumstances of occurrence?State as exactly as you can the difference from ideal. <br>Eg.:Is the carton crunched, torn, punctured, etc? Describe the abnormality such as bent, sheared, crushed, rusted, spilled, lost material, not delivered, etc.',
       title: 'How is the state different from normal condition?'
     },
+    position: {
+        adjust: {
+            x: 215
+        }
+    }
 });
 
 $("input[title$='Individual Affected?']").qtip({ 
     content: {
         text: 'Please tick the checkbox if someone is affected. When more than one person is affected, only identify the primary one.'
+    },
+    position: {
+        adjust: {
+            x: 215
+        }
     }
 });
 
 $("select[title$='Function/Department']").qtip({ 
     content: {
         text: 'Select an option to indicate the function/department of the person affected. Eg.: For workers in the factories, Sourcing Unit should be selected. Note: General Management is only for the CEO and associated roles that are not under any specific function or department.<br>If no one affected in this incident, select the function/department of the investigator.'
+    },
+    position: {
+        adjust: {
+            x: 215
+        }
     }
 });
 
 $("select[title$='Employment Type']").qtip({ 
     content: {
         text: 'Select an option to indicate the Employment Type. Select Contractor - Labour if the person is from a labour hiring agent such as Randstad. They are normally directly supervised by Unilever. Select Contractor - Trade if the person is from a contractor such as Electricians and Plumbers. They normally are not directly supervised by Unilever.'
+    },
+    position: {
+        adjust: {
+            x: 215
+        }
     }
 });
 
@@ -418,12 +483,22 @@ $("input[title$='Phone Number']").qtip({
     content: {
         text: 'Please enter a landline or mobile phone number.',
       title: 'Optional Field'
+    },
+    position: {
+        adjust: {
+            x: 215
+        }
     }
 });
 
 $("select[title$='Incident Time Period']").qtip({ 
     content: {
         text: 'Select an option to indicate the relationship between the work hours and the incident time. If the person is a field worker then driving between sites are included in working hours.'
+    },
+    position: {
+        adjust: {
+            x: 215
+        }
     }
 });
 
@@ -441,6 +516,11 @@ $("nobr:contains('Immediate Manager or Investigator')").parent('h3').parent('td'
 $("input[title$='Injured/Disease']").qtip({ 
     content: {
         text: 'Tick the checkbox only when the person is injured or diseased.'
+    },
+    position: {
+        adjust: {
+            x: 215
+        }
     }
 });
 
@@ -448,6 +528,11 @@ $("select[title$='Type of First Aid']").qtip({
     content: {
       text: 'Please select the propery type of first aid provided. Examples for Preventative First Aid: Heat or ice pack was provided to prevent injury, rinse eyes after contact with chemical before any injury. An example for Applied First Aid: Applying a band-aid to a finger cut.',
       title: 'General Guidelines'
+    },
+    position: {
+        adjust: {
+            x: 215
+        }
     }
 });
 
@@ -476,18 +561,33 @@ $("nobr:contains('Body Part - All affected')").parent('h3').parent('td').parent(
 $("input[title$='Vehicle Caused?']").qtip({ 
     content: {
         text: 'Tick the checkbox if this incident was caused by a vehicle including fork lift truck.'
+    },
+    position: {
+        adjust: {
+            x: 215
+        }
     }
 });
 
 $("input[title$='Property Damaged?']").qtip({ 
     content: {
         text: 'Tick the checkbox if this incident caused any property damage such as buildings, plants, vehicles, etc.'
+    },
+    position: {
+        adjust: {
+            x: 215
+        }
     }
 });
 
 $("select[title$='Type of Damage']").qtip({ 
     content: {
         text: 'Please select the most significant type of property damage in this incident. Here are some examples: <br><br><b>Storage Racking</b> including warehouse racking and other storage POS racking. <br><b>Roller Doors</b> including rapid roller doors as well as regular roller doors.<br><b>Site Infrastructure</b> including buildings, roads, fence, bollards, water supplies, electrical grid, etc.. <br><b>Plants/Equipment</b> including gas tanks, vessels, ammonia plant, production line, mobile plant, etc..<br><b>Goods/Material</b> including finished goods, raw material, etc..<br><b>Vehicles</b> including all motor vehicles.'
+    },
+    position: {
+        adjust: {
+            x: 215
+        }
     }
 });
 
@@ -507,6 +607,11 @@ $("input[title$='Environmental Impact?']").qtip({
     content: {
         text: '- an unauthorised release of chemicals to the air from a factory stack.<br>- a milk tanker rollover into a creek.<br>- a sewerage system overflow.<br>- a factory fire.<br>- illegal dumping of waste',
       title: 'Examples'
+    },
+    position: {
+        adjust: {
+            x: 215
+        }
     }
 });
 
@@ -525,24 +630,44 @@ $("textarea[title$='Environmental Impact Details']").qtip({
 $("input[title$='Any Witnesses']").qtip({ 
     content: {
         text: 'Tick the checkbox if there is any witnesses.'
+    },
+    position: {
+        adjust: {
+            x: 215
+        }
     }
 });
 
 $("textarea[title$='Witness Information']").qtip({ 
     content: {
       text: 'Please provide information such as Name, Phone Number or Email.'
+    },
+    position: {
+        adjust: {
+            x: 215
+        }
     }
 });
 
 $("input[title$='Not Work Related']").qtip({ 
     content: {
         text: 'Tick the checkbox if this incident is not work related. Eg: injury occurred during weekend while lifting heavy boxes at home.'
+    },
+    position: {
+        adjust: {
+            x: 215
+        }
     }
 });
 
 $("input[title$='Declaration']").qtip({ 
     content: {
         text: 'Tick the checkbox when you fill out all the necessary fields above. After ticking off, you can submit this incident report by clicking the save botton at the top left or the bottom right hand side of the page.'
+    },
+    position: {
+        adjust: {
+            x: 215
+        }
     }
 });
 
