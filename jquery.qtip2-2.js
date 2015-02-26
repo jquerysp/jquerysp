@@ -218,7 +218,7 @@ $("select[title$='Function/Department']").qtip({
     }
 });
 
-$("select[title$='Country']").qtip({ 
+$("input[title$='Country']").qtip({ 
     content: {
         text: 'Select the country for the responsible person. <br><br>Note: This is not about where the issue is but where the responsible person is.'
     }
