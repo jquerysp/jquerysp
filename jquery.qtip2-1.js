@@ -615,11 +615,21 @@ $("select[title$='Unilever Incident Classification']").change(function(){
 $("input[title$='Incident Title']").qtip({ 
     content: {
       text: 'Please enter a short description of this incident. Please do NOT mention any names. Eg: Worker slipped in the kitchen.'
+    },
+    position: {
+        adjust: {
+            x: 215
+        }
     }
 });
 $("input[title$='Off Site']").qtip({ 
     content: {
       text: 'Tick the checkbox if the incident did not happen at one of the sites listed in the Site field below. Eg: tick the checkbox if the incident happened on the road.'
+    },
+    position: {
+        adjust: {
+            x: 215
+        }
     }
 });
 
@@ -649,42 +659,42 @@ $("input[title$='Production Related?']").qtip({
 
 $("textarea[title$='5W1H - the What']").qtip({ 
     content: {
-      text: 'Any variation due to production materials? Any materials differences? Differences among lots? Any variation due to different part dimensions, shapes? Eg.: <br>Material, Product Number, Lot Number, Component Name',
+      text: 'Any variation in production materials specifications, material shapes; housekeeping etc?',
       title: 'What thing or product did you see the problem on?'
     },
 });
 
 $("textarea[title$='5W1H - the When']").qtip({ 
     content: {
-      text: 'Any variation related to time or period? Does the problem occur at the start of work? in the middle? During which operations is the problem apt to occur? Is the problem likely to occur after set-up changes? Eg.: <br>Start/End Date, Shift, Time, Event (Is this problem happening on one, two or all shifts? After Start Up? Changeover? Etc.)',
+      text: 'During which part of the operation is the problem likely to occur? E.g.,  set-up changes, after start up, changeover etc.   Is this problem happening on one, two or all shifts?',
       title: 'When did the problem occur?'
     },
 });
 
 $("textarea[title$='5W1H - the Where']").qtip({ 
     content: {
-      text: 'Any variation due to equipment, fixtures, components? In what process / what machine elements does the problem occur? Any differences among different equipment, machine types? Any variation associated with different figs, fixtures? Eg.: <br>Line# / Equipment / Component, Location, Process.',
+      text: 'Any variation associated with different figs, fixtures? Eg.:Line# / Equipment / Component, Location, Process.',
       title: 'Where did you see the problem? Where on the work or material did you see the problem?'
     },
 });
 
 $("textarea[title$='5W1H - the Who']").qtip({ 
     content: {
-      text: 'Any variation among people involved in the operation? Any morning/day/night shift difference? Any differences among new operators, floaters, temporary staff? Eg.: <br>If the problem occurs for only certain skills levels, i.e. mechanics, operators, temps, shifts and/or experience levels, it is skill dependent. Skill independent - it could happen to anyone.',
+      text: 'Is the Skill/Experience level of the person relative or  could it happen to anyone?',
       title: 'Is the problem related to skill? Skill dependent or independent'
     },
 });
 
 $("textarea[title$='5W1H - the Which']").qtip({ 
     content: {
-      text: 'Are there any characteristic trends over time? Does it appear at regular or irregular intervals? Do problems increase or decrease? Any changes before or after? Eg.:<br>Random: Can happen anytime. <br>Periodic: the problem occurrence is predictable such as after start-ups, changeovers, only when it is 100 deg., etc.<br>Continuous: The problem occurs uninterrupted in time or sequence.',
+      text: 'Are there any characteristic trends over time? <br>Random: Can happen anytime. <br>Periodic: the problem occurrence is predictable such as after start-ups, changeovers, only when it is 100 deg., etc.<br>Continuous: The problem occurs uninterrupted in time or sequence.',
       title: 'Which trend / pattern did you see the problem have? Is the trend random or is there a pattern?'
     },
 });
 
 $("textarea[title$='5W1H - the How']").qtip({ 
     content: {
-      text: 'Any variation in circumstances of occurrence?State as exactly as you can the difference from ideal. <br>Eg.:Is the carton crunched, torn, punctured, etc? Describe the abnormality such as bent, sheared, crushed, rusted, spilled, lost material, not delivered, etc.',
+      text: 'Any variation in circumstances of occurrence? State as exactly as you can the difference from ideal. Eg.:Is the carton crunched, torn, punctured, etc? Describe the abnormality such as bent, sheared, crushed, rusted, spilled, lost material, not delivered, etc.',
       title: 'How is the state different from normal condition?'
     },
 });
