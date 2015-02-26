@@ -61,7 +61,10 @@ if(mm<10) {
 today = dd+'/'+mm+'/'+yyyy;
 //alert(today);
 
-
+$().SPServices.SPArrangeChoices({
+	columnName: "Country",
+	perRow: 5
+});
  
 $("input[title$='On Behalf']").change(function(){
     $("nobr:containsExactCase('Originator Name')").parent('h3').parent('td').parent('tr').toggle();
@@ -202,9 +205,15 @@ $("textarea[title$='Action required']").qtip({
     }
 });
 
+$("select[title$='Country']").qtip({ 
+    content: {
+        text: 'Select the country for the responsible person. <br><br>Note: This is not about where the issue is but where the responsible person is.'
+    }
+});
+
 $("select[title$='Function/Department']").qtip({ 
     content: {
-        text: 'Select an option to indicate the function/department. Eg.: For workers in the factories, Sourcing Unit should be selected. Note: General Management is only for the CEO and associated roles that are not under any specific function or department.'
+        text: 'Select an option to indicate the function/department for the responsible person. Eg.: For workers in the factories, Sourcing Unit should be selected. Note: General Management is only for the CEO and associated roles that are not under any specific function or department.'
     }
 });
 
