@@ -85,7 +85,7 @@ $("input[title$='On Behalf']").change(function(){
 	}
 });
 
-$("textarea[title$='Discription of Issue']").focus(function(){
+$("textarea[title$='Description of Issue']").focus(function(){
 	if ($("input[oldtitle$='On Behalf']").is(':checked')){
 		var oriper = $().SPServices.SPFindPeoplePicker({peoplePickerDisplayName: "Originator Name"});
 		if (oriper.currentValue.length<1) {
@@ -188,7 +188,7 @@ $("nobr:containsExactCase('Originator Name')").parent('h3').parent('td').parent(
     }
 });
 
-$("textarea[title$='Discription of Issue']").qtip({ 
+$("textarea[title$='Description of Issue']").qtip({ 
     content: {
       text: 'Clearly describe the issue and provide the background information behind this corrective action. Give as much information as you can.',
       title: 'General Guidelines'
