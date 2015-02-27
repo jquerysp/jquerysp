@@ -212,15 +212,20 @@ $("textarea[title$='Action required']").qtip({
     }
 });
 
-$("select[title$='Function/Department']").qtip({ 
+$("nobr:contains('Country')").parent('h3').parent('td').parent('tr').qtip({ 
     content: {
-        text: 'Select an option to indicate the function/department for the responsible person. Eg.: For workers in the factories, Sourcing Unit should be selected. Note: General Management is only for the CEO and associated roles that are not under any specific function or department.'
+        text: 'Select the country for the responsible person. <br><br>Note: This is not about where the issue is but where the responsible person is.'
+    },
+    position: {
+        adjust: {
+            x: 215
+        }
     }
 });
 
-$("input[title$='Country']").qtip({ 
+$("select[title$='Function/Department']").qtip({ 
     content: {
-        text: 'Select the country for the responsible person. <br><br>Note: This is not about where the issue is but where the responsible person is.'
+        text: 'Select an option to indicate the function/department for the responsible person. Eg.: For workers in the factories, Sourcing Unit should be selected. Note: General Management is only for the CEO and associated roles that are not under any specific function or department.'
     }
 });
 
