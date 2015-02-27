@@ -69,7 +69,7 @@ $().SPServices.SPArrangeChoices({
 
 $("legend:containsExactCase('[OPTIONAL] Proposed Due Date - Responsible Person to Complete')").parent('fieldset').parent('div').parent('td').parent('tr').hide(); 
 $("legend:containsExactCase('Agreed Due Date - Originator may Update')").parent('fieldset').parent('div').parent('td').parent('tr').hide(); 
-$("legend:containsExactCase('Completion of Corrrective Actions - Responsible Person to Complete')").parent('fieldset').parent('div').parent('td').parent('tr').hide();
+$("legend:containsExactCase('Completion of Corrective Actions - Responsible Person to Complete')").parent('fieldset').parent('div').parent('td').parent('tr').hide();
 $("legend:containsExactCase('Verification and Closing of Corrective Actions - Originator to Complete')").parent('fieldset').parent('div').parent('td').parent('tr').hide(); 
  
 $("input[title$='On Behalf']").change(function(){
