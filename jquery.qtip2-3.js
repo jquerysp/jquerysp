@@ -205,9 +205,14 @@ $("textarea[title$='Action required']").qtip({
     }
 });
 
-$("input[title$='Country']").qtip({ 
+$("nobr:contains('Country')").parent('h3').parent('td').parent('tr').qtip({ 
     content: {
         text: 'Select the country for the responsible person. <br><br>Note: This is not about where the issue is but where the responsible person is.'
+    },
+    position: {
+        adjust: {
+            x: 215
+        }
     }
 });
 
