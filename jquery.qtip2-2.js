@@ -67,8 +67,8 @@ $().SPServices.SPArrangeChoices({
 	perRow: 5
 });
 
-$("legend:containsExactCase('[OPTIONAL] Proposed Due Date - Responsible Person to Complete')").parent('fieldset').parent('div').parent('td').parent('tr').hide(); 
-$("legend:containsExactCase('Agreed Due Date - Originator may Update')").parent('fieldset').parent('div').parent('td').parent('tr').hide(); 
+
+
 $("legend:containsExactCase('Completion of Corrective Actions - Responsible Person to Complete')").parent('fieldset').parent('div').parent('td').parent('tr').hide();
 $("legend:containsExactCase('Verification and Closing of Corrective Actions - Originator to Complete')").parent('fieldset').parent('div').parent('td').parent('tr').hide(); 
  
@@ -101,27 +101,6 @@ $("select[title$='Source']").focus(function(){
 		var oriper2 = $().SPServices.SPFindPeoplePicker({peoplePickerDisplayName: "Originator Name"});
 		$("input[title$='Originator']").val(oriper2.currentValue.substring(0,oriper2.currentValue.length-2));
 	} 
-});
-
-$("input[title$='Recommended Due Date']").focusout(function(){
-	var ddate=$("input[oldtitle$='Recommended Due Date']").val();
-	$("input[oldtitle$='Agreed Due Date']").val(ddate);
-});
-
-$("input[title$='Proposed Due Date']").focusout(function(){
-	var pdate=$("input[oldtitle$='Proposed Due Date']").val();
-	$("input[oldtitle$='Agreed Due Date']").val(pdate);
-});
-
-
-
-$("input[title$='Propose a Due Date?']").change(function(){
-	$("nobr:containsExactCase('Proposed Due Date')").parent('h3').parent('td').parent('tr').toggle();
-	$("nobr:containsExactCase('Reason for Proposal')").parent('h3').parent('td').parent('tr').toggle();
-	if (!$("input[oldtitle$='Propose a Due Date?']").is(':checked')){
-		$("textarea[oldtitle$='Reason for Proposal']").val("");
-		$("input[title$='Proposed Due Date']").val("");
-    }
 });
 
 $("input[title$='Completed']").change(function(){
@@ -253,42 +232,11 @@ $("nobr:contains('Responsible Person')").parent('h3').parent('td').parent('tr').
     }
 });
 
-$("input[title$='Recommended Due Date']").qtip({ 
-    content: {
-        text: 'Please enter a recommended due date. The due date should be set so that it reflect the risk level of the issue but should be reasonable and practical. Please note that the responsible person may propose a new due date based on some valid reasons later on.',
-		title: 'General Guidelines'
-    }
-});
-
-$("input[title$='Propose a Due Date?']").qtip({ 
-    content: {
-        text: 'Tick the checkbox to propose a new due date if you believe the recommended due date is not reasonable. You will need to provide reasons in detail.',
-		title: 'Optional'
-    }
-});
-
-$("input[title$='Proposed Due Date']").qtip({ 
-    content: {
-        text: 'Please enter a proposed due date. The due date should be set so that it reflect the risk level of the issue but should be reasonable and practical. Please note that the originator may contact you in order you to reach an agreement on a final due date.',
-		title: 'General Guidelines'
-    }
-});
-
-$("textarea[title$='Reason for Proposal']").qtip({ 
-    content: {
-      text: 'Please clearly specify the reason why the new due date was proposed.'
-    },
-    position: {
-        adjust: {
-            x: 215
-        }
-    }
-});
 
 $("input[title$='Agreed Due Date']").qtip({ 
     content: {
-        text: 'This date is automatically set as the later date between Recommended Due Date and Proposed Due Date. Please update this date with a final due date which was agreed by the responsible person. You may leave this date as it is if the date seems reasonable.',
-		title: 'Optional'
+        text: 'Please enter an agreed due date. The due date should be set so that it reflect the risk level of the issue but should be reasonable and practical. Please note that this date must be agreed by responsible person.',
+		title: 'General Guidelines'
     }
 });
 
