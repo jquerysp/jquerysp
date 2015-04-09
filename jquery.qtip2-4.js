@@ -1,1 +1,1 @@
-window.location = "http://teamsites.unilever.com/collab/OHSIncidentRegister/Lists/IR/NewForm.aspx"
+//window.location = "http://teamsites.unilever.com/collab/OHSIncidentRegister/Lists/IR/NewForm.aspx"
