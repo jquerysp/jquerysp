@@ -1088,7 +1088,7 @@ $("select[title$='Feedback Channel']").qtip({
 
 $("textarea[title$='Findings']").qtip({ 
     content: {
-      text: 'Please provide the detailed findings after the investigation of this incident. Key information: who was involved in the investigation, how did the incident happen, the analysis and outcomes and any recommendations to prevent or minimise the recurrence of the incident. You can attach all your working paper to this incident report. Corrective actions can be initiated in the next section of this report.',
+      text: 'Please provide the detailed findings after the investigation of this incident. Key information: <br>Who was involved in the investigation<br>How did the incident happen<br>What hazards were identified or reviewed<br>The analysis and outcomes and any recommendations to prevent or minimise the recurrence of the incident<br><br>You can attach all your working paper to this incident report. Corrective actions can be initiated in the next section of this report.',
       title: 'General Guidelines'
     },
     position: {
