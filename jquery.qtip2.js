@@ -513,7 +513,7 @@ $("nobr:contains('Immediate Manager or Investigator')").parent('h3').parent('td'
     }
 });
 
-$("nobr:contains('Other Relevant Supervisor/Manager 1')").parent('h3').parent('td').parent('tr').qtip({ 
+$("nobr:contains('Other Relevant Supervisor-Manager 1')").parent('h3').parent('td').parent('tr').qtip({ 
     content: {
         text: 'If you believe some other supervisors and managers are relevant to this and should be notified or involved in the investigation, please enter their name here. You can only Enter one name at a time.<br><br>Please do NOT enter any Sourcing Unit Director, SHE Manager, Vice President or WHS Coordinator names because they already get notifications for all incidents reported.'
       title: 'Optional'
@@ -525,7 +525,7 @@ $("nobr:contains('Other Relevant Supervisor/Manager 1')").parent('h3').parent('t
     }
 });
 
-$("nobr:contains('Other Relevant Supervisor/Manager 2')").parent('h3').parent('td').parent('tr').qtip({ 
+$("nobr:contains('Other Relevant Supervisor-Manager 2')").parent('h3').parent('td').parent('tr').qtip({ 
     content: {
         text: 'If you believe some other supervisors and managers are relevant to this and should be notified or involved in the investigation, please enter their name here. You can only Enter one name at a time.<br><br>Please do NOT enter any Sourcing Unit Director, SHE Manager, Vice President or WHS Coordinator names because they already get notifications for all incidents reported.'
       title: 'Optional'
@@ -537,7 +537,7 @@ $("nobr:contains('Other Relevant Supervisor/Manager 2')").parent('h3').parent('t
     }
 });
 
-$("nobr:contains('Other Relevant Supervisor/Manager 3')").parent('h3').parent('td').parent('tr').qtip({ 
+$("nobr:contains('Other Relevant Supervisor-Manager 3')").parent('h3').parent('td').parent('tr').qtip({ 
     content: {
         text: 'If you believe some other supervisors and managers are relevant to this and should be notified or involved in the investigation, please enter their name here. You can only Enter one name at a time.<br><br>Please do NOT enter any Sourcing Unit Director, SHE Manager, Vice President or WHS Coordinator names because they already get notifications for all incidents reported.'
       title: 'Optional'
