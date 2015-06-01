@@ -1206,9 +1206,10 @@ $("textarea[title$='CA Close Out Comments']").qtip({
     }
 });
 
-$("textarea[title$='Short Description of Incident']").qtip({ 
+
+$("nobr:containsExactCase('Short Description of Incident')").parent('h3').parent('td').parent('tr').qtip({ 
     content: {
-      text: 'Please provide a short description of this incident. This will go into the monthly report.'
+        text: 'Please provide a short description of this incident. This will go into the monthly report.'
     },
     position: {
         adjust: {
