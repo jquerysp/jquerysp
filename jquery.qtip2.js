@@ -376,8 +376,7 @@ $("input[title$='Production Related?']").qtip({
 
 $("textarea[title$='5W1H - the What']").qtip({ 
     content: {
-      text: 'Any variation in production materials specifications, material shapes; housekeeping etc?',
-      title: 'What thing or product did you see the problem on?'
+      text: 'What did you see the problem on, a particular product, regular activity etc',
     },
     position: {
         adjust: {
@@ -388,8 +387,7 @@ $("textarea[title$='5W1H - the What']").qtip({
 
 $("textarea[title$='5W1H - the When']").qtip({ 
     content: {
-      text: 'During which part of the operation is the problem likely to occur? E.g.,  set-up changes, after start up, changeover etc.   Is this problem happening on one, two or all shifts?',
-      title: 'When did the problem occur?'
+      text: 'when did the problem occur? Start of shift, end of shift, etc',
     },
     position: {
         adjust: {
@@ -400,8 +398,7 @@ $("textarea[title$='5W1H - the When']").qtip({
 
 $("textarea[title$='5W1H - the Where']").qtip({ 
     content: {
-      text: 'Any variation associated with different figs, fixtures? Eg.:Line# / Equipment / Component, Location, Process.',
-      title: 'Where did you see the problem? Where on the work or material did you see the problem?'
+      text: 'Where did you see the problem? Ie, machine, housekeeping, material etc',
     },
     position: {
         adjust: {
@@ -412,8 +409,7 @@ $("textarea[title$='5W1H - the Where']").qtip({
 
 $("textarea[title$='5W1H - the Who']").qtip({ 
     content: {
-      text: 'Is the Skill/Experience level of the person relative or  could it happen to anyone?',
-      title: 'Is the problem related to skill? Skill dependent or independent'
+      text: 'Who is doing the job? Is it their usual job YES or NO',
     },
     position: {
         adjust: {
@@ -436,8 +432,7 @@ $("textarea[title$='5W1H - the Which']").qtip({
 
 $("textarea[title$='5W1H - the How']").qtip({ 
     content: {
-      text: 'Any variation in circumstances of occurrence? State as exactly as you can the difference from ideal. Eg.:Is the carton crunched, torn, punctured, etc? Describe the abnormality such as bent, sheared, crushed, rusted, spilled, lost material, not delivered, etc.',
-      title: 'How is the state different from normal condition?'
+      text: 'How did the injury occur?  NOT WHY, but how',
     },
     position: {
         adjust: {
