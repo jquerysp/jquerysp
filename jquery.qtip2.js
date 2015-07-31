@@ -39,8 +39,8 @@ $.extend( $.expr[":"], {
 $(document).ready(function(){
 
 var thisUserAccount = $().SPServices.SPGetCurrentUser({
-	fieldNames: ["Name", "Title"],
-	debug: false
+﻿  fieldNames: ["Name", "Title"],
+﻿  debug: false
 });
 
 //alert(thisUserAccount.Title);
@@ -66,8 +66,8 @@ today = dd+'/'+mm+'/'+yyyy;
     relationshipList: "sa_area",
     relationshipListParentColumn: "site",
     relationshipListChildColumn: "Title",
-		parentColumn: "Site",
-	simpleChild: true,
+﻿  ﻿  parentColumn: "Site",
+﻿  simpleChild: true,
     childColumn: "Area"
   });
   $().SPServices.SPCascadeDropdowns({
@@ -76,7 +76,7 @@ today = dd+'/'+mm+'/'+yyyy;
     relationshipListChildColumn: "Title",
     relationshipListSortColumn: "ID",
     parentColumn: "Area",
-	simpleChild: true,
+﻿  simpleChild: true,
     childColumn: "Sub-area"
   });
 
@@ -84,8 +84,8 @@ today = dd+'/'+mm+'/'+yyyy;
     relationshipList: "ir_idc",
     relationshipListParentColumn: "TOE",
     relationshipListChildColumn: "Title",
-	parentColumn: "Type of Event",
-	simpleChild: true,
+﻿  parentColumn: "Type of Event",
+﻿  simpleChild: true,
     childColumn: "Direct Causes"
   });
   $().SPServices.SPCascadeDropdowns({
@@ -94,7 +94,7 @@ today = dd+'/'+mm+'/'+yyyy;
     relationshipListChildColumn: "Title",
     relationshipListSortColumn: "ID",
     parentColumn: "Direct Causes",
-	simpleChild: true,
+﻿  simpleChild: true,
     childColumn: "Root Causes"
   });
 
@@ -104,18 +104,18 @@ today = dd+'/'+mm+'/'+yyyy;
     relationshipListChildColumn: "Title",
     relationshipListSortColumn: "ID",
     parentColumn: "Root Causes",
-	simpleChild: true,
-	childColumn: "Detailed Root Causes"
+﻿  simpleChild: true,
+﻿  childColumn: "Detailed Root Causes"
   });
 
 $().SPServices.SPArrangeChoices({
-	columnName: "Body Part - All affected",
-	perRow: 3
+﻿  columnName: "Body Part - All affected",
+﻿  perRow: 3
 });
 
 $().SPServices.SPArrangeChoices({
-	columnName: "Country",
-	perRow: 5
+﻿  columnName: "Country",
+﻿  perRow: 5
 });
 
 $("legend:containsExactCase('Investigation - Manager / Investigator to Complete')").parent('fieldset').parent('div').parent('td').parent('tr').hide(); 
@@ -125,160 +125,137 @@ $("legend:containsExactCase('Classification and Miscellaneous - WHS Coordinator 
 
 $("input[title$='Any Witnesses']").change(function(){
     $("nobr:containsExactCase('Witness Information')").parent('h3').parent('td').parent('tr').toggle();
-	if (!$("input[title$='Any Witnesses']").is(':checked')){
-	$("textarea[oldtitle$='Witness Information']").val("");
-	}
+﻿  if (!$("input[title$='Any Witnesses']").is(':checked')){
+﻿  $("textarea[oldtitle$='Witness Information']").val("");
+﻿  }
 });
 
 $("input[title$='Off Site']").change(function(){
         $("nobr:containsExactCase('Site')").parent('h3').parent('td').parent('tr').toggle();
-		$("nobr:containsExactCase('Area')").parent('h3').parent('td').parent('tr').toggle();
-		$("nobr:containsExactCase('Sub-area')").parent('h3').parent('td').parent('tr').toggle();
-		$("nobr:containsExactCase('Location')").parent('h3').parent('td').parent('tr').toggle();
-	if ($("input[oldtitle$='Off Site']").is(':checked')){
-		$("select[title$='Site']").find('option:first').attr('selected', 'selected');
-		$("select[title$='Area']").val(0);
-		$("select[title$='Sub-area']").val(0);
-		$("input[oldtitle$='Production Related?']").removeAttr('checked');
-		$("nobr:containsExactCase('Production Related?')").parent('h3').parent('td').parent('tr').hide();
-		$("textarea[oldtitle$='5W1H - the What']").val("");
-		$("textarea[oldtitle$='5W1H - the When']").val("");
-		$("textarea[oldtitle$='5W1H - the Where']").val("");
-		$("textarea[oldtitle$='5W1H - the Who']").val("");
-		$("textarea[oldtitle$='5W1H - the Which']").val("");
-		$("textarea[oldtitle$='5W1H - the How']").val("");
-		$("nobr:containsExactCase('5W1H - the What')").parent('h3').parent('td').parent('tr').hide();
-		$("nobr:containsExactCase('5W1H - the When')").parent('h3').parent('td').parent('tr').hide();
-		$("nobr:containsExactCase('5W1H - the Where')").parent('h3').parent('td').parent('tr').hide();
-		$("nobr:containsExactCase('5W1H - the Who')").parent('h3').parent('td').parent('tr').hide();
-		$("nobr:containsExactCase('5W1H - the Which')").parent('h3').parent('td').parent('tr').hide();
-		$("nobr:containsExactCase('5W1H - the How')").parent('h3').parent('td').parent('tr').hide();
-	} else {
-		$("input[oldtitle$='Location']").val("");
+﻿  ﻿  $("nobr:containsExactCase('Area')").parent('h3').parent('td').parent('tr').toggle();
+﻿  ﻿  $("nobr:containsExactCase('Sub-area')").parent('h3').parent('td').parent('tr').toggle();
+﻿  ﻿  $("nobr:containsExactCase('Location')").parent('h3').parent('td').parent('tr').toggle();
+﻿  if ($("input[oldtitle$='Off Site']").is(':checked')){
+﻿  ﻿  $("select[title$='Site']").find('option:first').attr('selected', 'selected');
+﻿  ﻿  $("select[title$='Area']").val(0);
+﻿  ﻿  $("select[title$='Sub-area']").val(0);
+﻿  ﻿  $("textarea[oldtitle$='5W1H - the What']").val("");
+﻿  ﻿  $("textarea[oldtitle$='5W1H - the When']").val("");
+﻿  ﻿  $("textarea[oldtitle$='5W1H - the Where']").val("");
+﻿  ﻿  $("textarea[oldtitle$='5W1H - the Who']").val("");
+﻿  ﻿  $("textarea[oldtitle$='5W1H - the Which']").val("");
+﻿  ﻿  $("textarea[oldtitle$='5W1H - the How']").val("");
+﻿  ﻿  $("nobr:containsExactCase('5W1H - the What')").parent('h3').parent('td').parent('tr').hide();
+﻿  ﻿  $("nobr:containsExactCase('5W1H - the When')").parent('h3').parent('td').parent('tr').hide();
+﻿  ﻿  $("nobr:containsExactCase('5W1H - the Where')").parent('h3').parent('td').parent('tr').hide();
+﻿  ﻿  $("nobr:containsExactCase('5W1H - the Who')").parent('h3').parent('td').parent('tr').hide();
+﻿  ﻿  $("nobr:containsExactCase('5W1H - the Which')").parent('h3').parent('td').parent('tr').hide();
+﻿  ﻿  $("nobr:containsExactCase('5W1H - the How')").parent('h3').parent('td').parent('tr').hide();
+﻿  } else {
+﻿  ﻿  $("input[oldtitle$='Location']").val("");
+    if ($("select[title$='Site']").val()=="Minto" || $("select[title$='Site']").val()=="North Rocks" || $("select[title$='Site']").val()=="Petone" || $("select[title$='Site']").val()=="Tatura") {
+  ﻿  ﻿  $("nobr:containsExactCase('5W1H - the What')").parent('h3').parent('td').parent('tr').show();
+﻿  ﻿  ﻿  $("nobr:containsExactCase('5W1H - the When')").parent('h3').parent('td').parent('tr').show();
+﻿  ﻿  ﻿  $("nobr:containsExactCase('5W1H - the Where')").parent('h3').parent('td').parent('tr').show();
+﻿  ﻿  ﻿  $("nobr:containsExactCase('5W1H - the Who')").parent('h3').parent('td').parent('tr').show();
+﻿  ﻿  ﻿  $("nobr:containsExactCase('5W1H - the Which')").parent('h3').parent('td').parent('tr').show();
+﻿  ﻿  ﻿  $("nobr:containsExactCase('5W1H - the How')").parent('h3').parent('td').parent('tr').show();
+  ﻿  } else {		
+  ﻿  ﻿  $("textarea[oldtitle$='5W1H - the What']").val("");
+﻿  ﻿  ﻿  $("textarea[oldtitle$='5W1H - the When']").val("");
+﻿  ﻿  ﻿  $("textarea[oldtitle$='5W1H - the Where']").val("");
+﻿  ﻿  ﻿  $("textarea[oldtitle$='5W1H - the Who']").val("");
+﻿  ﻿  ﻿  $("textarea[oldtitle$='5W1H - the Which']").val("");
+﻿  ﻿  ﻿  $("textarea[oldtitle$='5W1H - the How']").val("");
+﻿  ﻿  ﻿  $("nobr:containsExactCase('5W1H - the What')").parent('h3').parent('td').parent('tr').hide();
+﻿  ﻿  ﻿  $("nobr:containsExactCase('5W1H - the When')").parent('h3').parent('td').parent('tr').hide();
+﻿  ﻿  ﻿  $("nobr:containsExactCase('5W1H - the Where')").parent('h3').parent('td').parent('tr').hide();
+﻿  ﻿  ﻿  $("nobr:containsExactCase('5W1H - the Who')").parent('h3').parent('td').parent('tr').hide();
+﻿  ﻿  ﻿  $("nobr:containsExactCase('5W1H - the Which')").parent('h3').parent('td').parent('tr').hide();
+﻿  ﻿  ﻿  $("nobr:containsExactCase('5W1H - the How')").parent('h3').parent('td').parent('tr').hide();		
+    }
     }
 });
 
 $("select[title$='Site']").change(function(){
     if ($("select[title$='Site']").val()=="Minto" || $("select[title$='Site']").val()=="North Rocks" || $("select[title$='Site']").val()=="Petone" || $("select[title$='Site']").val()=="Tatura") {
-        $("nobr:containsExactCase('Production Related?')").parent('h3').parent('td').parent('tr').show();
-		if (!$("input[oldtitle$='Production Related?']").is(':checked')){
-			$("textarea[oldtitle$='5W1H - the What']").val("");
-			$("textarea[oldtitle$='5W1H - the When']").val("");
-			$("textarea[oldtitle$='5W1H - the Where']").val("");
-			$("textarea[oldtitle$='5W1H - the Who']").val("");
-			$("textarea[oldtitle$='5W1H - the Which']").val("");
-			$("textarea[oldtitle$='5W1H - the How']").val("");
-			$("nobr:containsExactCase('5W1H - the What')").parent('h3').parent('td').parent('tr').hide();
-			$("nobr:containsExactCase('5W1H - the When')").parent('h3').parent('td').parent('tr').hide();
-			$("nobr:containsExactCase('5W1H - the Where')").parent('h3').parent('td').parent('tr').hide();
-			$("nobr:containsExactCase('5W1H - the Who')").parent('h3').parent('td').parent('tr').hide();
-			$("nobr:containsExactCase('5W1H - the Which')").parent('h3').parent('td').parent('tr').hide();
-			$("nobr:containsExactCase('5W1H - the How')").parent('h3').parent('td').parent('tr').hide();
-		} else {
-			$("nobr:containsExactCase('5W1H - the What')").parent('h3').parent('td').parent('tr').show();
-			$("nobr:containsExactCase('5W1H - the When')").parent('h3').parent('td').parent('tr').show();
-			$("nobr:containsExactCase('5W1H - the Where')").parent('h3').parent('td').parent('tr').show();
-			$("nobr:containsExactCase('5W1H - the Who')").parent('h3').parent('td').parent('tr').show();
-			$("nobr:containsExactCase('5W1H - the Which')").parent('h3').parent('td').parent('tr').show();
-			$("nobr:containsExactCase('5W1H - the How')").parent('h3').parent('td').parent('tr').show();
-		}
-    } else {
-		$("input[oldtitle$='Production Related?']").removeAttr('checked');
-        $("nobr:containsExactCase('Production Related?')").parent('h3').parent('td').parent('tr').hide();
-			$("textarea[oldtitle$='5W1H - the What']").val("");
-			$("textarea[oldtitle$='5W1H - the When']").val("");
-			$("textarea[oldtitle$='5W1H - the Where']").val("");
-			$("textarea[oldtitle$='5W1H - the Who']").val("");
-			$("textarea[oldtitle$='5W1H - the Which']").val("");
-			$("textarea[oldtitle$='5W1H - the How']").val("");
-			$("nobr:containsExactCase('5W1H - the What')").parent('h3').parent('td').parent('tr').hide();
-			$("nobr:containsExactCase('5W1H - the When')").parent('h3').parent('td').parent('tr').hide();
-			$("nobr:containsExactCase('5W1H - the Where')").parent('h3').parent('td').parent('tr').hide();
-			$("nobr:containsExactCase('5W1H - the Who')").parent('h3').parent('td').parent('tr').hide();
-			$("nobr:containsExactCase('5W1H - the Which')").parent('h3').parent('td').parent('tr').hide();
-			$("nobr:containsExactCase('5W1H - the How')").parent('h3').parent('td').parent('tr').hide();
+  ﻿  ﻿  $("nobr:containsExactCase('5W1H - the What')").parent('h3').parent('td').parent('tr').show();
+﻿  ﻿  ﻿  $("nobr:containsExactCase('5W1H - the When')").parent('h3').parent('td').parent('tr').show();
+﻿  ﻿  ﻿  $("nobr:containsExactCase('5W1H - the Where')").parent('h3').parent('td').parent('tr').show();
+﻿  ﻿  ﻿  $("nobr:containsExactCase('5W1H - the Who')").parent('h3').parent('td').parent('tr').show();
+﻿  ﻿  ﻿  $("nobr:containsExactCase('5W1H - the Which')").parent('h3').parent('td').parent('tr').show();
+﻿  ﻿  ﻿  $("nobr:containsExactCase('5W1H - the How')").parent('h3').parent('td').parent('tr').show();
+  ﻿  } else {		
+  ﻿  ﻿  $("textarea[oldtitle$='5W1H - the What']").val("");
+﻿  ﻿  ﻿  $("textarea[oldtitle$='5W1H - the When']").val("");
+﻿  ﻿  ﻿  $("textarea[oldtitle$='5W1H - the Where']").val("");
+﻿  ﻿  ﻿  $("textarea[oldtitle$='5W1H - the Who']").val("");
+﻿  ﻿  ﻿  $("textarea[oldtitle$='5W1H - the Which']").val("");
+﻿  ﻿  ﻿  $("textarea[oldtitle$='5W1H - the How']").val("");
+﻿  ﻿  ﻿  $("nobr:containsExactCase('5W1H - the What')").parent('h3').parent('td').parent('tr').hide();
+﻿  ﻿  ﻿  $("nobr:containsExactCase('5W1H - the When')").parent('h3').parent('td').parent('tr').hide();
+﻿  ﻿  ﻿  $("nobr:containsExactCase('5W1H - the Where')").parent('h3').parent('td').parent('tr').hide();
+﻿  ﻿  ﻿  $("nobr:containsExactCase('5W1H - the Who')").parent('h3').parent('td').parent('tr').hide();
+﻿  ﻿  ﻿  $("nobr:containsExactCase('5W1H - the Which')").parent('h3').parent('td').parent('tr').hide();
+﻿  ﻿  ﻿  $("nobr:containsExactCase('5W1H - the How')").parent('h3').parent('td').parent('tr').hide();		
     }
 });
 
-$("input[title$='Production Related?']").change(function(){
-	if (!$("input[oldtitle$='Production Related?']").is(':checked')){
-			$("textarea[oldtitle$='5W1H - the What']").val("");
-			$("textarea[oldtitle$='5W1H - the When']").val("");
-			$("textarea[oldtitle$='5W1H - the Where']").val("");
-			$("textarea[oldtitle$='5W1H - the Who']").val("");
-			$("textarea[oldtitle$='5W1H - the Which']").val("");
-			$("textarea[oldtitle$='5W1H - the How']").val("");
-			$("nobr:containsExactCase('5W1H - the What')").parent('h3').parent('td').parent('tr').hide();
-			$("nobr:containsExactCase('5W1H - the When')").parent('h3').parent('td').parent('tr').hide();
-			$("nobr:containsExactCase('5W1H - the Where')").parent('h3').parent('td').parent('tr').hide();
-			$("nobr:containsExactCase('5W1H - the Who')").parent('h3').parent('td').parent('tr').hide();
-			$("nobr:containsExactCase('5W1H - the Which')").parent('h3').parent('td').parent('tr').hide();
-			$("nobr:containsExactCase('5W1H - the How')").parent('h3').parent('td').parent('tr').hide();
-		} else {
-			$("nobr:containsExactCase('5W1H - the What')").parent('h3').parent('td').parent('tr').show();
-			$("nobr:containsExactCase('5W1H - the When')").parent('h3').parent('td').parent('tr').show();
-			$("nobr:containsExactCase('5W1H - the Where')").parent('h3').parent('td').parent('tr').show();
-			$("nobr:containsExactCase('5W1H - the Who')").parent('h3').parent('td').parent('tr').show();
-			$("nobr:containsExactCase('5W1H - the Which')").parent('h3').parent('td').parent('tr').show();
-			$("nobr:containsExactCase('5W1H - the How')").parent('h3').parent('td').parent('tr').show();
-		}
-});
-
 $("input[title$='Individual Affected?']").change(function(){
-	$("nobr:containsExactCase('Shift Name')").parent('h3').parent('td').parent('tr').toggle();
-	$("nobr:containsExactCase('Employment Type')").parent('h3').parent('td').parent('tr').toggle();
-	$("nobr:containsExactCase('Injured/Disease')").parent('h3').parent('td').parent('tr').toggle();
-	$("nobr:containsExactCase('Incident Time Period')").parent('h3').parent('td').parent('tr').toggle();
-	if (!$("input[oldtitle$='Individual Affected?']").is(':checked')){
-		$("nobr:containsExactCase('Full Name')").parent('h3').parent('td').parent('tr').hide();
-		$("nobr:containsExactCase('Phone Number')").parent('h3').parent('td').parent('tr').hide();
-		$("nobr:containsExactCase('Job Title')").parent('h3').parent('td').parent('tr').hide();
-		$("input[title$='Full Name']").val("");
-		$("input[title$='Job Title']").val("");
-		$("select[oldtitle$='Employment Type']").val("");
-		$("input[oldtitle$='Phone Number']").val("");
-		$("select[title$='Shift Name']").val("");
-		$("select[oldtitle$='Incident Time Period']").val("");
-		$("input[oldtitle$='Injured/Disease']").removeAttr('checked');
-		$("select[oldtitle$='Type of First Aid']").val("");
-		$("textarea[title$='First Aid Treatment']").val("");
-		$("select[title$='Body Part - Primary']").val("");
-		$("select[oldtitle$='Incident Time Period']").val("");
-		$("nobr:containsExactCase('Body Part - All affected')").parents("tr:first").find('input:checkbox').each(function(){
-			$(this).prop('checked',false);
-		});
+﻿  $("nobr:containsExactCase('Shift Name')").parent('h3').parent('td').parent('tr').toggle();
+﻿  $("nobr:containsExactCase('Employment Type')").parent('h3').parent('td').parent('tr').toggle();
+﻿  $("nobr:containsExactCase('Injured/Disease')").parent('h3').parent('td').parent('tr').toggle();
+﻿  $("nobr:containsExactCase('Incident Time Period')").parent('h3').parent('td').parent('tr').toggle();
+﻿  if (!$("input[oldtitle$='Individual Affected?']").is(':checked')){
+﻿  ﻿  $("nobr:containsExactCase('Full Name')").parent('h3').parent('td').parent('tr').hide();
+﻿  ﻿  $("nobr:containsExactCase('Phone Number')").parent('h3').parent('td').parent('tr').hide();
+﻿  ﻿  $("nobr:containsExactCase('Job Title')").parent('h3').parent('td').parent('tr').hide();
+﻿  ﻿  $("input[title$='Full Name']").val("");
+﻿  ﻿  $("input[title$='Job Title']").val("");
+﻿  ﻿  $("select[oldtitle$='Employment Type']").val("");
+﻿  ﻿  $("input[oldtitle$='Phone Number']").val("");
+﻿  ﻿  $("select[title$='Shift Name']").val("");
+﻿  ﻿  $("select[oldtitle$='Incident Time Period']").val("");
+﻿  ﻿  $("input[oldtitle$='Injured/Disease']").removeAttr('checked');
+﻿  ﻿  $("select[oldtitle$='Type of First Aid']").val("");
+﻿  ﻿  $("textarea[title$='First Aid Treatment']").val("");
+﻿  ﻿  $("select[title$='Body Part - Primary']").val("");
+﻿  ﻿  $("select[oldtitle$='Incident Time Period']").val("");
+﻿  ﻿  $("nobr:containsExactCase('Body Part - All affected')").parents("tr:first").find('input:checkbox').each(function(){
+﻿  ﻿  ﻿  $(this).prop('checked',false);
+﻿  ﻿  });
     } else {
-		$("nobr:containsExactCase('Full Name')").parent('h3').parent('td').parent('tr').show();
-		$("nobr:containsExactCase('Phone Number')").parent('h3').parent('td').parent('tr').show();
-		$("nobr:containsExactCase('Job Title')").parent('h3').parent('td').parent('tr').show();	
-	}
-	if (!$("input[oldtitle$='Injured/Disease']").is(':checked')){
-		$("nobr:containsExactCase('Type of First Aid')").parent('h3').parent('td').parent('tr').hide();
-		$("nobr:containsExactCase('First Aid Treatment')").parent('h3').parent('td').parent('tr').hide();
-		$("nobr:containsExactCase('Body Part - Primary')").parent('h3').parent('td').parent('tr').hide();
-		$("nobr:containsExactCase('Body Part - All affected')").parent('h3').parent('td').parent('tr').hide();
+﻿  ﻿  $("nobr:containsExactCase('Full Name')").parent('h3').parent('td').parent('tr').show();
+﻿  ﻿  $("nobr:containsExactCase('Phone Number')").parent('h3').parent('td').parent('tr').show();
+﻿  ﻿  $("nobr:containsExactCase('Job Title')").parent('h3').parent('td').parent('tr').show();﻿  
+﻿  }
+﻿  if (!$("input[oldtitle$='Injured/Disease']").is(':checked')){
+﻿  ﻿  $("nobr:containsExactCase('Type of First Aid')").parent('h3').parent('td').parent('tr').hide();
+﻿  ﻿  $("nobr:containsExactCase('First Aid Treatment')").parent('h3').parent('td').parent('tr').hide();
+﻿  ﻿  $("nobr:containsExactCase('Body Part - Primary')").parent('h3').parent('td').parent('tr').hide();
+﻿  ﻿  $("nobr:containsExactCase('Body Part - All affected')").parent('h3').parent('td').parent('tr').hide();
     }
 });
 
 $("input[title$='Injured/Disease']").change(function(){
-	$("nobr:containsExactCase('Type of First Aid')").parent('h3').parent('td').parent('tr').toggle();
-	$("nobr:containsExactCase('First Aid Treatment')").parent('h3').parent('td').parent('tr').hide();
-	$("nobr:containsExactCase('Body Part - Primary')").parent('h3').parent('td').parent('tr').toggle();
-	$("nobr:containsExactCase('Body Part - All affected')").parent('h3').parent('td').parent('tr').toggle();
-	if (!$("input[oldtitle$='Injured/Disease']").is(':checked')){
-		$("select[oldtitle$='Type of First Aid']").val("");
-		$("textarea[title$='First Aid Treatment']").val("");
-		$("select[title$='Body Part - Primary']").val("");
-		$("nobr:containsExactCase('Body Part - All affected')").parents("tr:first").find('input:checkbox').each(function(){
-			$(this).prop('checked',false);
-		});
+﻿  $("nobr:containsExactCase('Type of First Aid')").parent('h3').parent('td').parent('tr').toggle();
+﻿  $("nobr:containsExactCase('First Aid Treatment')").parent('h3').parent('td').parent('tr').hide();
+﻿  $("nobr:containsExactCase('Body Part - Primary')").parent('h3').parent('td').parent('tr').toggle();
+﻿  $("nobr:containsExactCase('Body Part - All affected')").parent('h3').parent('td').parent('tr').toggle();
+﻿  if (!$("input[oldtitle$='Injured/Disease']").is(':checked')){
+﻿  ﻿  $("select[oldtitle$='Type of First Aid']").val("");
+﻿  ﻿  $("textarea[title$='First Aid Treatment']").val("");
+﻿  ﻿  $("select[title$='Body Part - Primary']").val("");
+﻿  ﻿  $("nobr:containsExactCase('Body Part - All affected')").parents("tr:first").find('input:checkbox').each(function(){
+﻿  ﻿  ﻿  $(this).prop('checked',false);
+﻿  ﻿  });
     }
 });
 
 $("select[title$='Type of First Aid']").change(function(){
     if ($("select[oldtitle$='Type of First Aid']").val()=="No FA provided") {
         $("nobr:containsExactCase('First Aid Treatment')").parent('h3').parent('td').parent('tr').hide();
-	 $("textarea[title$='First Aid Treatment']").val("");
+﻿   $("textarea[title$='First Aid Treatment']").val("");
     } else {
         $("nobr:containsExactCase('First Aid Treatment')").parent('h3').parent('td').parent('tr').show();
     }
@@ -286,26 +263,26 @@ $("select[title$='Type of First Aid']").change(function(){
 
 $("input[title$='Vehicle Caused?']").change(function(){
     $("nobr:containsExactCase('Type of Vehicle')").parent('h3').parent('td').parent('tr').toggle();
-	if (!$("input[title$='Vehicle Caused?']").is(':checked')){
-	$("select[title$='Type of Vehicle']").val("");
+﻿  if (!$("input[title$='Vehicle Caused?']").is(':checked')){
+﻿  $("select[title$='Type of Vehicle']").val("");
     }
 });
 
 $("input[title$='Property Damaged?']").change(function(){
     $("nobr:containsExactCase('Type of Damage')").parent('h3').parent('td').parent('tr').toggle();
-	$("nobr:containsExactCase('Property Damaged Details')").parent('h3').parent('td').parent('tr').toggle();
-	if (!$("input[title$='Property Damaged?']").is(':checked')){
-		$("select[oldtitle$='Type of Damage']").val("");
-		$("textarea[oldtitle$='Property Damaged Details']").val("");
+﻿  $("nobr:containsExactCase('Property Damaged Details')").parent('h3').parent('td').parent('tr').toggle();
+﻿  if (!$("input[title$='Property Damaged?']").is(':checked')){
+﻿  ﻿  $("select[oldtitle$='Type of Damage']").val("");
+﻿  ﻿  $("textarea[oldtitle$='Property Damaged Details']").val("");
     }
 });
 
 $("input[title$='Environmental Impact?']").change(function(){
     $("nobr:containsExactCase('Type of Impact')").parent('h3').parent('td').parent('tr').toggle();
-	$("nobr:containsExactCase('Environmental Impact Details')").parent('h3').parent('td').parent('tr').toggle();
-	if (!$("input[title$='Environmental Impact?']").is(':checked')){
-		$("select[title$='Type of Impact']").val("");
-		$("textarea[oldtitle$='Environmental Impact Details']").val("");
+﻿  $("nobr:containsExactCase('Environmental Impact Details')").parent('h3').parent('td').parent('tr').toggle();
+﻿  if (!$("input[title$='Environmental Impact?']").is(':checked')){
+﻿  ﻿  $("select[title$='Type of Impact']").val("");
+﻿  ﻿  $("textarea[oldtitle$='Environmental Impact Details']").val("");
     }
 });
 
@@ -355,17 +332,6 @@ $("textarea[title$='Description of Incident']").qtip({
     content: {
       text: 'Please do NOT mention any personal health information. Clearly describe what happened. Give as much information as you can.',
       title: 'General Guidelines'
-    },
-    position: {
-        adjust: {
-            x: 215
-        }
-    }
-});
-
-$("input[title$='Production Related?']").qtip({ 
-    content: {
-      text: 'Please tick the checkbox if the incident is production related. Eg.: a machine, a product or a production process was involved.'
     },
     position: {
         adjust: {
