@@ -647,7 +647,7 @@ $("textarea[title$='Description of Incident']").qtip({
 
 $("textarea[title$='5W1H - the What']").qtip({ 
     content: {
-      text: 'What did you see the problem on, a particular product, regular activity etc',
+      text: 'What did you see the problem on, a particular product, regular activity etc?',
     },
     position: {
         adjust: {
@@ -658,7 +658,7 @@ $("textarea[title$='5W1H - the What']").qtip({
 
 $("textarea[title$='5W1H - the When']").qtip({ 
     content: {
-      text: 'when did the problem occur? Start of shift, end of shift, etc',
+      text: 'When did the problem occur? Start of shift, end of shift, etc?',
     },
     position: {
         adjust: {
@@ -669,7 +669,7 @@ $("textarea[title$='5W1H - the When']").qtip({
 
 $("textarea[title$='5W1H - the Where']").qtip({ 
     content: {
-      text: 'Where did you see the problem? Ie, machine, housekeeping, material etc',
+      text: 'Where did you see the problem? Ie, machine, housekeeping, material etc?',
     },
     position: {
         adjust: {
@@ -680,7 +680,7 @@ $("textarea[title$='5W1H - the Where']").qtip({
 
 $("textarea[title$='5W1H - the Who']").qtip({ 
     content: {
-      text: 'Who is doing the job? Is it their usual job YES or NO',
+      text: 'Who is doing the job? Is it their usual job YES or NO?',
     },
     position: {
         adjust: {
