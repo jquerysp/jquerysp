@@ -1,11 +1,3 @@
-function PreSaveAction(){
-    var itemTitle = $("textarea[title$='Comments if not Recordable']").val();
-    if (itemTitle.length < 1) {
-            alert("Please enter Comments if not Recordable before saving it again1.");
-            return false;
-    }
-};
-
 $(document).ready(function(){
 
 $("textarea[title$='Comments if not Recordable']").qtip({ 
@@ -19,6 +11,13 @@ $("textarea[title$='Comments if not Recordable']").qtip({
     }
 });
 
-
-
 });
+
+
+function PreSaveAction(){
+    var itemTitle = $("textarea[title$='Comments if not Recordable']").val();
+    if (itemTitle.length < 1) {
+            alert("Please enter Comments if not Recordable before saving it again.");
+            return false;
+    }
+};
