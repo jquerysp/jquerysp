@@ -8,7 +8,7 @@ function PreSaveAction(){
 
 $(document).ready(function(){
 
-$("input[title$='Comments if not Recordable']").qtip({ 
+$("textarea[title$='Comments if not Recordable']").qtip({ 
     content: {
         text: 'Tick the checkbox when you fill out all the necessary fields above. After ticking off, you can submit this incident report by clicking the save botton at the top left or the bottom right hand side of the page.'
     },
