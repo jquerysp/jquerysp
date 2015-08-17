@@ -17,7 +17,8 @@ $("textarea[title$='Comments if not Recordable']").qtip({
 function PreSaveAction(){
     var itemTitle = $("textarea[title$='Comments if not Recordable']").val();
     if (itemTitle.length < 1) {
-            alert("Please enter Comments if not Recordable before saving it again2.");
+            alert("Please enter Comments if not Recordable before saving it again5.");
             return false;
     }
+	return true;
 };
