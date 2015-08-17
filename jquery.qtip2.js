@@ -670,11 +670,3 @@ $("input[title$='Declaration']").qtip({
 
 
 });
-function PreSaveAction(){
-    var itemTitle = $("textarea[title$='5W1H - the What']").val();
-    if (itemTitle.length < 1) {
-            alert("Please enter all 5W1H questions before saving it again.");
-            $("input[title='Total']").attr("style", "border: solid 1px #ff4c42 !important");
-            return false;
-    }
-}
