@@ -69,7 +69,9 @@ function PreSaveAction(){
 				return false;
 		}
 		return true;
-	}
+    } else {
+    	return true;
+    }
 };
 
 $(document).ready(function(){
