@@ -72,7 +72,7 @@ function PreSaveAction(){
     } else {
     	return true;
     }
-}
+};
 
 $(document).ready(function(){
 
